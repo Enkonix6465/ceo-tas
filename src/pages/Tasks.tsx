@@ -545,7 +545,7 @@ function Tasks() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className={`${getTaskRowColor(task)} backdrop-blur-xl border rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group h-full flex flex-col cursor-pointer`}
+                  className={`${getTaskRowColor(task)} backdrop-blur-xl border rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group h-full flex flex-col cursor-pointer overflow-hidden`}
                   onClick={() => navigate(`/task/${task.id}`)}
                 >
                   <div className="flex items-start justify-between mb-3">
@@ -565,7 +565,7 @@ function Tasks() {
                         }`} />
                       </button>
                       
-                      <h3 className={`font-bold text-lg truncate ${
+                      <h3 className={`font-bold text-lg break-words line-clamp-2 ${
                         task.status === 'completed' 
                           ? 'line-through text-gray-500 dark:text-gray-400' 
                           : 'text-slate-800 dark:text-white'
@@ -614,7 +614,7 @@ function Tasks() {
                   </div>
                   
                   {task.description && (
-                    <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-3 line-clamp-2">
+                    <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-3 line-clamp-2 break-words">
                       {task.description}
                     </p>
                   )}
