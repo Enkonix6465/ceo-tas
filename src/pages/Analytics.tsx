@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bar, XAxis, YAxis, ResponsiveContainer, Line, PieChart, Pie, Cell, AreaChart, Area, Tooltip, Legend, ComposedChart } from "recharts";
+import { Bar, XAxis, YAxis, ResponsiveContainer, Line, PieChart, Pie, Cell, AreaChart, Area, Tooltip, Legend, ComposedChart, BarChart } from "recharts";
 import { TrendingUp, Activity, Users, CheckCircle, Filter, Download, Search, ChevronDown, BarChart3, AlertCircle, Eye, ArrowRight, User } from "lucide-react";
 import toast from "react-hot-toast";
 const CustomTooltip: React.FC<{ performanceData: any; children: React.ReactNode }> = ({ performanceData, children }) => {
@@ -685,6 +685,118 @@ const Analytics = () => {
 
   const departmentPerformance = Object.values(departmentData);
 
+  // Real performance cache for leaders (totalPerformanceScore style)
+  const [leaderScores, setLeaderScores] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    const computeScores = async () => {
+      try {
+        if (!teams || teams.length === 0 || tasks.length === 0) {
+          setLeaderScores({});
+          return;
+        }
+
+        const leadIds: string[] = Array.from(
+          new Set((teams || []).map((t: any) => t.created_by).filter(Boolean))
+        );
+
+        const results: Record<string, number> = {};
+
+        // Compute metrics per lead from tasks
+        for (const leadId of leadIds) {
+          const empTasks = tasks.filter((t: any) => t.assigned_to === leadId);
+
+          const perf = { total: empTasks.length, completed: 0, onTime: 0, reassigned: 0 } as any;
+
+          const empReviews = [] as number[];
+          const productivityScores = [] as number[];
+
+          empTasks.forEach((task: any) => {
+            const { progress_status, due_date, progress_updated_at, reviewpoints, reassign_history = [] } = task || {};
+
+            if (typeof reviewpoints === 'number') empReviews.push(reviewpoints);
+
+            if (progress_status === 'completed') {
+              perf.completed++;
+              const due = new Date(due_date);
+              const completeDate = progress_updated_at?.toDate?.() || new Date(progress_updated_at);
+              if (completeDate && !isNaN(due as any) && completeDate <= due) {
+                perf.onTime++;
+              }
+            }
+
+            if (Array.isArray(reassign_history) && reassign_history.length > 0) {
+              perf.reassigned += reassign_history.length;
+            }
+
+            // Productivity scoring similar to Performance Matrix
+            const assignedAt = task.created_at?.toDate?.();
+            const dueAt = new Date(task.due_date);
+            const completedAt = task.progress_updated_at?.toDate?.();
+            if (assignedAt && dueAt && completedAt && !isNaN(dueAt as any)) {
+              const totalTime = dueAt.getTime() - assignedAt.getTime();
+              const timeLeft = dueAt.getTime() - completedAt.getTime();
+              const timeOverdue = completedAt.getTime() - dueAt.getTime();
+              if (completedAt <= dueAt) {
+                const leftRatio = totalTime > 0 ? timeLeft / totalTime : 0;
+                if (leftRatio >= 0.5) productivityScores.push(100);
+                else if (leftRatio >= 0 && leftRatio < 0.1) productivityScores.push(70);
+                else productivityScores.push(60);
+              } else {
+                const overdueRatio = totalTime > 0 ? timeOverdue / totalTime : 1;
+                if (overdueRatio <= 0.1) productivityScores.push(50);
+                else if (overdueRatio <= 0.5) productivityScores.push(30);
+                else productivityScores.push(10);
+              }
+            }
+          });
+
+          const completionRate = perf.total > 0 ? (perf.completed / perf.total) * 100 : 0;
+          const onTimeRate = perf.completed > 0 ? (perf.onTime / perf.completed) * 100 : 0;
+          const avgReviewScore = empReviews.length > 0 ? empReviews.reduce((a, b) => a + b, 0) / empReviews.length : 0;
+          const avgProductivityScore = productivityScores.length > 0 ? productivityScores.reduce((a, b) => a + b, 0) / productivityScores.length : 0;
+
+          // Fetch latest HR feedback score
+          let hrFeedbackScore = 0;
+          try {
+            const qRef = query(collection(safeDb, "HR_feedback"), where("employeeId", "==", leadId));
+            const snap = await getDocs(qRef);
+            if (!snap.empty) {
+              let latestDoc: any = null;
+              let latestDate: Date | null = null;
+              snap.forEach((docSnap) => {
+                const docId = docSnap.id;
+                const datePart = docId.split("_")[1];
+                const docDate = new Date(datePart);
+                if (!latestDate || docDate > latestDate) {
+                  latestDate = docDate;
+                  latestDoc = docSnap;
+                }
+              });
+              if (latestDoc) {
+                const data: any = latestDoc.data();
+                if (typeof data.score === 'number') hrFeedbackScore = data.score;
+              }
+            }
+          } catch {}
+
+          const totalPerformanceScore = Math.max(
+            Number((avgProductivityScore * 0.2 + completionRate * 0.25 + onTimeRate * 0.25 + avgReviewScore * 0.2 + hrFeedbackScore * 0.1).toFixed(2)),
+            0
+          );
+
+          results[leadId] = totalPerformanceScore;
+        }
+
+        setLeaderScores(results);
+      } catch (e) {
+        // ignore errors, keep graceful fallback
+      }
+    };
+
+    computeScores();
+  }, [teams, tasks, safeDb]);
+
   // Generate mock employee reports (would come from admin/team lead inputs)
   const generateEmployeeReport = (_employeeId: string) => {
     const mockReports = {
@@ -802,6 +914,19 @@ const Analytics = () => {
       }
     );
   };
+
+  // Compute Top 5 Team Leads by performance to fill overview gap
+  const topTeamLeads = (() => {
+    try {
+      const leadIds = new Set((teams || []).map((t: any) => t.created_by).filter(Boolean));
+      const leadPerf = (individualPerformance || []).filter((emp: any) => leadIds.has(emp.id));
+      return leadPerf
+        .sort((a: any, b: any) => (b.performanceScore || 0) - (a.performanceScore || 0))
+        .slice(0, 5);
+    } catch {
+      return [] as any[];
+    }
+  })();
 
   const exportAnalytics = () => {
     const data = {
@@ -999,7 +1124,7 @@ const Analytics = () => {
               className="space-y-6"
             >
               {/* Enhanced Stats Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch auto-rows-fr">
                 {[
                   {
                     icon: Activity,
@@ -1063,13 +1188,12 @@ const Analytics = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border-2 border-purple-500/50 dark:border-purple-500/30 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-                    onClick={() => {
+                    className="group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border-2 border-purple-500/50 dark:border-purple-500/30 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full min-h-[140px]"
+                onClick={() => {
                       if (stat.onClick) {
                         stat.onClick();
                       } else if (stat.route) {
-                        navigate(stat.route);
-                        // If there's a filter to apply, store it in localStorage for the dashboard to use
+                        window.location.href = stat.route;
                         if (stat.filter) {
                           localStorage.setItem('dashboardFilter', stat.filter);
                         }
@@ -1257,8 +1381,69 @@ const Analytics = () => {
                   </div>
                 </motion.div>
 
-                {/* Department Performance */}
-                
+                {/* Top Team Leaders - fills empty third column */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border-2 border-purple-500/50 dark:border-purple-500/30 p-6"
+                >
+                  <h3 className="text-lg font-bold text-violet-800 dark:text-violet-200 mb-4">
+                    Top 5 Team Leaders
+                  </h3>
+                  {topTeamLeads.length === 0 ? (
+                    <div className="h-64 flex items-center justify-center text-sm text-violet-600/70 dark:text-violet-300/70">
+                      No team leader data
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 gap-3">
+                      {topTeamLeads.map((lead: any, idx: number) => (
+                        <div
+                          key={lead.id}
+                          className="flex items-center gap-3 bg-white/70 dark:bg-slate-900/60 rounded-xl border border-violet-200/60 dark:border-violet-500/30 p-3 h-20 hover:shadow-md transition cursor-pointer"
+                          onClick={() => {
+                            try {
+                              localStorage.setItem('selectedEmployeeId', lead.id);
+                            } catch {}
+                            window.location.href = `/PerformMatrix?empId=${encodeURIComponent(lead.id)}`;
+                          }}
+                          role="button"
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              try {
+                                localStorage.setItem('selectedEmployeeId', lead.id);
+                              } catch {}
+                              window.location.href = `/PerformMatrix?empId=${encodeURIComponent(lead.id)}`;
+                            }
+                          }}
+                        >
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 text-white flex items-center justify-center text-xs font-bold">
+                            {idx + 1}
+                          </div>
+                          <img
+                            src={lead.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(lead.name || lead.id)}`}
+                            alt={lead.name}
+                            className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <div className="text-sm font-semibold text-violet-800 dark:text-violet-200 truncate">{lead.name || 'Leader'}</div>
+                            <div className="text-xs text-violet-600/70 dark:text-violet-300/70 truncate">
+                              {lead.department || lead.role || 'Team Lead'}
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-base font-bold text-emerald-700 dark:text-emerald-300">
+                              {Math.round((leaderScores[lead.id] ?? lead.performanceScore ?? 0))}%
+                            </div>
+                            <div className="text-[10px] text-emerald-600/80 dark:text-emerald-300/80">Performance</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </motion.div>
+
               </div>
             </motion.div>
           )}
@@ -1283,7 +1468,7 @@ const Analytics = () => {
               </div>
 
               {/* Performance Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                 {individualPerformance
                   .filter((emp) =>
                     emp.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -1295,7 +1480,7 @@ const Analytics = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className={`group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border-2 cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${
+                      className={`group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border-2 cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full min-h-[280px] ${
                         emp.performanceLevel.level === "critical"
                           ? "border-red-500/70 dark:border-red-500/50"
                           : emp.performanceLevel.level === "needs_improvement"
@@ -1424,7 +1609,7 @@ const Analytics = () => {
                           onClick={(e) => {
                             e.stopPropagation();
                             localStorage.setItem('selectedEmployeeId', emp.id);
-                            navigate('/performance-matrix');
+                            window.location.href = '/performance-matrix';
                           }}
                         >
                           <Eye className="w-4 h-4" />
