@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { collection, getDocs, addDoc, updateDoc, doc, Timestamp, onSnapshot, arrayUnion } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, Timestamp, onSnapshot, arrayUnion } from "firebase/firestore";
 import { db, auth } from "../lib/firebase";
 import { useAuthStore } from "../store/authStore";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,18 +17,13 @@ import {
   Circle,
   X,
   Save,
-  User,
   Flag,
   ArrowRight,
   AlertCircle,
-  Star,
   Edit,
-  Trash2,
   Eye,
-  Users,
   Layers,
   Target,
-  Zap,
   TrendingUp,
   Activity,
   Timer,
@@ -52,7 +47,8 @@ const KanbanPage = () => {
   const [showTaskDetailModal, setShowTaskDetailModal] = useState(false);
   const [commentLoading, setCommentLoading] = useState(false);
   const [newComment, setNewComment] = useState("");
-  const [selectedTask, setSelectedTask] = useState(null);
+  const [selectedTask, setSelectedTask] = useState<any | null>(null);
+  const safeDb = db as any;
   const [newTaskColumn, setNewTaskColumn] = useState("");
   const [draggedTask, setDraggedTask] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -213,7 +209,7 @@ const KanbanPage = () => {
         const testConnection = async () => {
           try {
             // Try to get a simple document to test connection
-            await collection(db, "tasks");
+            await collection(safeDb, "tasks");
             hasConnected = true;
             clearTimeout(connectionTimeout);
 
@@ -248,7 +244,7 @@ const KanbanPage = () => {
     const setupRealtimeListeners = () => {
       try {
         const tasksUnsub = onSnapshot(
-          collection(db, "tasks"),
+          collection(safeDb, "tasks"),
           (snapshot) => {
             if (mounted) {
               hasConnected = true;
@@ -267,7 +263,7 @@ const KanbanPage = () => {
         );
 
         const projectsUnsub = onSnapshot(
-          collection(db, "projects"),
+          collection(safeDb, "projects"),
           (snapshot) => {
             if (mounted) {
               setProjects(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
@@ -282,7 +278,7 @@ const KanbanPage = () => {
         );
 
         const employeesUnsub = onSnapshot(
-          collection(db, "employees"),
+          collection(safeDb, "employees"),
           (snapshot) => {
             if (mounted) {
               setEmployees(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
@@ -298,14 +294,14 @@ const KanbanPage = () => {
 
         // Also fetch users collection and merge with employees
         const usersUnsub = onSnapshot(
-          collection(db, "users"),
+          collection(safeDb, "users"),
           (snapshot) => {
             if (mounted) {
-              const users = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+              const users = snapshot.docs.map(doc => ({ id: doc.id, ...(doc.data() as any) })) as any[];
               setEmployees(prev => {
                 // Merge users with employees, avoid duplicates
                 const existingIds = prev.map(emp => emp.id);
-                const newUsers = users.filter(user => !existingIds.includes(user.id) && !existingIds.includes(user.uid));
+                const newUsers = users.filter((user: any) => !existingIds.includes(user.id) && !existingIds.includes(user.uid));
                 return [...prev, ...newUsers];
               });
             }
@@ -353,14 +349,14 @@ const KanbanPage = () => {
 
     setCommentLoading(true);
     try {
-      const comment = {
+      const comment: any = {
         text: newComment.trim(),
         timestamp: new Date().toISOString(),
-        userId: auth.currentUser?.uid || 'anonymous',
+        userId: (auth as any)?.currentUser?.uid || 'anonymous',
       };
 
       if (db) {
-        const taskRef = doc(db, "tasks", selectedTask.id);
+        const taskRef = doc(safeDb, "tasks", (selectedTask as any).id);
         await updateDoc(taskRef, {
           comments: arrayUnion(comment)
         });
@@ -571,9 +567,11 @@ const KanbanPage = () => {
     }
   };
 
-  const handleDragStart = (e: React.DragEvent, task: any) => {
+  const handleDragStart = (e: any, task: any) => {
     setDraggedTask(task);
-    e.dataTransfer.effectAllowed = "move";
+    if (e?.dataTransfer) {
+      e.dataTransfer.effectAllowed = "move";
+    }
   };
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -673,7 +671,7 @@ const KanbanPage = () => {
         onDragStart={(e) => handleDragStart(e, task)}
         onClick={() => {
           setSelectedTask(task);
-          setShowTaskDetailModal(true);
+          setShowTaskDetailModal(false);
         }}
         className={`${getCardBgColor()} rounded-lg p-4 mb-3 transition-all duration-200 cursor-pointer group relative overflow-hidden hover:shadow-md hover:-translate-y-1`}
       >
@@ -699,7 +697,7 @@ const KanbanPage = () => {
         {/* Header */}
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1">
-            <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight mb-1 group-hover:text-blue-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+            <h4 className="text-sm font-bold text-gray-900 dark:text-white leading-tight mb-1 group-hover:text-blue-600 dark:group-hover:text-purple-400 transition-colors duration-300 line-clamp-2 break-words">
               {task.title}
             </h4>
             <div className="flex items-center gap-2">
@@ -728,7 +726,7 @@ const KanbanPage = () => {
         
         {/* Description */}
         {task.description && (
-          <p className="text-xs text-gray-700 dark:text-gray-200 mb-3 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-gray-700 dark:text-gray-200 mb-3 line-clamp-2 leading-relaxed break-words">
             {task.description}
           </p>
         )}
@@ -780,7 +778,7 @@ const KanbanPage = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="px-2 py-1 text-xs bg-gradient-to-r from-blue-100/80 via-gray-100/70 to-slate-100/80 dark:from-purple-900/40 dark:via-purple-800/30 dark:to-purple-900/40 text-blue-700 dark:text-purple-300 rounded-lg border border-blue-200/50 dark:border-purple-400/30 font-medium shadow-sm backdrop-blur-sm"
+                className="px-2 py-1 text-xs bg-gradient-to-r from-blue-100/80 via-gray-100/70 to-slate-100/80 dark:from-purple-900/40 dark:via-purple-800/30 dark:to-purple-900/40 text-blue-700 dark:text-purple-300 rounded-lg border border-blue-200/50 dark:border-purple-400/30 font-medium shadow-sm backdrop-blur-sm break-words max-w-full"
               >
                 #{tag.trim()}
               </motion.span>
@@ -1637,6 +1635,83 @@ const KanbanPage = () => {
 
 
       </div>
+
+      {viewMode === "board" && (
+        <div className="hidden lg:block absolute top-[160px] right-1 w-[280px] pointer-events-auto">
+        <div className="h-[400px] bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-2xl border border-gray-200/60 dark:border-purple-500/30 shadow-xl overflow-hidden">
+      <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Details</h3>
+        {selectedTask && (
+          <span className="text-xs px-2 py-1 rounded bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700/40">
+            #{(selectedTask as any)?.task_id || "—"}
+          </span>
+        )}
+      </div>
+      <div className="p-4 overflow-y-auto h-full">
+                {selectedTask ? (
+                <div className="space-y-4 text-sm">
+                  <div>
+                      <div className="text-base font-semibold text-gray-900 dark:text-white mb-1">{(selectedTask as any)?.title}</div>
+                      <div className="text-gray-600 dark:text-gray-300">{(selectedTask as any)?.description || '—'}</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-500">Assignee</div>
+                        <div className="text-gray-900 dark:text-white">{getEmployeeName((selectedTask as any)?.assigned_to)}</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-500">Reporter</div>
+                        <div className="text-gray-900 dark:text-white">{getEmployeeName((selectedTask as any)?.created_by)}</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-500">Status</div>
+                        <div className="capitalize text-gray-900 dark:text-white">{(selectedTask as any)?.status?.replace('_',' ')}</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-500">Priority</div>
+                        <div className="capitalize text-gray-900 dark:text-white">{(selectedTask as any)?.priority}</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-500">Due date</div>
+                        <div className="text-gray-900 dark:text-white">{(selectedTask as any)?.due_date ? new Date((selectedTask as any).due_date).toLocaleDateString() : '—'}</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-500">Project</div>
+                        <div className="text-gray-900 dark:text-white">{projects.find(p => p.id === (selectedTask as any)?.project_id)?.name || '—'}</div>
+                    </div>
+                  </div>
+                    {(selectedTask as any)?.tags && (
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Tags</div>
+                      <div className="flex flex-wrap gap-2">
+                          {(selectedTask as any).tags.split(',').map((t:string, i:number) => (
+                          <span key={i} className="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">#{t.trim()}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  <div>
+                    <div className="text-xs text-gray-500 mb-1">Comments</div>
+                    <div className="space-y-2 max-h-40 overflow-y-auto">
+                        {(selectedTask as any)?.comments?.length ? (selectedTask as any).comments.map((c:any, i:number) => (
+                        <div key={i} className="p-2 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 text-xs">
+                          {c.text || String(c)}
+                        </div>
+                        )) : (
+                        <div className="text-xs text-gray-400">No comments</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                ) : (
+                <div className="h-full flex items-center justify-center text-gray-400 dark:text-purple-300/70 text-sm">
+                  Click a card to see details here
+                </div>
+                )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Enhanced New Task Modal */}
       <AnimatePresence>
