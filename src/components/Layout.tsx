@@ -253,7 +253,8 @@ function Layout() {
                     }`}
                   >
                     <LayoutDashboard className="w-4 h-4" />
-                    <span>Project Dashboard</span>
+                    <span>Project Dashboard   </span>
+                    <Plus className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/ProjectDocCreator"
@@ -442,8 +443,16 @@ function Layout() {
             </div>
 
             <div className="flex items-center gap-3">
-           
-              
+              {(location.pathname.startsWith("/ProjectDashboard") || location.pathname.includes("/project-dashboard")) && (
+                <Link
+                  to={location.pathname}
+                  className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-violet-600 dark:text-violet-300 hover:bg-violet-100/60 dark:hover:bg-violet-700/40 border border-violet-200/50 dark:border-violet-500/30 shadow-md transition-all duration-200 backdrop-blur-sm"
+                  title="Add"
+                >
+                  <Plus className="w-4 h-4" />
+                </Link>
+              )}
+
               <Link
                 to="/settings"
                 className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-violet-600 dark:text-violet-300 hover:bg-violet-100/60 dark:hover:bg-violet-700/40 border border-violet-200/50 dark:border-violet-500/30 shadow-md transition-all duration-200 backdrop-blur-sm"
@@ -451,7 +460,7 @@ function Layout() {
               >
                 <Settings className="w-4 h-4" />
               </Link>
-              
+
               <button
                 onClick={toggleTheme}
                 className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-violet-600 dark:text-violet-300 hover:bg-violet-100/60 dark:hover:bg-violet-700/40 border border-violet-200/50 dark:border-violet-500/30 shadow-md transition-all duration-200 backdrop-blur-sm"
