@@ -127,7 +127,7 @@ export function LoginForm({
                 <User className="w-6 h-6 text-white" />
               </div>
               <div className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400 bg-clip-text text-transparent">
-                ENKONIX TAS
+                ENKONI TAS
               </div>
             </div>
 
