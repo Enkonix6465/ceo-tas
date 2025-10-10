@@ -159,7 +159,7 @@ export default function EmployeeManagement() {
 
 
   return (
-    <div className="max-w-6xl mx-auto p-4 sm:p-6 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div className="max-w-6xl mx-auto p-4 sm:p-6 text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-900 min-h-screen overflow-y-auto">
       <h2 className="text-3xl font-bold mb-6 text-center text-blue-700 dark:text-blue-400 animate-fade-in-down">
         Employee Management
       </h2>
@@ -176,7 +176,7 @@ export default function EmployeeManagement() {
       )}
 
 
-      <div className="bg-white dark:bg-gray-800 shadow-lg p-4 rounded mb-8 animate-slide-up">
+      <div className="bg-white dark:bg-gray-800 shadow-lg p-4 rounded mb-8 animate-slide-up max-h-[600px] overflow-y-auto custom-scrollbar">
         <h3 className="font-semibold mb-4 text-lg flex items-center gap-2">
           <UserPlus className="w-5 h-5" />
           Add / Edit Employee
@@ -373,7 +373,7 @@ export default function EmployeeManagement() {
             />
           </div>
         </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto max-h-96 overflow-y-auto">
           <table className="w-full table-auto border text-sm min-w-[800px]">
             <thead className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
               <tr>

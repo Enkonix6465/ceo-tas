@@ -98,7 +98,7 @@ const FeedbackPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 overflow-y-auto">
       <div className="p-6 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">
@@ -176,7 +176,7 @@ const FeedbackPage = () => {
             <Users className="w-5 h-5" />
             Employee Directory
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[500px] overflow-y-auto custom-scrollbar">
             {filteredEmployees.map((emp) => (
               <div
                 key={emp.id}
@@ -317,7 +317,7 @@ const FeedbackPage = () => {
             </div>
 
             {filteredFeedbacks.length > 0 ? (
-              <div className="space-y-4">
+              <div className="space-y-4 max-h-[400px] overflow-y-auto custom-scrollbar">
                 {filteredFeedbacks.map((f, idx) => (
                   <div
                     key={idx}
