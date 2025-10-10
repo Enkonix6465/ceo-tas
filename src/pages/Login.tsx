@@ -64,11 +64,11 @@ export default function LoginPage() {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('click', handleClick);
       clearInterval(hoverCleanup);
-    };
+    }
   }, []);
 
   return (
-    <div className={`min-h-screen relative overflow-hidden ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-950' : 'bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50'}`}>
+    <div className={`min-h-screen relative overflow-hidden ${theme === 'dark' ? 'bg-gradient-to-br from-blue-900 via-blue-950 to-blue-950' : 'bg-gradient-to-br from-blue-50 via-blue-50 to-blue-50'}`}>
       {/* Liquid Glass Background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Primary Liquid Glass Blob */}
@@ -112,7 +112,7 @@ export default function LoginPage() {
         style={{ 
           left: cursorPos.x - 10, 
           top: cursorPos.y - 10,
-          transform: `translate3d(0, 0, 0)`
+          transform: `tranblue3d(0, 0, 0)`
         }}
       />
 
@@ -139,7 +139,7 @@ export default function LoginPage() {
             left: particle.x - 1.5,
             top: particle.y - 1.5,
             opacity: 0.7,
-            transform: `translate(${particle.vx * 8}px, ${particle.vy * 8}px) scale(${Math.random() * 0.6 + 0.4})`
+            transform: `tranblue(${particle.vx * 8}px, ${particle.vy * 8}px) scale(${Math.random() * 0.6 + 0.4})`
           }}
         />
       ))}

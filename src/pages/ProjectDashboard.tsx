@@ -245,26 +245,26 @@ export default function ProjectDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:bg-gradient-to-br dark:from-slate-800 dark:via-purple-900/40 dark:to-indigo-900/60 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:bg-gradient-to-br dark:from-slate-800 dark:via-blue-900/40 dark:to-rose-900/60 relative overflow-hidden">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-rose-300/20 dark:bg-rose-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-slate-200/10 dark:bg-slate-600/5 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
       </div>
       {/* Enhanced Header */}
-      <div className="liquid-glass border-b border-slate-200/50 dark:border-purple-500/30 shadow-lg backdrop-blur-xl relative z-10">
+      <div className="liquid-glass border-b border-slate-200/50 dark:border-blue-500/30 shadow-lg backdrop-blur-xl relative z-10">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-slate-600 via-purple-600 to-indigo-700 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-slate-600 via-blue-600 to-rose-700 rounded-2xl flex items-center justify-center shadow-lg">
               <Briefcase className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-700 via-purple-600 to-indigo-600 bg-clip-text text-transparent tracking-tight">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-700 via-blue-600 to-rose-600 bg-clip-text text-transparent tracking-tight">
                   Project Dashboard
                 </h1>
-                <p className="text-slate-600/80 dark:text-purple-300/70 font-medium">
+                <p className="text-slate-600/80 dark:text-blue-300/70 font-medium">
                   Manage and track all your projects
                 </p>
               </div>
@@ -294,7 +294,7 @@ export default function ProjectDashboard() {
 
               <button
                 onClick={() => setShowNewProjectModal(true)}
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-600 via-purple-600 to-indigo-700 text-white rounded-xl hover:from-slate-700 hover:via-purple-700 hover:to-indigo-800 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-600 via-blue-600 to-rose-700 text-white rounded-xl hover:from-slate-700 hover:via-blue-700 hover:to-rose-800 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <Plus className="w-4 h-4" />
                 <span className="hidden sm:inline font-medium">New Project</span>
@@ -311,13 +311,13 @@ export default function ProjectDashboard() {
                 placeholder="Search projects, descriptions, or team names..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-purple-500/30 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all shadow-sm"
+                className="w-full pl-12 pr-4 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-blue-500/30 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-sm"
               />
             </div>
 
             <div className="flex items-center gap-3">
-              <button className="p-4 border border-slate-200/50 dark:border-purple-500/30 rounded-xl hover:bg-slate-50/50 dark:hover:bg-purple-700/50 transition-all shadow-sm backdrop-blur-sm">
-                <Filter className="w-5 h-5 text-slate-600 dark:text-purple-300" />
+              <button className="p-4 border border-slate-200/50 dark:border-blue-500/30 rounded-xl hover:bg-slate-50/50 dark:hover:bg-blue-700/50 transition-all shadow-sm backdrop-blur-sm">
+                <Filter className="w-5 h-5 text-slate-600 dark:text-blue-300" />
               </button>
             </div>
           </div>
@@ -359,8 +359,8 @@ export default function ProjectDashboard() {
             className="enhanced-glass-card p-6 hover:shadow-xl transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:from-slate-700/50 dark:via-purple-800/40 dark:to-indigo-800/50 rounded-xl flex items-center justify-center shadow-md">
-                <Layers3 className="w-6 h-6 text-slate-600 dark:text-purple-300" />
+              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:from-slate-700/50 dark:via-blue-800/40 dark:to-rose-800/50 rounded-xl flex items-center justify-center shadow-md">
+                <Layers3 className="w-6 h-6 text-slate-600 dark:text-blue-300" />
               </div>
               <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">{projects.length}</span>
             </div>
@@ -375,8 +375,8 @@ export default function ProjectDashboard() {
             className="enhanced-glass-card p-6 hover:shadow-xl transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:from-slate-700/50 dark:via-purple-800/40 dark:to-indigo-800/50 rounded-xl flex items-center justify-center shadow-md">
-                <Users className="w-6 h-6 text-slate-600 dark:text-purple-300" />
+              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:from-slate-700/50 dark:via-blue-800/40 dark:to-rose-800/50 rounded-xl flex items-center justify-center shadow-md">
+                <Users className="w-6 h-6 text-slate-600 dark:text-blue-300" />
               </div>
               <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">{teams.length}</span>
             </div>
@@ -391,8 +391,8 @@ export default function ProjectDashboard() {
             className="enhanced-glass-card p-6 hover:shadow-xl transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:from-slate-700/50 dark:via-purple-800/40 dark:to-indigo-800/50 rounded-xl flex items-center justify-center shadow-md">
-                <Target className="w-6 h-6 text-slate-600 dark:text-purple-300" />
+              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:from-slate-700/50 dark:via-blue-800/40 dark:to-rose-800/50 rounded-xl flex items-center justify-center shadow-md">
+                <Target className="w-6 h-6 text-slate-600 dark:text-blue-300" />
               </div>
               <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">{employees.length}</span>
             </div>
@@ -407,8 +407,8 @@ export default function ProjectDashboard() {
             className="enhanced-glass-card p-6 hover:shadow-xl transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:from-slate-700/50 dark:via-purple-800/40 dark:to-indigo-800/50 rounded-xl flex items-center justify-center shadow-md">
-                <Activity className="w-6 h-6 text-slate-600 dark:text-purple-300" />
+              <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:from-slate-700/50 dark:via-blue-800/40 dark:to-rose-800/50 rounded-xl flex items-center justify-center shadow-md">
+                <Activity className="w-6 h-6 text-slate-600 dark:text-blue-300" />
               </div>
               <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                 {projects.length > 0 ? Math.round(projects.reduce((acc, p) => acc + getProjectProgress(p), 0) / projects.length) : 0}%
@@ -444,14 +444,14 @@ export default function ProjectDashboard() {
                   {/* Card Header */}
                   <div className="relative p-6 pb-4">
                     {/* Background Pattern */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-200/20 via-indigo-200/15 to-slate-200/10 dark:from-purple-800/10 dark:via-indigo-800/8 dark:to-slate-700/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200/20 via-rose-200/15 to-slate-200/10 dark:from-blue-800/10 dark:via-rose-800/8 dark:to-slate-700/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
 
                     <div className="relative z-10">
                       <div className="flex items-start justify-between mb-6">
                         <div className="flex items-center gap-4">
                           <div className="relative">
-                            <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:from-slate-700/60 dark:via-purple-800/50 dark:to-indigo-800/60 rounded-xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
-                              <Building2 className="w-6 h-6 text-slate-600 dark:text-purple-300 group-hover:text-purple-600 dark:group-hover:text-purple-200 transition-colors duration-300" />
+                            <div className="w-12 h-12 bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:from-slate-700/60 dark:via-blue-800/50 dark:to-rose-800/60 rounded-xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
+                              <Building2 className="w-6 h-6 text-slate-600 dark:text-blue-300 group-hover:text-blue-600 dark:group-hover:text-blue-200 transition-colors duration-300" />
                             </div>
                             <div className={`absolute -top-2 -right-2 w-6 h-6 rounded-full border-3 border-white dark:border-slate-800 shadow-lg ${
                               progress >= 100 ? 'bg-green-500' :
@@ -460,12 +460,12 @@ export default function ProjectDashboard() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
-                              <span className="text-xs font-bold bg-gradient-to-r from-slate-100 to-purple-100 dark:from-slate-700/80 dark:to-purple-800/60 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-full border border-slate-200/60 dark:border-purple-500/30 backdrop-blur-sm shadow-sm">
+                              <span className="text-xs font-bold bg-gradient-to-r from-slate-100 to-blue-100 dark:from-slate-700/80 dark:to-blue-800/60 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-full border border-slate-200/60 dark:border-blue-500/30 backdrop-blur-sm shadow-sm">
                                 Project #{index + 1}
                               </span>
                               <span className={`text-xs px-3 py-2 rounded-full font-semibold shadow-sm ${
                                 daysRemaining > 30 ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 dark:from-green-900/30 dark:to-emerald-900/30 dark:text-green-400 border border-green-200 dark:border-green-700/30' :
-                                daysRemaining > 7 ? 'bg-gradient-to-r from-yellow-100 to-orange-100 text-yellow-700 dark:from-yellow-900/30 dark:to-orange-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-700/30' :
+                                daysRemaining > 7 ? 'bg-gradient-to-r from-yellow-100 to-blue-100 text-yellow-700 dark:from-yellow-900/30 dark:to-blue-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-700/30' :
                                 'bg-gradient-to-r from-red-100 to-pink-100 text-red-700 dark:from-red-900/30 dark:to-pink-900/30 dark:text-red-400 border border-red-200 dark:border-red-700/30'
                               }`}>
                                 {daysRemaining > 0 ? `${daysRemaining} days left` : 'Overdue'}
@@ -474,16 +474,16 @@ export default function ProjectDashboard() {
                           </div>
                         </div>
                         <div className="flex gap-2">
-                          <button className="group/btn p-3 bg-gradient-to-br from-slate-50/90 to-purple-50/80 dark:from-slate-700/90 dark:to-purple-800/60 backdrop-blur-sm rounded-xl hover:from-purple-100/90 hover:to-indigo-100/80 dark:hover:from-purple-700/80 dark:hover:to-indigo-700/60 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
-                            <Eye className="w-5 h-5 text-slate-600 dark:text-slate-300 group-hover/btn:text-purple-600 dark:group-hover/btn:text-purple-300 transition-colors" />
+                          <button className="group/btn p-3 bg-gradient-to-br from-slate-50/90 to-blue-50/80 dark:from-slate-700/90 dark:to-blue-800/60 backdrop-blur-sm rounded-xl hover:from-blue-100/90 hover:to-rose-100/80 dark:hover:from-blue-700/80 dark:hover:to-rose-700/60 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                            <Eye className="w-5 h-5 text-slate-600 dark:text-slate-300 group-hover/btn:text-blue-600 dark:group-hover/btn:text-blue-300 transition-colors" />
                           </button>
-                          <button className="group/btn p-3 bg-gradient-to-br from-slate-50/90 to-purple-50/80 dark:from-slate-700/90 dark:to-purple-800/60 backdrop-blur-sm rounded-xl hover:from-purple-100/90 hover:to-indigo-100/80 dark:hover:from-purple-700/80 dark:hover:to-indigo-700/60 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
-                            <MoreHorizontal className="w-5 h-5 text-slate-600 dark:text-slate-300 group-hover/btn:text-purple-600 dark:group-hover/btn:text-purple-300 transition-colors" />
+                          <button className="group/btn p-3 bg-gradient-to-br from-slate-50/90 to-blue-50/80 dark:from-slate-700/90 dark:to-blue-800/60 backdrop-blur-sm rounded-xl hover:from-blue-100/90 hover:to-rose-100/80 dark:hover:from-blue-700/80 dark:hover:to-rose-700/60 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                            <MoreHorizontal className="w-5 h-5 text-slate-600 dark:text-slate-300 group-hover/btn:text-blue-600 dark:group-hover/btn:text-blue-300 transition-colors" />
                           </button>
                         </div>
                       </div>
 
-                      <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">
+                      <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">
                         {project.name}
                       </h2>
 
@@ -497,7 +497,7 @@ export default function ProjectDashboard() {
                     <div className="relative mb-6">
                       <div className="flex justify-between items-center mb-3">
                         <div className="flex items-center gap-2">
-                          <Activity className="w-4 h-4 text-purple-500" />
+                          <Activity className="w-4 h-4 text-blue-500" />
                           <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Project Progress</span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -508,12 +508,12 @@ export default function ProjectDashboard() {
                           }`}></div>
                         </div>
                       </div>
-                      <div className="relative w-full h-3 bg-gradient-to-r from-slate-200/80 via-purple-200/60 to-indigo-200/80 dark:from-slate-700/80 dark:via-purple-800/60 dark:to-indigo-800/80 backdrop-blur-sm rounded-full overflow-hidden shadow-inner">
+                      <div className="relative w-full h-3 bg-gradient-to-r from-slate-200/80 via-blue-200/60 to-rose-200/80 dark:from-slate-700/80 dark:via-blue-800/60 dark:to-rose-800/80 backdrop-blur-sm rounded-full overflow-hidden shadow-inner">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${progress}%` }}
                           transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
-                          className="h-full bg-gradient-to-r from-slate-500 via-purple-500 to-indigo-600 rounded-full shadow-lg relative overflow-hidden"
+                          className="h-full bg-gradient-to-r from-slate-500 via-blue-500 to-rose-600 rounded-full shadow-lg relative overflow-hidden"
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-transparent animate-shimmer"></div>
                         </motion.div>
@@ -523,28 +523,28 @@ export default function ProjectDashboard() {
 
                   {/* Enhanced Project Details */}
                   <div className="px-6 pb-4">
-                                          <div className="bg-gradient-to-br from-slate-50/80 via-purple-50/40 to-indigo-50/60 dark:from-slate-800/40 dark:via-purple-900/20 dark:to-indigo-900/30 rounded-xl p-4 border border-slate-200/50 dark:border-purple-500/20 backdrop-blur-sm">
+                                          <div className="bg-gradient-to-br from-slate-50/80 via-blue-50/40 to-rose-50/60 dark:from-slate-800/40 dark:via-blue-900/20 dark:to-rose-900/30 rounded-xl p-4 border border-slate-200/50 dark:border-blue-500/20 backdrop-blur-sm">
                                               <div className="grid grid-cols-2 gap-4 mb-4">
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <Calendar className="w-5 h-5 text-purple-500" />
+                            <Calendar className="w-5 h-5 text-blue-500" />
                             <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Start Date</span>
                           </div>
                           <p className="text-lg font-bold text-slate-900 dark:text-slate-100 ml-7">{project.startDate}</p>
                         </div>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <Clock className="w-5 h-5 text-indigo-500" />
+                            <Clock className="w-5 h-5 text-rose-500" />
                             <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Deadline</span>
                           </div>
                           <p className="text-lg font-bold text-slate-900 dark:text-slate-100 ml-7">{project.deadline}</p>
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between pt-4 border-t border-slate-200/50 dark:border-purple-500/20">
+                      <div className="flex items-center justify-between pt-4 border-t border-slate-200/50 dark:border-blue-500/20">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-800/60 dark:to-indigo-800/60 rounded-full flex items-center justify-center">
-                            <User className="w-4 h-4 text-purple-600 dark:text-purple-300" />
+                          <div className="w-8 h-8 bg-gradient-to-br from-blue-100 to-rose-100 dark:from-blue-800/60 dark:to-rose-800/60 rounded-full flex items-center justify-center">
+                            <User className="w-4 h-4 text-blue-600 dark:text-blue-300" />
                           </div>
                           <div>
                             <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Project Lead</p>
@@ -625,13 +625,13 @@ export default function ProjectDashboard() {
                   </div>
 
                   {/* Enhanced Hover Effect Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br from-purple-100/10 via-indigo-100/15 to-slate-100/20 dark:from-purple-900/5 dark:via-indigo-900/8 dark:to-slate-800/10 rounded-2xl transition-all duration-500 pointer-events-none border border-purple-300/20 dark:border-purple-500/20 ${
+                  <div className={`absolute inset-0 bg-gradient-to-br from-blue-100/10 via-rose-100/15 to-slate-100/20 dark:from-blue-900/5 dark:via-rose-900/8 dark:to-slate-800/10 rounded-2xl transition-all duration-500 pointer-events-none border border-blue-300/20 dark:border-blue-500/20 ${
                     hoveredCard === project.id ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
                   }`} />
 
                   {/* Animated border glow on hover */}
                   <div className={`absolute inset-0 rounded-2xl transition-all duration-500 pointer-events-none ${
-                    hoveredCard === project.id ? 'shadow-lg shadow-purple-500/20 dark:shadow-purple-400/10' : ''
+                    hoveredCard === project.id ? 'shadow-lg shadow-blue-500/20 dark:shadow-blue-400/10' : ''
                   }`} />
                 </motion.div>
               );
@@ -751,7 +751,7 @@ export default function ProjectDashboard() {
               <button
                 onClick={handleCreateProject}
                 disabled={!newProject.name.trim()}
-                className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-rose-600 text-white rounded-lg hover:from-blue-700 hover:to-rose-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Create Project
               </button>

@@ -222,7 +222,7 @@ const DashboardPage = () => {
       id: "pending",
       title: "To Do",
       icon: Circle,
-      color: "amber",
+      color: "blue",
       count: filteredTasks.filter(t => t.status === "pending").length
     },
     {
@@ -236,7 +236,7 @@ const DashboardPage = () => {
       id: "review",
       title: "Review",
       icon: Eye,
-      color: "purple",
+      color: "blue",
       count: filteredTasks.filter(t => t.status === "review").length
     },
     {
@@ -346,14 +346,14 @@ const DashboardPage = () => {
     >
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-gray-600 dark:text-purple-300/90 mb-2">
+          <p className="text-sm font-medium text-gray-600 dark:text-blue-300/90 mb-2">
             {title}
           </p>
           <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
             {value}
           </p>
           {subtitle && (
-            <p className="text-xs text-gray-500 dark:text-purple-300/70">
+            <p className="text-xs text-gray-500 dark:text-blue-300/70">
               {subtitle}
             </p>
           )}
@@ -451,7 +451,7 @@ const DashboardPage = () => {
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div
-                className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                className="bg-gradient-to-r from-blue-500 to-blue-500 h-2 rounded-full"
                 style={{ width: `${task.progress}%` }}
               />
             </div>
@@ -499,9 +499,9 @@ const DashboardPage = () => {
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:from-blue-900/20 dark:via-blue-900/20 dark:to-rose-900/20 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-purple-200 border-t-purple-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-200 border-t-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600 dark:text-gray-300 font-medium">Loading dashboard...</p>
         </div>
       </div>
@@ -509,13 +509,13 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20 flex flex-col">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:from-blue-900/20 dark:via-blue-900/20 dark:to-rose-900/20 flex flex-col">
       {/* Enhanced Header */}
-      <div className="liquid-glass border-b border-gray-200 dark:border-purple-500/30 px-6 py-4">
+      <div className="liquid-glass border-b border-gray-200 dark:border-blue-500/30 px-6 py-4">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-600 rounded-2xl flex items-center justify-center">
                 <LayoutDashboard className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -544,7 +544,7 @@ const DashboardPage = () => {
             <select
               value={selectedTimeRange}
               onChange={(e) => setSelectedTimeRange(e.target.value)}
-              className="px-3 py-2 text-sm border border-gray-200 dark:border-purple-500/30 rounded-lg bg-white dark:bg-black/60 text-gray-900 dark:text-purple-100"
+              className="px-3 py-2 text-sm border border-gray-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-blue/60 text-gray-900 dark:text-blue-100"
             >
               <option value="7">Last 7 days</option>
               <option value="30">Last 30 days</option>
@@ -559,13 +559,13 @@ const DashboardPage = () => {
                 placeholder="Search tasks..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-9 pr-4 py-2 text-sm border border-gray-200 dark:border-purple-500/30 rounded-lg bg-white dark:bg-black/60 text-gray-900 dark:text-purple-100 w-64"
+                className="pl-9 pr-4 py-2 text-sm border border-gray-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-blue/60 text-gray-900 dark:text-blue-100 w-64"
               />
             </div>
 
             <button
               onClick={() => setShowNewTaskModal(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               <Plus className="w-4 h-4" />
               New Task
@@ -574,7 +574,7 @@ const DashboardPage = () => {
         </div>
 
         {/* View Toggle */}
-        <div className="flex items-center gap-1 bg-gray-100 dark:bg-purple-800/30 rounded-xl p-1">
+        <div className="flex items-center gap-1 bg-gray-100 dark:bg-blue-800/30 rounded-xl p-1">
           {[
             { id: "overview", label: "Overview", icon: LayoutDashboard },
             { id: "performance", label: "Performance", icon: BarChart3 },
@@ -584,8 +584,8 @@ const DashboardPage = () => {
               onClick={() => setActiveView(view.id)}
               className={`flex items-center gap-2 px-4 py-2 text-sm rounded-lg transition-all ${
                 activeView === view.id
-                  ? 'bg-white dark:bg-purple-700 text-gray-900 dark:text-white shadow-sm'
-                  : 'text-gray-600 dark:text-purple-300 hover:text-gray-900 dark:hover:text-white'
+                  ? 'bg-white dark:bg-blue-700 text-gray-900 dark:text-white shadow-sm'
+                  : 'text-gray-600 dark:text-blue-300 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               <view.icon className="w-4 h-4" />
@@ -699,7 +699,7 @@ const DashboardPage = () => {
                     return (
                       <div key={team.teamId} className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">
+                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">
                             #{index + 1}
                           </div>
                           <div>
@@ -769,8 +769,8 @@ const DashboardPage = () => {
         {activeView === "performance" && (
           <div className="flex h-full">
             {/* Employee Sidebar */}
-            <div className="w-80 border-r border-gray-200 dark:border-purple-500/30 liquid-glass flex flex-col">
-              <div className="px-6 py-4 border-b border-gray-200 dark:border-purple-500/30">
+            <div className="w-80 border-r border-gray-200 dark:border-blue-500/30 liquid-glass flex flex-col">
+              <div className="px-6 py-4 border-b border-gray-200 dark:border-blue-500/30">
                 <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Team Members
                 </h2>
@@ -789,8 +789,8 @@ const DashboardPage = () => {
                           onClick={() => setSelectedEmployee(emp)}
                           className={`p-3 rounded-xl cursor-pointer border transition-all ${
                             selectedEmployee?.id === emp.id
-                              ? "border-purple-500 bg-purple-50 dark:bg-purple-500/20"
-                              : "border-gray-200 dark:border-purple-500/20 hover:border-purple-300"
+                              ? "border-blue-500 bg-blue-50 dark:bg-blue-500/20"
+                              : "border-gray-200 dark:border-blue-500/20 hover:border-blue-300"
                           }`}
                         >
                           <div className="flex items-center gap-3">
@@ -826,7 +826,7 @@ const DashboardPage = () => {
                       <img
                         src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${selectedEmployee.name}`}
                         alt="avatar"
-                        className="w-16 h-16 rounded-full border-2 border-purple-200"
+                        className="w-16 h-16 rounded-full border-2 border-blue-200"
                       />
                       <div>
                         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -869,7 +869,7 @@ const DashboardPage = () => {
                       title="Avg/Week"
                       value={performanceData.avgTasksPerWeek?.toFixed(1) || 0}
                       icon={Activity}
-                      color="purple"
+                      color="blue"
                     />
                   </div>
 
@@ -970,8 +970,8 @@ const DashboardPage = () => {
                   <div className="liquid-glass-card rounded-t-2xl p-4 border-b-0">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-purple-100 dark:bg-purple-500/20 rounded-lg flex items-center justify-center">
-                          <column.icon className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                        <div className="w-8 h-8 bg-blue-100 dark:bg-blue-500/20 rounded-lg flex items-center justify-center">
+                          <column.icon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -982,7 +982,7 @@ const DashboardPage = () => {
                       </div>
                       <button
                         onClick={() => setShowNewTaskModal(true)}
-                        className="w-6 h-6 bg-purple-100 dark:bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-600 hover:bg-purple-200"
+                        className="w-6 h-6 bg-blue-100 dark:bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-600 hover:bg-blue-200"
                       >
                         <Plus className="w-3 h-3" />
                       </button>
@@ -1021,14 +1021,14 @@ const DashboardPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              className="absolute inset-0 bg-blue/50 backdrop-blur-sm"
               onClick={() => setShowNewTaskModal(false)}
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-lg bg-white dark:bg-black rounded-2xl shadow-2xl"
+              className="relative w-full max-w-lg bg-white dark:bg-blue rounded-2xl shadow-2xl"
             >
               <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -1051,7 +1051,7 @@ const DashboardPage = () => {
                     type="text"
                     value={newTaskForm.title}
                     onChange={(e) => setNewTaskForm(prev => ({ ...prev, title: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                     placeholder="Enter task title..."
                   />
                 </div>
@@ -1063,7 +1063,7 @@ const DashboardPage = () => {
                   <textarea
                     value={newTaskForm.description}
                     onChange={(e) => setNewTaskForm(prev => ({ ...prev, description: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                     rows={3}
                     placeholder="Task description..."
                   />
@@ -1077,7 +1077,7 @@ const DashboardPage = () => {
                     <select
                       value={newTaskForm.priority}
                       onChange={(e) => setNewTaskForm(prev => ({ ...prev, priority: e.target.value }))}
-                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                     >
                       <option value="low">Low</option>
                       <option value="medium">Medium</option>
@@ -1093,7 +1093,7 @@ const DashboardPage = () => {
                       type="date"
                       value={newTaskForm.due_date}
                       onChange={(e) => setNewTaskForm(prev => ({ ...prev, due_date: e.target.value }))}
-                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                     />
                   </div>
                 </div>
@@ -1105,7 +1105,7 @@ const DashboardPage = () => {
                   <select
                     value={newTaskForm.assigned_to}
                     onChange={(e) => setNewTaskForm(prev => ({ ...prev, assigned_to: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                   >
                     <option value="">Select assignee</option>
                     {employees.map((emp) => (
@@ -1125,7 +1125,7 @@ const DashboardPage = () => {
                   </button>
                   <button
                     onClick={handleAddTask}
-                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     Create Task
                   </button>

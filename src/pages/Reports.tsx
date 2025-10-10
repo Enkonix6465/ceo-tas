@@ -278,18 +278,18 @@ const Reports = () => {
   // Error boundary fallback
   if (hasError && connectionStatus === 'offline') {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
-        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl shadow-lg max-w-md">
-          <div className="p-4 bg-orange-100 dark:bg-orange-500/20 rounded-xl mb-4 inline-block">
-            <AlertCircle className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
+        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl shadow-lg max-w-md">
+          <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+            <AlertCircle className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
           <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">Reports Unavailable</h3>
-          <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4">
+          <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4">
             Unable to load report data. Please check your connection.
           </p>
           <button
             onClick={handleRefresh}
-            className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
+            className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
           >
             Try Again
           </button>
@@ -300,36 +300,36 @@ const Reports = () => {
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-violet-600 dark:text-violet-400 font-medium">Loading Reports...</p>
+          <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-blue-600 dark:text-blue-400 font-medium">Loading Reports...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex flex-col relative overflow-hidden">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-violet-200/20 to-purple-200/20 dark:from-violet-900/10 dark:to-purple-900/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-indigo-200/20 to-violet-200/20 dark:from-indigo-900/10 dark:to-violet-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-rose-200/20 to-blue-200/20 dark:from-rose-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
       </div>
 
       {/* Header */}
-      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-violet-200/50 dark:border-violet-500/20 px-6 py-4 shadow-lg">
+      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-blue-200/50 dark:border-blue-500/20 px-6 py-4 shadow-lg">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl shadow-lg">
+              <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
                 <FileText className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-rose-600 dark:from-blue-400 dark:via-blue-400 dark:to-rose-400 bg-clip-text text-transparent">
                   Reports
                 </h1>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70 font-medium">
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70 font-medium">
                   Real-time performance analytics
                 </p>
               </div>
@@ -339,12 +339,12 @@ const Reports = () => {
               connectionStatus === 'connected'
                 ? 'bg-emerald-50/80 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-500/30'
                 : connectionStatus === 'connecting'
-                ? 'bg-amber-50/80 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200/60 dark:border-amber-500/30'
+                ? 'bg-blue-50/80 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-500/30'
                 : 'bg-gray-50/80 dark:bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-200/60 dark:border-gray-500/30'
             }`}>
               <div className={`w-2 h-2 rounded-full ${
                 connectionStatus === 'connected' ? 'bg-emerald-500' :
-                connectionStatus === 'connecting' ? 'bg-amber-500 animate-pulse' :
+                connectionStatus === 'connecting' ? 'bg-blue-500 animate-pulse' :
                 'bg-gray-500'
               }`}></div>
               {connectionStatus === 'connected' ? 'Live' : connectionStatus === 'connecting' ? 'Loading' : 'Offline'}
@@ -355,14 +355,14 @@ const Reports = () => {
             <button
               onClick={handleRefresh}
               disabled={loading}
-              className="p-2 bg-white/70 dark:bg-slate-800/70 text-violet-600 dark:text-violet-300 hover:bg-violet-100/70 dark:hover:bg-violet-700/40 border border-violet-200/60 dark:border-violet-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
+              className="p-2 bg-white/70 dark:bg-slate-800/70 text-blue-600 dark:text-blue-300 hover:bg-blue-100/70 dark:hover:bg-blue-700/40 border border-blue-200/60 dark:border-blue-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             </button>
             
             <button
               onClick={exportReport}
-              className="p-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-sm"
+              className="p-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-sm"
             >
               <Download className="w-4 h-4" />
             </button>
@@ -382,8 +382,8 @@ const Reports = () => {
               onClick={() => setSelectedReport(report.id)}
               className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium transition-all duration-200 ${
                 selectedReport === report.id
-                  ? 'bg-violet-100/60 dark:bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-200/60 dark:border-violet-500/30'
-                  : 'text-violet-600/70 dark:text-violet-300/70 hover:bg-violet-50/60 dark:hover:bg-violet-500/5'
+                  ? 'bg-blue-100/60 dark:bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-500/30'
+                  : 'text-blue-600/70 dark:text-blue-300/70 hover:bg-blue-50/60 dark:hover:bg-blue-500/5'
               }`}
             >
               <report.icon className="w-4 h-4" />
@@ -405,7 +405,7 @@ const Reports = () => {
                   title: "Total Tasks",
                   value: reportData.performance.totalTasks || 0,
                   icon: Target,
-                  color: "violet",
+                  color: "blue",
                   change: "+12%"
                 },
                 {
@@ -435,17 +435,17 @@ const Reports = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-200"
+                  className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-200"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className={`p-2 rounded-xl ${
-                      stat.color === 'violet' ? 'bg-violet-100 dark:bg-violet-500/20' :
+                      stat.color === 'blue' ? 'bg-blue-100 dark:bg-blue-500/20' :
                       stat.color === 'emerald' ? 'bg-emerald-100 dark:bg-emerald-500/20' :
                       stat.color === 'blue' ? 'bg-blue-100 dark:bg-blue-500/20' :
                       'bg-red-100 dark:bg-red-500/20'
                     }`}>
                       <stat.icon className={`w-5 h-5 ${
-                        stat.color === 'violet' ? 'text-violet-600 dark:text-violet-400' :
+                        stat.color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
                         stat.color === 'emerald' ? 'text-emerald-600 dark:text-emerald-400' :
                         stat.color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
                         'text-red-600 dark:text-red-400'
@@ -470,7 +470,7 @@ const Reports = () => {
             
             {/* Performance Charts */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+              <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
                 <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">Task Completion Trend</h3>
                 <ResponsiveContainer width="100%" height={300}>
                   <LineChart data={reportData.trends || []}>
@@ -484,10 +484,10 @@ const Reports = () => {
                 </ResponsiveContainer>
               </div>
               
-              <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+              <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
                 <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">Efficiency Rate</h3>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-violet-600 dark:text-violet-400 mb-2">
+                  <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
                     {reportData.performance.efficiency || 0}%
                   </div>
                   <div className="text-sm text-slate-600 dark:text-slate-400 mb-4">
@@ -495,7 +495,7 @@ const Reports = () => {
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                     <div 
-                      className="bg-gradient-to-r from-violet-500 to-purple-600 h-3 rounded-full transition-all duration-1000"
+                      className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-1000"
                       style={{ width: `${reportData.performance.efficiency || 0}%` }}
                     />
                   </div>
@@ -520,7 +520,7 @@ const Reports = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-4 shadow-lg"
+                  className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-4 shadow-lg"
                 >
                   <div className={`p-2 rounded-xl mb-3 inline-block ${
                     stat.color === 'blue' ? 'bg-blue-100 dark:bg-blue-500/20' :
@@ -541,7 +541,7 @@ const Reports = () => {
               ))}
             </div>
             
-            <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+            <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">Project Status Distribution</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <RechartsPieChart>
@@ -580,7 +580,7 @@ const Reports = () => {
               {[
                 { title: "Total Members", value: reportData.team.totalMembers || 0, icon: Users, color: "blue" },
                 { title: "Active Members", value: reportData.team.activeMembers || 0, icon: User, color: "green" },
-                { title: "Departments", value: reportData.team.departments || 0, icon: BarChart3, color: "purple" },
+                { title: "Departments", value: reportData.team.departments || 0, icon: BarChart3, color: "blue" },
                 { title: "New Joiners", value: reportData.team.newJoiners || 0, icon: Star, color: "yellow" },
               ].map((stat, index) => (
                 <motion.div
@@ -588,18 +588,18 @@ const Reports = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-4 shadow-lg"
+                  className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-4 shadow-lg"
                 >
                   <div className={`p-2 rounded-xl mb-3 inline-block ${
                     stat.color === 'blue' ? 'bg-blue-100 dark:bg-blue-500/20' :
                     stat.color === 'green' ? 'bg-green-100 dark:bg-green-500/20' :
-                    stat.color === 'purple' ? 'bg-purple-100 dark:bg-purple-500/20' :
+                    stat.color === 'blue' ? 'bg-blue-100 dark:bg-blue-500/20' :
                     'bg-yellow-100 dark:bg-yellow-500/20'
                   }`}>
                     <stat.icon className={`w-5 h-5 ${
                       stat.color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
                       stat.color === 'green' ? 'text-green-600 dark:text-green-400' :
-                      stat.color === 'purple' ? 'text-purple-600 dark:text-purple-400' :
+                      stat.color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
                       'text-yellow-600 dark:text-yellow-400'
                     }`} />
                   </div>
@@ -614,7 +614,7 @@ const Reports = () => {
         {/* Trends Report */}
         {selectedReport === 'trends' && reportData.trends && (
           <div className="space-y-6">
-            <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+            <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">7-Day Task Trends</h3>
               <ResponsiveContainer width="100%" height={400}>
                 <AreaChart data={reportData.trends}>

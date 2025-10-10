@@ -211,7 +211,7 @@ const TaskDetail = () => {
         <div className="text-red-500 mb-4">{error}</div>
         <button 
           onClick={() => navigate(-1)}
-          className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+          className="px-4 py-2 bg-rose-600 text-white rounded hover:bg-rose-700"
         >
           Go Back
         </button>
@@ -225,7 +225,7 @@ const TaskDetail = () => {
         <div className="text-gray-500 mb-4">Task not found</div>
         <button 
           onClick={() => navigate(-1)}
-          className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+          className="px-4 py-2 bg-rose-600 text-white rounded hover:bg-rose-700"
         >
           Go Back
         </button>
@@ -368,7 +368,7 @@ const TaskDetail = () => {
                 {/* Description */}
                 <div>
                   <label className="text-sm font-medium text-gray-600 dark:text-gray-400">Description</label>
-                  <div className="mt-2 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-gray-200 dark:border-gray-600">
+                  <div className="mt-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-gray-200 dark:border-gray-600">
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       {task.description || "—"}
                     </p>
@@ -528,7 +528,7 @@ const TaskDetail = () => {
                             <button 
                               onClick={handleAddComment}
                               disabled={commentLoading || !newComment.trim()}
-                              className="px-4 py-1.5 bg-purple-600 text-white text-sm rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50"
+                              className="px-4 py-1.5 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
                             >
                               {commentLoading ? "Posting..." : "Post Comment"}
                             </button>

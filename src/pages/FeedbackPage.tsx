@@ -142,7 +142,7 @@ const FeedbackPage = () => {
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm border border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-3">
-                <TrendingUp className="w-8 h-8 text-purple-600" />
+                <TrendingUp className="w-8 h-8 text-blue-600" />
                 <div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">
                     {feedbackList.length > 0 
@@ -187,7 +187,7 @@ const FeedbackPage = () => {
                 }`}
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
                     {emp.name?.charAt(0).toUpperCase()}
                   </div>
                   <div>
@@ -199,7 +199,7 @@ const FeedbackPage = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={() => setSelectedEmployee(emp)}
-                    className="flex-1 px-3 py-2 text-sm bg-violet-500 text-white rounded-lg hover:bg-violet-600 transition-colors flex items-center justify-center gap-2"
+                    className="flex-1 px-3 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2"
                   >
                     <Star className="w-4 h-4" />
                     Give Feedback

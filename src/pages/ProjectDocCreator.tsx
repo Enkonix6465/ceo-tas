@@ -23,7 +23,7 @@ const QuillEditor = React.forwardRef<ReactQuill, any>((props, ref) => {
   // Don't render on server side to avoid hydration issues
   if (!mounted) {
     return (
-      <div className="h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-800 rounded-xl border-2 border-dashed border-blue-300 dark:border-gray-600">
+      <div className="h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-rose-100 dark:from-gray-700 dark:to-gray-800 rounded-xl border-2 border-dashed border-blue-300 dark:border-gray-600">
         <div className="text-center">
           <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
             <div className="animate-spin rounded-full h-6 w-6 border-2 border-white border-t-transparent"></div>
@@ -147,7 +147,7 @@ const ProjectDocCreator = () => {
       description: "Comprehensive project proposal template with timeline and budget",
       category: "Business",
       icon: Briefcase,
-      color: "from-blue-500 to-indigo-600",
+      color: "from-blue-500 to-rose-600",
       content: `
         <h1>Project Proposal: [Project Name]</h1>
         <h2>Executive Summary</h2>
@@ -217,7 +217,7 @@ const ProjectDocCreator = () => {
       description: "Detailed technical documentation for development projects",
       category: "Technical",
       icon: Code,
-      color: "from-purple-500 to-pink-600",
+      color: "from-blue-500 to-pink-600",
       content: `
         <h1>Technical Specification</h1>
         <h2>Overview</h2>
@@ -250,7 +250,7 @@ const ProjectDocCreator = () => {
       description: "Weekly/monthly project status report template",
       category: "Report",
       icon: Target,
-      color: "from-yellow-500 to-orange-600",
+      color: "from-yellow-500 to-blue-600",
       content: `
         <h1>Project Status Report</h1>
         <p><strong>Report Period:</strong> [Start Date] to [End Date]</p>
@@ -617,7 +617,7 @@ const ProjectDocCreator = () => {
           Document Type
         </label>
         <select
-          className="w-full px-3 py-2 text-sm border border-gray-200 dark:border-purple-500/30 rounded-md bg-white dark:bg-black/95 text-gray-900 dark:text-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-full px-3 py-2 text-sm border border-gray-200 dark:border-blue-500/30 rounded-md bg-white dark:bg-black/95 text-gray-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={docTypeFilter}
           onChange={(e) => setDocTypeFilter(e.target.value)}
         >
@@ -649,11 +649,11 @@ const ProjectDocCreator = () => {
   ];
 
   return (
-    <div className="h-full bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:bg-gradient-to-br dark:from-slate-800 dark:via-purple-900/40 dark:to-indigo-900/60 flex flex-col relative overflow-hidden">
+    <div className="h-full bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:bg-gradient-to-br dark:from-slate-800 dark:via-blue-900/40 dark:to-rose-900/60 flex flex-col relative overflow-hidden">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-rose-300/20 dark:bg-rose-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-slate-200/10 dark:bg-slate-600/5 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
       </div>
       <PageHeader
@@ -675,7 +675,7 @@ const ProjectDocCreator = () => {
             <button
               onClick={handleNewDocument}
               disabled={!selectedProject}
-              className="flex items-center gap-2 px-3 py-2 text-sm bg-gradient-to-r from-slate-600 via-purple-600 to-indigo-700 text-white rounded-lg hover:from-slate-700 hover:via-purple-700 hover:to-indigo-800 disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 transition-all shadow-lg hover:shadow-xl"
+              className="flex items-center gap-2 px-3 py-2 text-sm bg-gradient-to-r from-slate-600 via-blue-600 to-rose-700 text-white rounded-lg hover:from-slate-700 hover:via-blue-700 hover:to-rose-800 disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 transition-all shadow-lg hover:shadow-xl"
             >
               <Plus className="w-4 h-4" />
               New Document
@@ -695,9 +695,9 @@ const ProjectDocCreator = () => {
 
       <div className="flex-1 overflow-hidden flex">
         {/* Enhanced Sidebar */}
-        <div className="w-80 border-r border-slate-200/50 dark:border-purple-500/30 bg-white/80 dark:bg-slate-900/95 backdrop-blur-xl flex flex-col relative z-10 shadow-xl">
+        <div className="w-80 border-r border-slate-200/50 dark:border-blue-500/30 bg-white/80 dark:bg-slate-900/95 backdrop-blur-xl flex flex-col relative z-10 shadow-xl">
           {/* Project Selection */}
-          <div className="px-6 py-4 border-b border-slate-200/50 dark:border-purple-500/30">
+          <div className="px-6 py-4 border-b border-slate-200/50 dark:border-blue-500/30">
             <div className="flex items-center gap-3 mb-4">
              
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
@@ -713,8 +713,8 @@ const ProjectDocCreator = () => {
                   onClick={() => handleProjectSelect(project)}
                   className={`w-full text-left p-3 rounded-xl border-2 transition-all ${
                     selectedProject?.id === project.id
-                      ? "border-purple-500 bg-gradient-to-r from-purple-50/90 via-indigo-50/80 to-slate-50/90 dark:from-purple-900/30 dark:via-indigo-900/20 dark:to-slate-800/30 shadow-lg ring-2 ring-purple-200 dark:ring-purple-400/30"
-                      : "border-slate-200/60 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-500/50 hover:bg-slate-50/80 dark:hover:bg-purple-500/10 hover:shadow-md"
+                      ? "border-blue-500 bg-gradient-to-r from-blue-50/90 via-rose-50/80 to-slate-50/90 dark:from-blue-900/30 dark:via-rose-900/20 dark:to-slate-800/30 shadow-lg ring-2 ring-blue-200 dark:ring-blue-400/30"
+                      : "border-slate-200/60 dark:border-blue-500/30 hover:border-blue-300 dark:hover:border-blue-500/50 hover:bg-slate-50/80 dark:hover:bg-blue-500/10 hover:shadow-md"
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -744,10 +744,10 @@ const ProjectDocCreator = () => {
                 <>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                      <FileText className="w-5 h-5 text-purple-500" />
+                      <FileText className="w-5 h-5 text-blue-500" />
                       Documents
                     </h3>
-                    <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/40 dark:to-indigo-900/40 text-purple-700 dark:text-purple-300 rounded-full font-medium border border-purple-200/50 dark:border-purple-500/30">
+                    <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-blue-100 to-rose-100 dark:from-blue-900/40 dark:to-rose-900/40 text-blue-700 dark:text-blue-300 rounded-full font-medium border border-blue-200/50 dark:border-blue-500/30">
                       {filteredDocuments.length}
                     </span>
                   </div>
@@ -770,7 +770,7 @@ const ProjectDocCreator = () => {
                       </p>
                       <button
                         onClick={() => setActiveTab("templates")}
-                        className="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 text-sm font-medium transition-colors"
+                        className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium transition-colors"
                       >
                         Browse Templates →
                       </button>
@@ -784,12 +784,12 @@ const ProjectDocCreator = () => {
                           onClick={() => handleDocumentSelect(doc)}
                           className={`p-4 rounded-xl border-2 cursor-pointer transition-all ${
                             selectedDoc?.id === doc.id
-                              ? "border-purple-500 bg-gradient-to-r from-purple-50/90 via-indigo-50/80 to-slate-50/90 dark:from-purple-900/30 dark:via-indigo-900/20 dark:to-slate-800/30 shadow-lg ring-2 ring-purple-200 dark:ring-purple-400/30"
-                              : "border-slate-200/60 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-500/50 hover:bg-slate-50/80 dark:hover:bg-purple-500/10 hover:shadow-md"
+                              ? "border-blue-500 bg-gradient-to-r from-blue-50/90 via-rose-50/80 to-slate-50/90 dark:from-blue-900/30 dark:via-rose-900/20 dark:to-slate-800/30 shadow-lg ring-2 ring-blue-200 dark:ring-blue-400/30"
+                              : "border-slate-200/60 dark:border-blue-500/30 hover:border-blue-300 dark:hover:border-blue-500/50 hover:bg-slate-50/80 dark:hover:bg-blue-500/10 hover:shadow-md"
                           }`}
                         >
                           <div className="flex items-start gap-3">
-                            <div className="w-10 h-10 bg-gradient-to-br from-slate-500 via-purple-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
+                            <div className="w-10 h-10 bg-gradient-to-br from-slate-500 via-blue-500 to-rose-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
                               <FileText className="w-5 h-5 text-white" />
                             </div>
                             <div className="flex-1 min-w-0">
@@ -806,8 +806,8 @@ const ProjectDocCreator = () => {
                               </div>
                               {doc.template && (
                                 <div className="flex items-center gap-1 mt-1">
-                                  <Layout className="w-3 h-3 text-purple-500" />
-                                  <span className="text-xs text-purple-600 font-medium">Template</span>
+                                  <Layout className="w-3 h-3 text-blue-500" />
+                                  <span className="text-xs text-blue-600 font-medium">Template</span>
                                 </div>
                               )}
                             </div>
@@ -821,10 +821,10 @@ const ProjectDocCreator = () => {
                 <>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                      <Layout className="w-5 h-5 text-indigo-500" />
+                      <Layout className="w-5 h-5 text-rose-500" />
                       Templates
                     </h3>
-                    <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 text-indigo-700 dark:text-indigo-300 rounded-full font-medium border border-indigo-200/50 dark:border-indigo-500/30">
+                    <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-rose-100 to-blue-100 dark:from-rose-900/40 dark:to-blue-900/40 text-rose-700 dark:text-rose-300 rounded-full font-medium border border-rose-200/50 dark:border-rose-500/30">
                       {filteredTemplates.length}
                     </span>
                   </div>
@@ -835,14 +835,14 @@ const ProjectDocCreator = () => {
                         key={template.id}
                         whileHover={{ scale: 1.02, x: 4 }}
                         onClick={() => handleTemplateSelect(template)}
-                        className="p-4 rounded-xl border-2 border-slate-200/60 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-500/50 hover:bg-slate-50/80 dark:hover:bg-purple-500/10 cursor-pointer transition-all group hover:shadow-lg"
+                        className="p-4 rounded-xl border-2 border-slate-200/60 dark:border-blue-500/30 hover:border-blue-300 dark:hover:border-blue-500/50 hover:bg-slate-50/80 dark:hover:bg-blue-500/10 cursor-pointer transition-all group hover:shadow-lg"
                       >
                         <div className="flex items-start gap-3">
                           <div className={`w-10 h-10 bg-gradient-to-br ${template.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
                             <template.icon className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-sm group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                            <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-sm group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                               {template.name}
                             </h4>
                             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
@@ -870,7 +870,7 @@ const ProjectDocCreator = () => {
           {selectedProject ? (
             <>
               {/* Enhanced Editor Header */}
-              <div className="px-6 py-4 border-b border-slate-200/50 dark:border-purple-500/30 bg-white/80 dark:bg-slate-900/95 backdrop-blur-xl relative z-10 shadow-sm">
+              <div className="px-6 py-4 border-b border-slate-200/50 dark:border-blue-500/30 bg-white/80 dark:bg-slate-900/95 backdrop-blur-xl relative z-10 shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex-1 min-w-0">
                     <input
@@ -886,8 +886,8 @@ const ProjectDocCreator = () => {
                       onClick={() => setPreviewMode(!previewMode)}
                       className={`flex items-center gap-2 px-4 py-2 text-sm border-2 rounded-lg transition-all ${
                         previewMode
-                          ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300'
-                          : 'border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:border-purple-300 dark:hover:border-purple-500'
+                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
+                          : 'border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:border-blue-300 dark:hover:border-blue-500'
                       }`}
                     >
                       {previewMode ? (
@@ -921,8 +921,8 @@ const ProjectDocCreator = () => {
                     </div>
                     {selectedTemplate && (
                       <div className="flex items-center gap-2">
-                        <Layout className="w-4 h-4 text-purple-500" />
-                        <span className="text-purple-600">From {selectedTemplate.name} template</span>
+                        <Layout className="w-4 h-4 text-blue-500" />
+                        <span className="text-blue-600">From {selectedTemplate.name} template</span>
                       </div>
                     )}
                   </div>
@@ -970,8 +970,8 @@ const ProjectDocCreator = () => {
                         </div>
                         {selectedTemplate && (
                           <div className="flex items-center gap-2">
-                            <Layout className="w-4 h-4 text-purple-500" />
-                            <span className="text-purple-600">Template: {selectedTemplate.name}</span>
+                            <Layout className="w-4 h-4 text-blue-500" />
+                            <span className="text-blue-600">Template: {selectedTemplate.name}</span>
                           </div>
                         )}
                       </div>
@@ -1028,7 +1028,7 @@ const ProjectDocCreator = () => {
           ) : (
             <div className="flex-1 flex items-center justify-center bg-white dark:bg-slate-800">
               <div className="text-center max-w-md">
-                <div className="w-24 h-24 bg-gradient-to-br from-slate-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <div className="w-24 h-24 bg-gradient-to-br from-slate-500 via-blue-500 to-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
                   <Sparkles className="w-12 h-12 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
@@ -1067,7 +1067,7 @@ const ProjectDocCreator = () => {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="w-full max-w-md enhanced-glass-card shadow-2xl overflow-hidden"
             >
-              <div className="p-6 border-b border-slate-200/50 dark:border-purple-500/30">
+              <div className="p-6 border-b border-slate-200/50 dark:border-blue-500/30">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
@@ -1098,7 +1098,7 @@ const ProjectDocCreator = () => {
                         name="access"
                         checked={!shareSettings.public}
                         onChange={() => setShareSettings(prev => ({ ...prev, public: false }))}
-                        className="text-purple-600"
+                        className="text-blue-600"
                       />
                       <div>
                         <p className="font-medium">Private</p>
@@ -1111,7 +1111,7 @@ const ProjectDocCreator = () => {
                         name="access"
                         checked={shareSettings.public}
                         onChange={() => setShareSettings(prev => ({ ...prev, public: true }))}
-                        className="text-purple-600"
+                        className="text-blue-600"
                       />
                       <div>
                         <p className="font-medium">Public</p>
@@ -1131,7 +1131,7 @@ const ProjectDocCreator = () => {
                         type="checkbox"
                         checked={shareSettings.allowComments}
                         onChange={(e) => setShareSettings(prev => ({ ...prev, allowComments: e.target.checked }))}
-                        className="text-purple-600"
+                        className="text-blue-600"
                       />
                       <span className="text-sm">Allow comments</span>
                     </label>
@@ -1140,7 +1140,7 @@ const ProjectDocCreator = () => {
                         type="checkbox"
                         checked={shareSettings.allowDownload}
                         onChange={(e) => setShareSettings(prev => ({ ...prev, allowDownload: e.target.checked }))}
-                        className="text-purple-600"
+                        className="text-blue-600"
                       />
                       <span className="text-sm">Allow download</span>
                     </label>

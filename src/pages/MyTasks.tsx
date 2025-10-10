@@ -348,7 +348,7 @@ export default function MyTasks() {
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-cyan-100/95 to-orange-100/95 dark:bg-gradient-to-br dark:from-black/95 dark:to-black/90 flex flex-col">
+      <div className="h-full bg-gradient-to-br from-cyan-100/95 to-blue-100/95 dark:bg-gradient-to-br dark:from-black/95 dark:to-black/90 flex flex-col">
         <PageHeader
           title="My Tasks"
           status="Loading"
@@ -368,7 +368,7 @@ export default function MyTasks() {
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-cyan-100/95 to-orange-100/95 dark:bg-gradient-to-br dark:from-black/95 dark:to-black/90 flex flex-col">
+    <div className="h-full bg-gradient-to-br from-cyan-100/95 to-blue-100/95 dark:bg-gradient-to-br dark:from-black/95 dark:to-black/90 flex flex-col">
       <PageHeader
         title="My Tasks"
         subtitle={`${filteredTasks.length} tasks assigned`}

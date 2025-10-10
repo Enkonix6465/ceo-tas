@@ -134,7 +134,7 @@ const AllTasksPage = () => {
       case "pending":
         return <Circle className="w-4 h-4 text-gray-500" />;
       case "review":
-        return <Pause className="w-4 h-4 text-purple-500" />;
+        return <Pause className="w-4 h-4 text-blue-500" />;
       default:
         return <Circle className="w-4 h-4 text-gray-500" />;
     }
@@ -230,7 +230,7 @@ const AllTasksPage = () => {
                 </span>
               )}
               {task.task_id && (
-                <span className="px-2 py-1 text-xs bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 rounded-full border border-purple-200 dark:border-purple-700/50">
+                <span className="px-2 py-1 text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 rounded-full border border-blue-200 dark:border-blue-700/50">
                   #{task.task_id}
                 </span>
               )}
@@ -546,7 +546,7 @@ const AllTasksPage = () => {
                                         task.status === 'completed' ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400' :
                                         task.status === 'in_progress' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400' :
                                         task.status === 'pending' ? 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400' :
-                                        'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400'
+                                        'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
                                       }`}>
                                         {task.status.replace('_', ' ').toUpperCase()}
                                       </span>

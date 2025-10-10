@@ -169,12 +169,12 @@ function Layout() {
   };
 
   return (
-    <div className="min-h-screen h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/20 dark:to-indigo-900/10 flex overflow-hidden">
+    <div className="min-h-screen h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/20 dark:to-blue-900/10 flex overflow-hidden">
       <FirebaseConnectionStatus />
       
       {/* Project Creation Modal (same as ProjectDashboard) */}
       {showNewProjectModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-blue-900/50 flex items-center justify-center z-50">
           <div className="bg-white dark:bg-gray-800 rounded-xl p-6 w-full max-w-md mx-4 shadow-2xl">
             <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Create New Project</h2>
 
@@ -274,7 +274,7 @@ function Layout() {
               <button
                 onClick={handleCreateProject}
                 disabled={!newProject.name.trim()}
-                className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Create Project
               </button>
@@ -286,21 +286,21 @@ function Layout() {
       {/* Enhanced Sidebar */}
       <div className={`${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } md:translate-x-0 fixed md:static inset-y-0 left-0 z-50 w-[220px] lg:w-[240px] bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border-r border-violet-200/50 dark:border-violet-500/20 transition-all duration-300 ease-in-out flex flex-col shadow-xl`}>
+      } md:translate-x-0 fixed md:static inset-y-0 left-0 z-50 w-[220px] lg:w-[240px] bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border-r border-blue-200/50 dark:border-blue-500/20 transition-all duration-300 ease-in-out flex flex-col shadow-xl`}>
 
         {/* Enhanced Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-violet-200/50 dark:border-violet-500/20 bg-gradient-to-r from-violet-50/80 via-purple-50/80 to-indigo-50/80 dark:from-slate-800/80 dark:to-violet-900/80 backdrop-blur-sm">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-blue-200/50 dark:border-blue-500/20 bg-gradient-to-r from-blue-50/80 via-blue-50/80 to-blue-50/80 dark:from-slate-800/80 dark:to-blue-900/80 backdrop-blur-sm">
           <div className="relative workspace-dropdown">
             <button
               onClick={() => setWorkspaceOpen(!workspaceOpen)}
-              className="flex items-center gap-3 hover:bg-violet-100/60 dark:hover:bg-violet-700/30 rounded-xl px-4 py-3 transition-all duration-200 group"
+              className="flex items-center gap-3 hover:bg-blue-100/60 dark:hover:bg-blue-700/30 rounded-xl px-4 py-3 transition-all duration-200 group"
             >
               <div className="text-left">
                 <span className="text-base font-bold text-slate-800 dark:text-white block">TAS ENKONIX</span>
               </div>
               <Link
                 to="/settings"
-                className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-violet-600 dark:text-violet-300 hover:bg-violet-100/60 dark:hover:bg-violet-700/40 border border-violet-200/50 dark:border-violet-500/30 shadow-md transition-all duration-200 backdrop-blur-sm"
+                className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-blue-600 dark:text-blue-300 hover:bg-blue-100/60 dark:hover:bg-blue-700/40 border border-blue-200/50 dark:border-blue-500/30 shadow-md transition-all duration-200 backdrop-blur-sm"
                 title="Settings"
               >
                 <Settings className="w-4 h-4" />
@@ -308,7 +308,7 @@ function Layout() {
 
               <button
                 onClick={toggleTheme}
-                className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-violet-600 dark:text-violet-300 hover:bg-violet-100/60 dark:hover:bg-violet-700/40 border border-violet-200/50 dark:border-violet-500/30 shadow-md transition-all duration-200 backdrop-blur-sm"
+                className="p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-blue-600 dark:text-blue-300 hover:bg-blue-100/60 dark:hover:bg-blue-700/40 border border-blue-200/50 dark:border-blue-500/30 shadow-md transition-all duration-200 backdrop-blur-sm"
                 title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               >
                 {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
@@ -317,9 +317,9 @@ function Layout() {
           </div>
           <button
             onClick={toggleSidebar}
-            className="md:hidden p-2 rounded-lg hover:bg-violet-100 dark:hover:bg-violet-700/30 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-700/30 transition-colors"
           >
-            <X className="h-4 w-4 text-violet-600 dark:text-violet-300" />
+            <X className="h-4 w-4 text-blue-600 dark:text-blue-300" />
           </button>
         </div>
 
@@ -330,13 +330,13 @@ function Layout() {
             <div>
               <button
                 onClick={() => toggleSection('dashboard')}
-                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-violet-200 hover:bg-violet-100/60 dark:hover:bg-violet-700/30 rounded-xl transition-all duration-200 group"
+                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-blue-200 hover:bg-blue-100/60 dark:hover:bg-blue-700/30 rounded-xl transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
-                  <LayoutDashboard className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                  <LayoutDashboard className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span>Dashboard</span>
                 </div>
-                <ChevronDown className={`w-4 h-4 transition-transform ${expandedSections.dashboard ? 'rotate-0' : '-rotate-90'} text-violet-500`} />
+                <ChevronDown className={`w-4 h-4 transition-transform ${expandedSections.dashboard ? 'rotate-0' : '-rotate-90'} text-blue-500`} />
               </button>
               {expandedSections.dashboard && (
                 <div className="ml-6 mt-3 space-y-2">
@@ -345,8 +345,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-3 text-sm rounded-xl transition-all duration-200 group ${
                       isActive("/")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <Grid3X3 className="w-4 h-4" />
@@ -358,8 +358,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/PerformMatrix")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <TrendingUp className="w-4 h-4" />
@@ -370,8 +370,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/KanbanPage")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <CheckSquare className="w-4 h-4" />
@@ -382,8 +382,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/Analytics")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <BarChart3 className="w-4 h-4" />
@@ -394,8 +394,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/Reports")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <FileText className="w-4 h-4" />
@@ -406,8 +406,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/calendar")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <Calendar className="w-4 h-4" />
@@ -418,8 +418,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/AllTasks")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <Target className="w-4 h-4" />
@@ -433,24 +433,24 @@ function Layout() {
             <div>
               <button
                 onClick={() => toggleSection('projects')}
-                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-violet-200 hover:bg-violet-100/60 dark:hover:bg-violet-700/30 rounded-xl transition-all duration-200"
+                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-blue-200 hover:bg-blue-100/60 dark:hover:bg-blue-700/30 rounded-xl transition-all duration-200"
               >
                 <div className="flex items-center gap-3">
-                  <Briefcase className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                  <Briefcase className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span>Projects</span>
                   <div className="flex items-center gap-1">
-                    <Plus className="w-4 h-4 text-violet-500 hover:text-violet-700 dark:hover:text-violet-300 transition-colors" />
-                    <span className="text-xs text-violet-500 font-medium">({projects.length})</span>
+                    <Plus className="w-4 h-4 text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" />
+                    <span className="text-xs text-blue-500 font-medium">({projects.length})</span>
                   </div>
                 </div>
-                <ChevronRight className={`w-4 h-4 transition-transform ${expandedSections.projects ? 'rotate-90' : 'rotate-0'} text-violet-500`} />
+                <ChevronRight className={`w-4 h-4 transition-transform ${expandedSections.projects ? 'rotate-90' : 'rotate-0'} text-blue-500`} />
               </button>
               {expandedSections.projects && (
                 <div className="ml-6 mt-3 space-y-2">
                   {/* Quick Create Project Button - Opens Modal */}
                   <button
                     onClick={handleCreateNewProject}
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                   >
                     <FolderPlus className="w-4 h-4" />
                     <span>Create New Project</span>
@@ -460,7 +460,7 @@ function Layout() {
                   {/* ALL Projects Dropdown - Shows ALL projects */}
                   {projects.length > 0 && (
                     <div className="ml-4 space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
-                      <div className="text-xs font-semibold text-violet-600 dark:text-violet-400 mb-2 px-2">
+                      <div className="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2 px-2">
                         All Projects ({projects.length})
                       </div>
                       {projects.map((project) => (
@@ -468,10 +468,10 @@ function Layout() {
                           key={project.id}
                           to={`/project/${project.id}`}
                           onClick={closeSidebar}
-                          className="flex items-center gap-2 px-3 py-2 text-xs rounded-lg hover:bg-violet-50 dark:hover:bg-violet-800/30 transition-colors group"
+                          className="flex items-center gap-2 px-3 py-2 text-xs rounded-lg hover:bg-blue-50 dark:hover:bg-blue-800/30 transition-colors group"
                         >
-                          <Folder className="w-3 h-3 text-violet-500" />
-                          <span className="truncate text-slate-600 dark:text-slate-300 group-hover:text-violet-700 dark:group-hover:text-violet-200">
+                          <Folder className="w-3 h-3 text-blue-500" />
+                          <span className="truncate text-slate-600 dark:text-slate-300 group-hover:text-blue-700 dark:group-hover:text-blue-200">
                             {project.name}
                           </span>
                         </Link>
@@ -485,8 +485,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/ProjectTasksViewer")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <Folder className="w-4 h-4" />
@@ -497,8 +497,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/ProjectDocCreator")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <FileText className="w-4 h-4" />
@@ -512,17 +512,17 @@ function Layout() {
             <div>
               <button
                 onClick={() => toggleSection('tickets')}
-                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-violet-200 hover:bg-violet-100/60 dark:hover:bg-violet-700/30 rounded-xl transition-all duration-200"
+                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-blue-200 hover:bg-blue-100/60 dark:hover:bg-blue-700/30 rounded-xl transition-all duration-200"
               >
                 <div className="flex items-center gap-3">
-                  <CheckSquare className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                  <CheckSquare className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span>Tickets</span>
                   <div className="flex items-center gap-1">
-                    <Plus className="w-4 h-4 text-violet-500 hover:text-violet-700 dark:hover:text-violet-300 transition-colors" />
-                    <span className="text-xs text-violet-500 font-medium">({tickets.length})</span>
+                    <Plus className="w-4 h-4 text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" />
+                    <span className="text-xs text-blue-500 font-medium">({tickets.length})</span>
                   </div>
                 </div>
-                <ChevronRight className={`w-4 h-4 transition-transform ${expandedSections.tickets ? 'rotate-90' : 'rotate-0'} text-violet-500`} />
+                <ChevronRight className={`w-4 h-4 transition-transform ${expandedSections.tickets ? 'rotate-90' : 'rotate-0'} text-blue-500`} />
               </button>
               {expandedSections.tickets && (
                 <div className="ml-6 mt-3 space-y-2">
@@ -532,8 +532,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/RaiseProjectTicket")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <Plus className="w-4 h-4" />
@@ -543,7 +543,7 @@ function Layout() {
                   {/* ALL Tickets Dropdown - Shows ALL tickets */}
                   {tickets.length > 0 && (
                     <div className="ml-4 space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
-                      <div className="text-xs font-semibold text-violet-600 dark:text-violet-400 mb-2 px-2">
+                      <div className="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2 px-2">
                         All Tickets ({tickets.length})
                       </div>
                       {tickets.map((ticket) => (
@@ -551,10 +551,10 @@ function Layout() {
                           key={ticket.id}
                           to="/ViewTickets"
                           onClick={closeSidebar}
-                          className="flex items-center gap-2 px-3 py-2 text-xs rounded-lg hover:bg-violet-50 dark:hover:bg-violet-800/30 transition-colors group"
+                          className="flex items-center gap-2 px-3 py-2 text-xs rounded-lg hover:bg-blue-50 dark:hover:bg-blue-800/30 transition-colors group"
                         >
-                          <Ticket className="w-3 h-3 text-violet-500" />
-                          <span className="truncate text-slate-600 dark:text-slate-300 group-hover:text-violet-700 dark:group-hover:text-violet-200">
+                          <Ticket className="w-3 h-3 text-blue-500" />
+                          <span className="truncate text-slate-600 dark:text-slate-300 group-hover:text-blue-700 dark:group-hover:text-blue-200">
                             {ticket.title || ticket.projectTicketId}
                           </span>
                           <span className={`px-1.5 py-0.5 text-xs rounded-full ${
@@ -576,8 +576,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/ViewTickets")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <FileText className="w-4 h-4" />
@@ -591,13 +591,13 @@ function Layout() {
             <div>
               <button
                 onClick={() => toggleSection('administration')}
-                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-violet-200 hover:bg-violet-100/60 dark:hover:bg-violet-700/30 rounded-xl transition-all duration-200"
+                className="flex items-center justify-between w-full px-4 py-3 text-sm font-bold text-slate-700 dark:text-blue-200 hover:bg-blue-100/60 dark:hover:bg-blue-700/30 rounded-xl transition-all duration-200"
               >
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                  <Shield className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span>Administration</span>
                 </div>
-                <ChevronRight className={`w-4 h-4 transition-transform ${expandedSections.administration ? 'rotate-90' : 'rotate-0'} text-violet-500`} />
+                <ChevronRight className={`w-4 h-4 transition-transform ${expandedSections.administration ? 'rotate-90' : 'rotate-0'} text-blue-500`} />
               </button>
               {expandedSections.administration && (
                 <div className="ml-6 mt-3 space-y-2">
@@ -606,8 +606,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/AddUsers")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <UserPlus className="w-4 h-4" />
@@ -618,8 +618,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/Makeleader")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <Users className="w-4 h-4" />
@@ -631,8 +631,8 @@ function Layout() {
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:shadow-md ${
                       isActive("/FeedbackPage")
-                        ? "bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200"
+                        ? "bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40"
+                        : "text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200"
                     }`}
                   >
                     <MessageSquare className="w-4 h-4" />
@@ -647,25 +647,25 @@ function Layout() {
         
 
         {/* Enhanced User Profile */}
-        <div className="border-t border-violet-200/50 dark:border-violet-500/20 px-6 py-4 bg-gradient-to-r from-violet-50/60 to-purple-50/60 dark:from-slate-800/60 dark:to-violet-900/60 backdrop-blur-sm">
-          <div className="flex items-center gap-4 bg-gradient-to-r from-violet-100/80 to-purple-100/80 dark:from-slate-700/80 dark:to-violet-800/80 rounded-xl px-4 py-3 shadow-lg border border-violet-200/50 dark:border-violet-600/30">
-            <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 dark:from-violet-600 dark:to-purple-700 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-lg">
+        <div className="border-t border-blue-200/50 dark:border-blue-500/20 px-6 py-4 bg-gradient-to-r from-blue-50/60 to-blue-50/60 dark:from-slate-800/60 dark:to-blue-900/60 backdrop-blur-sm">
+          <div className="flex items-center gap-4 bg-gradient-to-r from-blue-100/80 to-blue-100/80 dark:from-slate-700/80 dark:to-blue-800/80 rounded-xl px-4 py-3 shadow-lg border border-blue-200/50 dark:border-blue-600/30">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-lg">
               A
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-bold text-slate-800 dark:text-white">
                 Admin
               </p>
-              <p className="text-xs text-violet-600 dark:text-violet-300 truncate">
+              <p className="text-xs text-blue-600 dark:text-blue-300 truncate">
                 Project Manager
               </p>
             </div>
             <button
               onClick={signOut}
-              className="p-2 rounded-lg hover:bg-violet-200/60 dark:hover:bg-violet-700/40 transition-colors group"
+              className="p-2 rounded-lg hover:bg-blue-200/60 dark:hover:bg-blue-700/40 transition-colors group"
               title="Sign Out"
             >
-              <LogOut className="w-4 h-4 text-violet-600 dark:text-violet-300 group-hover:text-violet-700 dark:group-hover:text-violet-200" />
+              <LogOut className="w-4 h-4 text-blue-600 dark:text-blue-300 group-hover:text-blue-700 dark:group-hover:text-blue-200" />
             </button>
           </div>
         </div>

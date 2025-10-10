@@ -357,24 +357,24 @@ const Calendar = () => {
   };
 
   return (
-    <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex overflow-hidden relative">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex overflow-hidden relative">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-violet-200/20 to-purple-200/20 dark:from-violet-900/10 dark:to-purple-900/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-indigo-200/20 to-violet-200/20 dark:from-indigo-900/10 dark:to-violet-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-rose-200/20 to-blue-200/20 dark:from-rose-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
       </div>
       {/* Project Sidebar */}
       <motion.div
         initial={{ x: -300 }}
         animate={{ x: sidebarOpen ? 0 : -300 }}
         transition={{ type: "spring", damping: 20 }}
-        className="w-80 liquid-glass border-r border-gray-200 dark:border-purple-500/30 flex flex-col flex-shrink-0 overflow-hidden shadow-lg"
+        className="w-80 liquid-glass border-r border-gray-200 dark:border-blue-500/30 flex flex-col flex-shrink-0 overflow-hidden shadow-lg"
       >
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-gray-200 dark:border-purple-500/30 flex-shrink-0">
+        <div className="p-6 border-b border-gray-200 dark:border-blue-500/30 flex-shrink-0">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white bg-gradient-to-r from-cyan-600 to-orange-600 dark:from-purple-400 dark:to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-blue-400 dark:to-blue-500 bg-clip-text text-transparent">
               Project Board [{new Date().getFullYear()}]
             </h2>
 
@@ -413,8 +413,8 @@ const Calendar = () => {
               onClick={() => setSelectedProject("all")}
               className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                 selectedProject === "all"
-                  ? "bg-violet-100 text-violet-700 font-medium shadow-sm dark:bg-violet-800/60 dark:text-violet-300"
-                  : "text-violet-600/70 dark:text-violet-300/70 hover:bg-violet-100/70 dark:hover:bg-violet-700/40"
+                  ? "bg-blue-100 text-blue-700 font-medium shadow-sm dark:bg-blue-800/60 dark:text-blue-300"
+                  : "text-blue-600/70 dark:text-blue-300/70 hover:bg-blue-100/70 dark:hover:bg-blue-700/40"
               }`}
             >
               <div className="flex items-center gap-3">
@@ -429,8 +429,8 @@ const Calendar = () => {
                 onClick={() => setSelectedProject(project.id)}
                 className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors group ${
                   selectedProject === project.id
-                    ? "bg-violet-100 text-violet-700 font-medium shadow-sm dark:bg-violet-800/60 dark:text-violet-300"
-                    : "text-violet-600/70 dark:text-violet-300/70 hover:bg-violet-100/70 dark:hover:bg-violet-700/40"
+                    ? "bg-blue-100 text-blue-700 font-medium shadow-sm dark:bg-blue-800/60 dark:text-blue-300"
+                    : "text-blue-600/70 dark:text-blue-300/70 hover:bg-blue-100/70 dark:hover:bg-blue-700/40"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -447,9 +447,9 @@ const Calendar = () => {
       {/* Main Calendar Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Compact Header Bar */}
-        <div className="liquid-glass border-b border-violet-200/60 dark:border-violet-500/30 p-3 flex items-center justify-between flex-shrink-0 shadow-sm dark:shadow-violet-500/20">
+        <div className="liquid-glass border-b border-blue-200/60 dark:border-blue-500/30 p-3 flex items-center justify-between flex-shrink-0 shadow-sm dark:shadow-blue-500/20">
           <div className="flex items-center gap-3">
-            <h1 className="text-lg font-semibold text-violet-800 dark:text-violet-200">
+            <h1 className="text-lg font-semibold text-blue-800 dark:text-blue-200">
               {getDateLabel()}
             </h1>
             <div className="flex items-center gap-1">
@@ -471,7 +471,7 @@ const Calendar = () => {
           <div className="flex items-center gap-2">
             {/* View Mode Toggle */}
             {activeView === "calendar" && (
-              <div className="flex items-center bg-violet-100/70 dark:bg-violet-700/40 rounded-lg p-1">
+              <div className="flex items-center bg-blue-100/70 dark:bg-blue-700/40 rounded-lg p-1">
                 {[
                   { id: "day", icon: Eye, label: "Day" },
                   { id: "week", icon: List, label: "Week" },
@@ -500,14 +500,14 @@ const Calendar = () => {
                 placeholder="Search tasks..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-7 pr-3 py-1.5 text-sm border border-gray-200 dark:border-purple-500/30 rounded-lg bg-white dark:bg-black/90 text-gray-900 dark:text-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500 w-48"
+                className="pl-7 pr-3 py-1.5 text-sm border border-gray-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-blue/90 text-gray-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
               />
             </div>
 
             <div className="relative z-50">
               <button
                 onClick={() => setFilterOpen(!filterOpen)}
-                className="flex items-center gap-1 px-2 py-1.5 text-sm border border-gray-200 dark:border-purple-500/30 rounded-lg bg-white dark:bg-black/90 text-gray-700 dark:text-purple-300 hover:bg-gray-50 dark:hover:bg-black/80 transition-colors"
+                className="flex items-center gap-1 px-2 py-1.5 text-sm border border-gray-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-blue/90 text-gray-700 dark:text-blue-300 hover:bg-gray-50 dark:hover:bg-blue/80 transition-colors"
               >
                 <Filter className="w-3 h-3" />
                 <span className="hidden sm:inline">Filter</span>
@@ -519,7 +519,7 @@ const Calendar = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="fixed right-4 top-20 w-80 bg-white dark:bg-black/95 border border-gray-200 dark:border-purple-500/30 rounded-lg shadow-xl z-[9999] p-4"
+                  className="fixed right-4 top-20 w-80 bg-white dark:bg-blue/95 border border-gray-200 dark:border-blue-500/30 rounded-lg shadow-xl z-[9999] p-4"
                 >
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Filter Events</h3>
 
@@ -627,7 +627,7 @@ const Calendar = () => {
                 {/* Timeline Chart Visualization */}
                 <div className="relative">
                   {/* Timeline Axis */}
-                  <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                  <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-blue-500"></div>
 
                   <div className="space-y-6">
                     {getAllFilteredEvents()
@@ -982,7 +982,7 @@ const Calendar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-blue/50 flex items-center justify-center z-50 p-4"
             onClick={() => setSelectedDate(null)}
           >
             <motion.div
@@ -1005,7 +1005,7 @@ const Calendar = () => {
                 {getEventsForDate(selectedDate).map((event, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-violet-50 dark:hover:bg-violet-500/10 transition-colors"
+                    className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                     onClick={() => navigate(`/task/${event.id}`)}
                   >
                    
@@ -1049,7 +1049,7 @@ const Calendar = () => {
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-blue/50 z-40 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}

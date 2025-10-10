@@ -61,9 +61,9 @@ const getPerformanceLabel = (percent: number) => {
   } else if (percent >= 75) {
     return { label: 'Good', color: 'bg-blue-600 dark:bg-blue-500' };
   } else if (percent >= 50) {
-    return { label: 'Average', color: 'bg-amber-600 dark:bg-amber-500' };
+    return { label: 'Average', color: 'bg-blue-600 dark:bg-blue-500' };
   } else if (percent >= 25) {
-    return { label: 'Below Average', color: 'bg-orange-600 dark:bg-orange-500' };
+    return { label: 'Below Average', color: 'bg-blue-600 dark:bg-blue-500' };
   } else {
     return { label: 'Poor', color: 'bg-red-600 dark:bg-red-500' };
   }
@@ -126,7 +126,7 @@ const Dashboard = () => {
   const getPerformanceLabel = (percent: number) => {
     if (percent >= 90) return { label: "Excellent", color: "bg-green-600" };
     if (percent >= 70) return { label: "Good", color: "bg-yellow-500" };
-    if (percent >= 50) return { label: "Average", color: "bg-orange-500" };
+    if (percent >= 50) return { label: "Average", color: "bg-blue-500" };
     return { label: "Poor", color: "bg-red-600" };
   };
   
@@ -515,9 +515,9 @@ const Dashboard = () => {
       case 'completed':
         return 'bg-emerald-50/80 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-500/30';
       case 'in-progress':
-        return 'bg-violet-50/80 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-200/60 dark:border-violet-500/30';
+        return 'bg-blue-50/80 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-500/30';
       case 'pending':
-        return 'bg-amber-50/80 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200/60 dark:border-amber-500/30';
+        return 'bg-blue-50/80 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-500/30';
       case 'overdue':
         return 'bg-red-50/80 dark:bg-red-500/10 text-red-600 dark:text-red-400 border-red-200/60 dark:border-red-500/30';
       default:
@@ -528,18 +528,18 @@ const Dashboard = () => {
   // Error boundary fallback
   if (hasError && connectionStatus === 'offline') {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
-        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl shadow-lg max-w-md">
-          <div className="p-4 bg-orange-100 dark:bg-orange-500/20 rounded-xl mb-4 inline-block">
-            <AlertCircle className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-blue-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-blue-900/5 flex items-center justify-center">
+        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl shadow-lg max-w-md">
+          <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+            <AlertCircle className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
           <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">Connection Error</h3>
-          <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4">
+          <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4">
             Unable to connect to the database. Please check your internet connection.
           </p>
           <button
             onClick={handleRefresh}
-            className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
+            className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
           >
             Try Again
           </button>
@@ -549,26 +549,26 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex flex-col relative overflow-hidden">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-blue-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-blue-900/5 flex flex-col relative overflow-hidden">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-violet-200/20 to-purple-200/20 dark:from-violet-900/10 dark:to-purple-900/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-indigo-200/20 to-violet-200/20 dark:from-indigo-900/10 dark:to-violet-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
       </div>
 
       {/* Compact Header */}
-      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-violet-200/50 dark:border-violet-500/20 px-6 py-4 shadow-lg">
+      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-blue-200/50 dark:border-blue-500/20 px-6 py-4 shadow-lg">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl shadow-lg">
+              <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
                 <BarChart3 className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-blue-600 dark:from-blue-400 dark:via-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
                   Dashboard
                 </h1>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70 font-medium">
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70 font-medium">
                   Real-time insights
                 </p>
               </div>
@@ -579,7 +579,7 @@ const Dashboard = () => {
                 connectionStatus === 'connected'
                   ? 'bg-emerald-50/80 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-500/30'
                   : connectionStatus === 'connecting'
-                  ? 'bg-amber-50/80 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200/60 dark:border-amber-500/30'
+                  ? 'bg-blue-50/80 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-500/30'
                   : 'bg-gray-50/80 dark:bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-200/60 dark:border-gray-500/30'
               }`}
               title={
@@ -590,7 +590,7 @@ const Dashboard = () => {
             >
               <div className={`w-2 h-2 rounded-full ${
                 connectionStatus === 'connected' ? 'bg-emerald-500' :
-                connectionStatus === 'connecting' ? 'bg-amber-500 animate-pulse' :
+                connectionStatus === 'connecting' ? 'bg-blue-500 animate-pulse' :
                 'bg-gray-500'
               }`}></div>
               {connectionStatus === 'connected' ? 'Live' :
@@ -603,7 +603,7 @@ const Dashboard = () => {
             <button
               onClick={handleRefresh}
               disabled={connectionStatus === 'connecting'}
-              className="p-2 bg-white/70 dark:bg-slate-800/70 text-violet-600 dark:text-violet-300 hover:bg-violet-100/70 dark:hover:bg-violet-700/40 border border-violet-200/60 dark:border-violet-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
+              className="p-2 bg-white/70 dark:bg-slate-800/70 text-blue-600 dark:text-blue-300 hover:bg-blue-100/70 dark:hover:bg-blue-700/40 border border-blue-200/60 dark:border-blue-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
             >
               <Activity className={`w-4 h-4 ${connectionStatus === 'connecting' ? 'animate-spin' : ''}`} />
             </button>
@@ -614,9 +614,9 @@ const Dashboard = () => {
         {/* Compact Toolbar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                       <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 bg-violet-100/60 dark:bg-violet-500/10 px-3 py-2 rounded-xl border border-violet-200/60 dark:border-violet-500/30 backdrop-blur-sm">
-                <Activity className="w-4 h-4 text-violet-600 dark:text-violet-400" />
-                <span className="text-sm font-bold text-violet-700 dark:text-violet-300">Overview</span>
+              <div className="flex items-center gap-2 bg-blue-100/60 dark:bg-blue-500/10 px-3 py-2 rounded-xl border border-blue-200/60 dark:border-blue-500/30 backdrop-blur-sm">
+                <Activity className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span className="text-sm font-bold text-blue-700 dark:text-blue-300">Overview</span>
               </div>
               
              
@@ -630,10 +630,10 @@ const Dashboard = () => {
                     initial={{ opacity: 0, y: 5, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 5, scale: 0.95 }}
-                    className="absolute top-full left-0 mt-2 w-56 bg-white/95 dark:bg-slate-800/95 border border-violet-200/60 dark:border-violet-500/30 rounded-xl shadow-xl z-50 overflow-hidden backdrop-blur-xl"
+                    className="absolute top-full left-0 mt-2 w-56 bg-white/95 dark:bg-slate-800/95 border border-blue-200/60 dark:border-blue-500/30 rounded-xl shadow-xl z-50 overflow-hidden backdrop-blur-xl"
                   >
-                    <div className="p-3 border-b border-violet-100/60 dark:border-violet-700/30">
-                      <p className="text-sm font-bold text-violet-800 dark:text-violet-200">Recent Projects</p>
+                    <div className="p-3 border-b border-blue-100/60 dark:border-blue-700/30">
+                      <p className="text-sm font-bold text-blue-800 dark:text-blue-200">Recent Projects</p>
                     </div>
                     <div className="p-2 max-h-48 overflow-y-auto">
                       {projects.slice(0, 3).map((project: any) => (
@@ -645,19 +645,19 @@ const Dashboard = () => {
                             // Navigate to project dashboard
                             navigate(`/project-dashboard/${project.id}`);
                           }}
-                          className="w-full text-left px-3 py-2 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-500/10 transition-colors group"
+                          className="w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors group"
                         >
                           <div className="flex items-center gap-3">
-                            <div className="w-6 h-6 bg-gradient-to-br from-violet-100 to-purple-100 dark:from-violet-500/20 dark:to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <Briefcase className="w-3 h-3 text-violet-600 dark:text-violet-400" />
+                            <div className="w-6 h-6 bg-gradient-to-br from-blue-100 to-blue-100 dark:from-blue-500/20 dark:to-blue-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                              <Briefcase className="w-3 h-3 text-blue-600 dark:text-blue-400" />
                             </div>
                             <div className="flex-1">
                               <span className="text-sm text-slate-800 dark:text-white font-medium">{project.name}</span>
-                              <p className="text-xs text-violet-600/70 dark:text-violet-300/70 mt-1">
+                              <p className="text-xs text-blue-600/70 dark:text-blue-300/70 mt-1">
                                 {project.description || 'No description'}
                               </p>
                             </div>
-                            <ChevronDown className="w-3 h-3 text-violet-400 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
+                            <ChevronDown className="w-3 h-3 text-blue-400 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
                           </div>
                         </button>
                       ))}
@@ -671,19 +671,19 @@ const Dashboard = () => {
           {/* Compact Search */}
           <div className="flex items-center gap-2">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-violet-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-400" />
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-9 pr-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-violet-200/60 dark:border-violet-500/30 rounded-xl text-violet-800 dark:text-violet-200 placeholder-violet-400 text-sm focus:outline-none focus:ring-1 focus:ring-violet-500 shadow-sm backdrop-blur-sm w-48"
+                className="pl-9 pr-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-blue-200/60 dark:border-blue-500/30 rounded-xl text-blue-800 dark:text-blue-200 placeholder-blue-400 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-sm backdrop-blur-sm w-48"
               />
             </div>
             
             <button
               onClick={() => setFilterOpen(!filterOpen)}
-              className="p-2 bg-white/70 dark:bg-slate-800/70 text-violet-700 dark:text-violet-300 hover:bg-violet-100/70 dark:hover:bg-violet-700/40 border border-violet-200/60 dark:border-violet-500/30 rounded-xl transition-all duration-200 shadow-sm backdrop-blur-sm"
+              className="p-2 bg-white/70 dark:bg-slate-800/70 text-blue-700 dark:text-blue-300 hover:bg-blue-100/70 dark:hover:bg-blue-700/40 border border-blue-200/60 dark:border-blue-500/30 rounded-xl transition-all duration-200 shadow-sm backdrop-blur-sm"
             >
               <Filter className="w-4 h-4" />
             </button>
@@ -701,7 +701,7 @@ const Dashboard = () => {
 
         </div> 
         {showProjectSummary && ( 
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 p-2 sm:p-4"> 
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-blue bg-opacity-50 p-2 sm:p-4"> 
             <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg w-full max-w-5xl mx-auto overflow-auto max-h-[90vh]"> 
               {/* Header */} 
               <div className="flex justify-between items-center border-b p-3 sm:p-4 sticky top-0 bg-white dark:bg-gray-900 z-10"> 
@@ -730,7 +730,7 @@ const Dashboard = () => {
           <div className="flex justify-end mb-2">
             <button 
               onClick={() => setCardFilter(null)}
-              className="px-3 py-1 text-xs font-medium bg-white/70 dark:bg-slate-800/70 text-violet-600 dark:text-violet-300 hover:bg-violet-100/70 dark:hover:bg-violet-700/40 border border-violet-200/60 dark:border-violet-500/30 rounded-lg transition-all duration-200 shadow-sm backdrop-blur-sm flex items-center gap-1"
+              className="px-3 py-1 text-xs font-medium bg-white/70 dark:bg-slate-800/70 text-blue-600 dark:text-blue-300 hover:bg-blue-100/70 dark:hover:bg-blue-700/40 border border-blue-200/60 dark:border-blue-500/30 rounded-lg transition-all duration-200 shadow-sm backdrop-blur-sm flex items-center gap-1"
             >
               <X className="w-3 h-3" /> Clear filter
             </button>
@@ -742,8 +742,8 @@ const Dashboard = () => {
               title: "Projects",
               value: projects.length,
               icon: Briefcase,
-              color: "violet",
-              gradient: "from-violet-500 to-purple-600",
+              color: "blue",
+              gradient: "from-blue-500 to-blue-600",
               change: "+12%",
               changeIcon: TrendingUp
             },
@@ -751,8 +751,8 @@ const Dashboard = () => {
               title: "Pending",
               value: pendingTasks.length,
               icon: Clock,
-              color: "amber",
-              gradient: "from-amber-500 to-orange-600",
+              color: "blue",
+              gradient: "from-blue-500 to-blue-600",
               change: `${overdueTasks.length} overdue`,
               changeIcon: AlertCircle
             },
@@ -761,7 +761,7 @@ const Dashboard = () => {
               value: inProgressTasks.length,
               icon: Activity,
               color: "blue",
-              gradient: "from-blue-500 to-indigo-600",
+              gradient: "from-blue-500 to-blue-600",
               change: `${tasks.length > 0 ? Math.round((inProgressTasks.length / tasks.length) * 100) : 0}% of total`,
               changeIcon: TrendingUp
             },
@@ -799,7 +799,7 @@ const Dashboard = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -2, transition: { duration: 0.2 } }}
-              className={`bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 ${cardFilter === (stat.title === 'Pending' ? 'pending' : stat.title === 'Active' ? 'in-progress' : stat.title === 'Done' ? 'completed' : stat.title === 'Overdue' ? 'overdue' : null) ? `border-${stat.color}-500 dark:border-${stat.color}-400` : 'border-violet-200/50 dark:border-violet-500/30'} rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer`}
+              className={`bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 ${cardFilter === (stat.title === 'Pending' ? 'pending' : stat.title === 'Active' ? 'in-progress' : stat.title === 'Done' ? 'completed' : stat.title === 'Overdue' ? 'overdue' : null) ? `border-${stat.color}-500 dark:border-${stat.color}-400` : 'border-blue-200/50 dark:border-blue-500/30'} rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer`}
               onClick={() => {
                 switch (stat.title) {
                   case 'Projects':
@@ -839,14 +839,14 @@ const Dashboard = () => {
               
               <div>
                 <div className="flex items-center justify-between">
-                  <p className="text-xs font-medium text-violet-600/70 dark:text-violet-300/70 mb-1">
+                  <p className="text-xs font-medium text-blue-600/70 dark:text-blue-300/70 mb-1">
                     {stat.title}
                   </p>
                   {cardFilter === (stat.title === 'Pending' ? 'pending' : stat.title === 'Active' ? 'in-progress' : stat.title === 'Done' ? 'completed' : null) && (
                     <span className={`text-xs font-bold text-${stat.color}-600 dark:text-${stat.color}-400`}>Filtered</span>
                   )}
                 </div>
-                <p className="text-2xl font-black text-slate-800 dark:text-white">
+                <p className="text-2xl font-blue text-slate-800 dark:text-white">
                   {stat.value}
                 </p>
               </div>
@@ -861,15 +861,15 @@ const Dashboard = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-violet-200/50 dark:border-violet-500/30 rounded-2xl p-4 shadow-lg"
+            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-blue-200/50 dark:border-blue-500/30 rounded-2xl p-4 shadow-lg"
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="p-1.5 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg">
+              <div className="p-1.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                 <BarChart3 className="w-4 h-4 text-white" />
               </div>
               <div>
                 <h3 className="text-sm font-bold text-slate-800 dark:text-white">Task Status</h3>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70">Distribution</p>
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70">Distribution</p>
               </div>
             </div>
             <div className="h-40 flex items-center justify-center">
@@ -881,12 +881,12 @@ const Dashboard = () => {
                       data: [completedTasks.length, inProgressTasks.length, pendingTasks.length],
                       backgroundColor: [
                         'rgba(16, 185, 129, 0.8)',
-                        'rgba(139, 92, 246, 0.8)',
+                        'rgba(28, 43, 132, 0.8)',
                         'rgba(245, 158, 11, 0.8)',
                       ],
                       borderColor: [
                         'rgba(16, 185, 129, 1)',
-                        'rgba(139, 92, 246, 1)',
+                        'rgb(57, 94, 203)',
                         'rgba(245, 158, 11, 1)',
                       ],
                       borderWidth: 2,
@@ -917,25 +917,25 @@ const Dashboard = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 }}
-            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-violet-200/50 dark:border-violet-500/30 rounded-2xl p-4 shadow-lg"
+            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-blue-200/50 dark:border-blue-500/30 rounded-2xl p-4 shadow-lg"
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="p-1.5 bg-gradient-to-br from-blue-500 to-violet-600 rounded-lg">
+              <div className="p-1.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                 <Users className="w-4 h-4 text-white" />
               </div>
               <div>
                 <h3 className="text-sm font-bold text-slate-800 dark:text-white">Team Metrics</h3>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70">Performance</p>
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70">Performance</p>
               </div>
             </div>
             
             <div className="space-y-4">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-violet-700 dark:text-violet-300">Efficiency</span>
-                  <span className="text-lg font-black text-slate-800 dark:text-white">{teamEfficiency}%</span>
+                  <span className="text-xs font-medium text-blue-700 dark:text-blue-300">Efficiency</span>
+                  <span className="text-lg font-blue text-slate-800 dark:text-white">{teamEfficiency}%</span>
                 </div>
-                <div className="w-full bg-violet-200/40 dark:bg-violet-700/30 rounded-full h-2">
+                <div className="w-full bg-blue-200/40 dark:bg-blue-700/30 rounded-full h-2">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${teamEfficiency}%` }}
@@ -945,14 +945,14 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-2 border-t border-purple-500/50 dark:border-purple-500/30">
+              <div className="grid grid-cols-2 gap-3 pt-2 border-t border-blue-500/50 dark:border-blue-500/30">
                 <div className="text-center">
-                  <p className="text-lg font-black text-slate-800 dark:text-white">{teams.length}</p>
-                  <p className="text-xs text-violet-600/70 dark:text-violet-300/70">Teams</p>
+                  <p className="text-lg font-blue text-slate-800 dark:text-white">{teams.length}</p>
+                  <p className="text-xs text-blue-600/70 dark:text-blue-300/70">Teams</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-lg font-black text-slate-800 dark:text-white">{employees.length}</p>
-                  <p className="text-xs text-violet-600/70 dark:text-violet-300/70">Members</p>
+                  <p className="text-lg font-blue text-slate-800 dark:text-white">{employees.length}</p>
+                  <p className="text-xs text-blue-600/70 dark:text-blue-300/70">Members</p>
                 </div>
               </div>
             </div>
@@ -963,16 +963,16 @@ const Dashboard = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6 }}
-            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-violet-200/50 dark:border-violet-500/30 rounded-2xl p-4 shadow-lg"
+            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-blue-200/50 dark:border-blue-500/30 rounded-2xl p-4 shadow-lg"
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="p-1.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
+                <div className="p-1.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                   <Activity className="w-4 h-4 text-white" />
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-slate-800 dark:text-white">Activity</h3>
-                  <p className="text-xs text-violet-600/70 dark:text-violet-300/70">
+                  <p className="text-xs text-blue-600/70 dark:text-blue-300/70">
                     {cardFilter ? 
                       cardFilter === 'pending' ? 'Pending Tasks' : 
                       cardFilter === 'in-progress' ? 'Active Tasks' : 
@@ -984,7 +984,7 @@ const Dashboard = () => {
               
               <button
                 onClick={() => setShowAllTasks(!showAllTasks)}
-                className="text-xs font-bold text-violet-600 hover:text-violet-700 dark:text-violet-400 dark:hover:text-violet-300"
+                className="text-xs font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
               >
                 {showAllTasks ? 'Less' : 'More'}
               </button>
@@ -994,13 +994,13 @@ const Dashboard = () => {
               {(showAllTasks ? filteredTasks : filteredTasks.slice(0, 5)).map((task: any, index) => (
                 <div
                   key={task.id}
-                  className="flex items-center gap-3 p-3 bg-gray-50/60 dark:bg-slate-700/40 hover:bg-violet-50/60 dark:hover:bg-violet-500/10 rounded-lg transition-colors group cursor-pointer"
+                  className="flex items-center gap-3 p-3 bg-gray-50/60 dark:bg-slate-700/40 hover:bg-blue-50/60 dark:hover:bg-blue-500/10 rounded-lg transition-colors group cursor-pointer"
                   onClick={() => navigate(`/task/${task.id}`)}
                 >
                   <div className={`w-2 h-2 rounded-full ${
                     task.status === 'completed' ? 'bg-emerald-500' :
-                    task.status === 'in-progress' ? 'bg-violet-500' :
-                    'bg-amber-500'
+                    task.status === 'in-progress' ? 'bg-blue-500' :
+                    'bg-blue-500'
                   }`}></div>
                   
                   <div className="flex-1 min-w-0">
@@ -1008,11 +1008,11 @@ const Dashboard = () => {
                       {task.title || 'Untitled Task'}
                     </p>
                     <div className="flex items-center gap-2 mt-1">
-                      <p className="text-xs text-violet-600/70 dark:text-violet-300/70">
+                      <p className="text-xs text-blue-600/70 dark:text-blue-300/70">
                         {task.assignee || 'Unassigned'}
                       </p>
                       {task.dueDate && (
-                        <span className="text-xs text-amber-600/70 dark:text-amber-400/70">
+                        <span className="text-xs text-blue-600/70 dark:text-blue-400/70">
                           Due: {new Date(task.dueDate).toLocaleDateString()}
                         </span>
                       )}
@@ -1028,8 +1028,8 @@ const Dashboard = () => {
 
             {filteredTasks.length === 0 && (
               <div className="text-center py-6">
-                <Clock className="w-8 h-8 text-violet-400 mx-auto mb-2" />
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70">No tasks found</p>
+                <Clock className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70">No tasks found</p>
               </div>
             )}
           </motion.div>
@@ -1042,7 +1042,7 @@ const Dashboard = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-violet-200/50 dark:border-violet-500/30 rounded-2xl p-4 shadow-lg"
+            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-blue-200/50 dark:border-blue-500/30 rounded-2xl p-4 shadow-lg"
           >
             <div className="flex items-center gap-2 mb-4">
               <div className="p-1.5 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg">
@@ -1050,20 +1050,20 @@ const Dashboard = () => {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-slate-800 dark:text-white">Quick Actions</h3>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70">Common tasks</p>
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70">Common tasks</p>
               </div>
             </div>
             
             <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={() => navigate('/tasks')}
-                className="p-3 bg-violet-50/60 dark:bg-violet-500/10 rounded-xl border border-violet-200/60 dark:border-violet-500/30 hover:bg-violet-100/60 dark:hover:bg-violet-500/20 transition-colors group"
+                className="p-3 bg-blue-50/60 dark:bg-blue-500/10 rounded-xl border border-blue-200/60 dark:border-blue-500/30 hover:bg-blue-100/60 dark:hover:bg-blue-500/20 transition-colors group"
               >
                 <div className="text-center">
-                  <div className="w-8 h-8 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
                     <Target className="w-4 h-4 text-white" />
                   </div>
-                  <p className="text-xs font-medium text-violet-700 dark:text-violet-300">View Tasks</p>
+                  <p className="text-xs font-medium text-blue-700 dark:text-blue-300">View Tasks</p>
                 </div>
               </button>
               
@@ -1093,13 +1093,13 @@ const Dashboard = () => {
               
               <button
                 onClick={() => navigate('/calendar')}
-                className="p-3 bg-amber-50/60 dark:bg-amber-500/10 rounded-xl border border-amber-200/60 dark:border-amber-500/30 hover:bg-amber-100/60 dark:hover:bg-amber-500/20 transition-colors group"
+                className="p-3 bg-blue-50/60 dark:bg-blue-500/10 rounded-xl border border-blue-200/60 dark:border-blue-500/30 hover:bg-blue-100/60 dark:hover:bg-blue-500/20 transition-colors group"
               >
                 <div className="text-center">
-                  <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
                     <Calendar className="w-4 h-4 text-white" />
                   </div>
-                  <p className="text-xs font-medium text-amber-700 dark:text-amber-300">Calendar</p>
+                  <p className="text-xs font-medium text-blue-700 dark:text-blue-300">Calendar</p>
                 </div>
               </button>
             </div>
@@ -1110,24 +1110,24 @@ const Dashboard = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-violet-200/50 dark:border-violet-500/30 rounded-2xl p-4 shadow-lg"
+            className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-2 border-blue-200/50 dark:border-blue-500/30 rounded-2xl p-4 shadow-lg"
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="p-1.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
+              <div className="p-1.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                 <Activity className="w-4 h-4 text-white" />
               </div>
               <div>
                 <h3 className="text-sm font-bold text-slate-800 dark:text-white">Recent Updates</h3>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70">Latest changes</p>
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70">Latest changes</p>
               </div>
             </div>
             
             <div className="space-y-3 max-h-32 overflow-y-auto">
               {[
                 { type: 'task', message: `${completedTasks.length} tasks completed this week`, color: 'emerald' },
-                { type: 'project', message: `${projects.length} active projects`, color: 'violet' },
+                { type: 'project', message: `${projects.length} active projects`, color: 'blue' },
                 { type: 'team', message: `${teams.length} teams working`, color: 'blue' },
-                { type: 'performance', message: `${teamEfficiency}% overall efficiency`, color: 'amber' }
+                { type: 'performance', message: `${teamEfficiency}% overall efficiency`, color: 'blue' }
               ].map((update, index) => (
                 <div key={index} className="flex items-center gap-3 p-2 bg-gray-50/60 dark:bg-slate-700/40 rounded-lg">
                   <div className={`w-2 h-2 rounded-full bg-${update.color}-500`}></div>
@@ -1141,7 +1141,7 @@ const Dashboard = () => {
       </div>
       
       {showModal && selectedTask && ( 
-        <div className="fixed inset-0 bg-black bg-opacity-40 dark:bg-opacity-60 flex items-center justify-center z-50 px-4 transition-opacity"> 
+        <div className="fixed inset-0 bg-blue bg-opacity-40 dark:bg-opacity-60 flex items-center justify-center z-50 px-4 transition-opacity"> 
           <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-xl w-full max-w-6xl p-6 relative grid grid-cols-1 md:grid-cols-3 gap-6 max-h-[90vh] overflow-y-auto animate-fadeIn"> 
             <button 
               onClick={() => setSelectedTask(null)} 
@@ -1151,7 +1151,7 @@ const Dashboard = () => {
             </button> 
 
             <div className="col-span-2 space-y-4"> 
-              <h2 className="text-2xl font-bold text-indigo-700 dark:text-indigo-400"> 
+              <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-400"> 
                 {selectedTask.title} 
               </h2> 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700 dark:text-gray-300"> 
@@ -1244,8 +1244,8 @@ const Dashboard = () => {
             </div> 
             
             <div className="col-span-1 space-y-4">
-              <div className="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg border border-indigo-100 dark:border-indigo-700/30">
-                <h3 className="font-medium text-indigo-800 dark:text-indigo-300 mb-2">Task Details</h3>
+              <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-100 dark:border-blue-700/30">
+                <h3 className="font-medium text-blue-800 dark:text-blue-300 mb-2">Task Details</h3>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600 dark:text-gray-400">Priority:</span>
@@ -1266,7 +1266,7 @@ const Dashboard = () => {
                         {selectedTask.tags.split(',').map((tag, index) => (
                           <span 
                             key={index}
-                            className="px-2 py-1 bg-indigo-100 dark:bg-indigo-800/40 text-indigo-700 dark:text-indigo-300 rounded text-xs"
+                            className="px-2 py-1 bg-blue-100 dark:bg-blue-800/40 text-blue-700 dark:text-blue-300 rounded text-xs"
                           >
                             {tag.trim()}
                           </span>
@@ -1303,7 +1303,7 @@ const Dashboard = () => {
                   )}
                   
                   <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 rounded-full bg-amber-500 mt-1.5"></div>
+                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-1.5"></div>
                     <div>
                       <p className="text-xs font-medium text-gray-700 dark:text-gray-300">Due Date</p>
                       <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -1328,7 +1328,7 @@ const Dashboard = () => {
                         className="bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 shadow-sm rounded-lg p-3 text-sm transition" 
                       > 
                         <div className="flex items-center gap-2 mb-1"> 
-                          <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-700 dark:text-indigo-300 flex items-center justify-center font-bold text-xs"> 
+                          <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-300 flex items-center justify-center font-bold text-xs"> 
                             {getEmployeeName(comment.userId)?.[0] || "U"} 
                           </div> 
                           <div className="text-sm font-medium text-gray-800 dark:text-gray-100"> 
@@ -1353,7 +1353,7 @@ const Dashboard = () => {
                 <div className="mt-4"> 
                   <textarea 
                     rows={3} 
-                    className="w-full p-2 border rounded-md text-sm bg-white dark:bg-zinc-800 dark:border-zinc-600 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-indigo-300" 
+                    className="w-full p-2 border rounded-md text-sm bg-white dark:bg-zinc-800 dark:border-zinc-600 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-blue-300" 
                     placeholder="Write a comment..." 
                     value={newComment} 
                     onChange={(e) => setNewComment(e.target.value)} 
@@ -1361,7 +1361,7 @@ const Dashboard = () => {
                   <button 
                     onClick={handleAddComment} 
                     disabled={commentLoading || !newComment.trim()} 
-                    className="mt-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded w-full disabled:opacity-50 transition" 
+                    className="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full disabled:opacity-50 transition" 
                   > 
                     {commentLoading ? "Saving..." : "Post Comment"} 
                   </button> 
@@ -1386,7 +1386,7 @@ const Dashboard = () => {
 
       {/* Project Summary Modal */}
       {showProjectSummary && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-blue bg-opacity-50">
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg w-full max-w-5xl mx-4">
             {/* Header */}
             <div className="flex justify-between items-center border-b p-4">
@@ -1507,8 +1507,8 @@ const Dashboard = () => {
 
               {/* Detailed Project Modal */}
               {detailedProject && (
-                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-6 overflow-auto">
-                  <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] overflow-y-auto p-8 relative border border-violet-200/50 dark:border-violet-500/30">
+                <div className="fixed inset-0 bg-blue/60 backdrop-blur-sm flex items-center justify-center z-50 p-6 overflow-auto">
+                  <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] overflow-y-auto p-8 relative border border-blue-200/50 dark:border-blue-500/30">
                     <button
                       onClick={() => setDetailedProject(null)}
                       className="absolute top-4 right-6 text-gray-600 dark:text-gray-300 hover:text-red-500 text-3xl font-bold"
@@ -1518,25 +1518,25 @@ const Dashboard = () => {
                     </button>
 
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m5 0v-4a1 1 0 011-1h2a1 1 0 011 1v4M7 7h10M7 11h6" />
                         </svg>
                       </div>
                       <div>
-                        <h2 className="text-3xl font-bold text-slate-800 dark:text-white bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400 bg-clip-text text-transparent">
+                        <h2 className="text-3xl font-bold text-slate-800 dark:text-white bg-gradient-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
                           {detailedProject.name}
                         </h2>
-                        <p className="text-violet-600/70 dark:text-violet-300/70 text-sm mt-1">
+                        <p className="text-blue-600/70 dark:text-blue-300/70 text-sm mt-1">
                           Project Details & Team Overview
                         </p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                      <div className="bg-violet-50/50 dark:bg-violet-900/20 rounded-2xl p-6 border border-violet-200/50 dark:border-violet-500/30">
+                      <div className="bg-blue-50/50 dark:bg-blue-900/20 rounded-2xl p-6 border border-blue-200/50 dark:border-blue-500/30">
                         <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
-                          <svg className="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           Project Information
@@ -1587,11 +1587,11 @@ const Dashboard = () => {
                             <div className="text-xs text-slate-600 dark:text-slate-400">Completed</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">{tasks.filter(t => (t.project_id === detailedProject.id || t.projectId === detailedProject.id) && t.status === 'pending').length}</div>
+                            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{tasks.filter(t => (t.project_id === detailedProject.id || t.projectId === detailedProject.id) && t.status === 'pending').length}</div>
                             <div className="text-xs text-slate-600 dark:text-slate-400">Pending</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{tasks.filter(t => (t.project_id === detailedProject.id || t.projectId === detailedProject.id) && t.status === 'in_progress').length}</div>
+                            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{tasks.filter(t => (t.project_id === detailedProject.id || t.projectId === detailedProject.id) && t.status === 'in_progress').length}</div>
                             <div className="text-xs text-slate-600 dark:text-slate-400">In Progress</div>
                           </div>
                         </div>

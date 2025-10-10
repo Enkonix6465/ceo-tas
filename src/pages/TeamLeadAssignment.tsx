@@ -113,7 +113,7 @@ export default function TeamLeadAssignmentPage() {
   });
 
   return (
-    <div className="p-6 min-h-screen bg-gradient-to-br from-cyan-100/95 to-orange-100/95 dark:bg-gradient-to-br dark:from-black/95 dark:to-black/90">
+    <div className="p-6 min-h-screen bg-gradient-to-br from-cyan-100/95 to-blue-100/95 dark:bg-gradient-to-br dark:from-black/95 dark:to-black/90">
       <h1 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
         Assign Team Leads
       </h1>
@@ -134,32 +134,32 @@ export default function TeamLeadAssignmentPage() {
             <table className="min-w-full text-sm">
               <thead className="bg-white/50 dark:bg-black/50">
                 <tr>
-                  <th className="p-3 text-left text-gray-800 dark:text-purple-100">Select</th>
-                  <th className="p-3 text-left text-gray-800 dark:text-purple-100">Name</th>
-                  <th className="p-3 text-left text-gray-800 dark:text-purple-100">Email</th>
-                  <th className="p-3 text-left text-gray-800 dark:text-purple-100">Phone</th>
-                  <th className="p-3 text-left text-gray-800 dark:text-purple-100">Location</th>
-                  <th className="p-3 text-left text-gray-800 dark:text-purple-100">Status</th>
+                  <th className="p-3 text-left text-gray-800 dark:text-blue-100">Select</th>
+                  <th className="p-3 text-left text-gray-800 dark:text-blue-100">Name</th>
+                  <th className="p-3 text-left text-gray-800 dark:text-blue-100">Email</th>
+                  <th className="p-3 text-left text-gray-800 dark:text-blue-100">Phone</th>
+                  <th className="p-3 text-left text-gray-800 dark:text-blue-100">Location</th>
+                  <th className="p-3 text-left text-gray-800 dark:text-blue-100">Status</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredEmployees.map((emp) => (
                   <tr
                     key={emp.id}
-                    className={`border-t border-gray-200 dark:border-purple-500/30 ${selectedIds.includes(emp.id) ? "bg-blue-50 dark:bg-purple-700/40" : ""}`}
+                    className={`border-t border-gray-200 dark:border-blue-500/30 ${selectedIds.includes(emp.id) ? "bg-blue-50 dark:bg-blue-700/40" : ""}`}
                   >
-                    <td className="p-3 text-gray-800 dark:text-purple-100">
+                    <td className="p-3 text-gray-800 dark:text-blue-100">
                       <input
                         type="checkbox"
                         checked={selectedIds.includes(emp.id)}
                         onChange={() => toggleSelection(emp.id)}
                       />
                     </td>
-                    <td className="p-3 text-gray-800 dark:text-purple-100">{emp.name}</td>
-                    <td className="p-3 text-gray-800 dark:text-purple-100">{emp.email}</td>
-                    <td className="p-3 text-gray-800 dark:text-purple-100">{emp.phone as any}</td>
-                    <td className="p-3 text-gray-800 dark:text-purple-100">{emp.location}</td>
-                    <td className="p-3 text-gray-800 dark:text-purple-100">{emp.status}</td>
+                    <td className="p-3 text-gray-800 dark:text-blue-100">{emp.name}</td>
+                    <td className="p-3 text-gray-800 dark:text-blue-100">{emp.email}</td>
+                    <td className="p-3 text-gray-800 dark:text-blue-100">{emp.phone as any}</td>
+                    <td className="p-3 text-gray-800 dark:text-blue-100">{emp.location}</td>
+                    <td className="p-3 text-gray-800 dark:text-blue-100">{emp.status}</td>
                   </tr>
                 ))}
               </tbody>
@@ -185,21 +185,21 @@ export default function TeamLeadAssignmentPage() {
               <table className="min-w-full text-sm">
                 <thead className="bg-white/50 dark:bg-black/50">
                   <tr>
-                    <th className="p-3 text-left text-gray-800 dark:text-purple-100">Name</th>
-                    <th className="p-3 text-left text-gray-800 dark:text-purple-100">Email</th>
-                    <th className="p-3 text-left text-gray-800 dark:text-purple-100">Phone</th>
-                    <th className="p-3 text-left text-gray-800 dark:text-purple-100">Location</th>
-                    <th className="p-3 text-left text-gray-800 dark:text-purple-100">Status</th>
+                    <th className="p-3 text-left text-gray-800 dark:text-blue-100">Name</th>
+                    <th className="p-3 text-left text-gray-800 dark:text-blue-100">Email</th>
+                    <th className="p-3 text-left text-gray-800 dark:text-blue-100">Phone</th>
+                    <th className="p-3 text-left text-gray-800 dark:text-blue-100">Location</th>
+                    <th className="p-3 text-left text-gray-800 dark:text-blue-100">Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   {teamLeads.map((lead) => (
-                    <tr key={lead.id} className="border-t border-gray-200 dark:border-purple-500/30">
-                      <td className="p-3 text-gray-800 dark:text-purple-100">{lead.name}</td>
-                      <td className="p-3 text-gray-800 dark:text-purple-100">{lead.email}</td>
-                      <td className="p-3 text-gray-800 dark:text-purple-100">{lead.phone as any}</td>
-                      <td className="p-3 text-gray-800 dark:text-purple-100">{lead.location}</td>
-                      <td className="p-3 text-gray-800 dark:text-purple-100">{lead.status}</td>
+                    <tr key={lead.id} className="border-t border-gray-200 dark:border-blue-500/30">
+                      <td className="p-3 text-gray-800 dark:text-blue-100">{lead.name}</td>
+                      <td className="p-3 text-gray-800 dark:text-blue-100">{lead.email}</td>
+                      <td className="p-3 text-gray-800 dark:text-blue-100">{lead.phone as any}</td>
+                      <td className="p-3 text-gray-800 dark:text-blue-100">{lead.location}</td>
+                      <td className="p-3 text-gray-800 dark:text-blue-100">{lead.status}</td>
                     </tr>
                   ))}
                 </tbody>

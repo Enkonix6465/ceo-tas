@@ -133,7 +133,7 @@ const ViewTickets = () => {
       case "high":
         return "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300";
       case "medium":
-        return "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300";
+        return "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300";
       case "low":
         return "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300";
       default:
@@ -215,39 +215,39 @@ const ViewTickets = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
         <div className="text-center">
           <div className="relative">
-            <div className="animate-spin rounded-full h-16 w-16 border-4 border-violet-200 dark:border-violet-400 border-t-violet-600 dark:border-t-violet-300 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-200 dark:border-blue-400 border-t-blue-600 dark:border-t-blue-300 mx-auto mb-4"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-6 h-6 bg-violet-600 dark:bg-violet-500 rounded-full"></div>
+              <div className="w-6 h-6 bg-blue-600 dark:bg-blue-500 rounded-full"></div>
             </div>
           </div>
-          <p className="text-violet-600 dark:text-violet-400 font-medium">Loading tickets...</p>
+          <p className="text-blue-600 dark:text-blue-400 font-medium">Loading tickets...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 p-4 lg:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 p-4 lg:p-6">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-violet-200/20 to-purple-200/20 dark:from-violet-900/10 dark:to-purple-900/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-indigo-200/20 to-violet-200/20 dark:from-indigo-900/10 dark:to-violet-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-rose-200/20 to-blue-200/20 dark:from-rose-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced Header */}
         <div className="mb-6 lg:mb-8">
-          <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 dark:from-violet-400 dark:via-purple-500 dark:to-indigo-500 bg-clip-text text-transparent mb-2">
+          <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-rose-600 dark:from-blue-400 dark:via-blue-500 dark:to-rose-500 bg-clip-text text-transparent mb-2">
             🎫 View & Manage Tickets
           </h1>
-          <p className="text-violet-600/70 dark:text-violet-300/70 text-sm lg:text-base">
+          <p className="text-blue-600/70 dark:text-blue-300/70 text-sm lg:text-base">
             Monitor and update tickets across all projects
           </p>
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-violet-600/70 dark:text-violet-300/70">
-            <span className="px-3 py-1 bg-violet-100/80 dark:bg-violet-600/30 text-violet-700 dark:text-violet-300 rounded-full font-medium">
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-blue-600/70 dark:text-blue-300/70">
+            <span className="px-3 py-1 bg-blue-100/80 dark:bg-blue-600/30 text-blue-700 dark:text-blue-300 rounded-full font-medium">
               {filteredTickets.length} tickets displayed
             </span>
             <span className="px-3 py-1 bg-blue-100/80 dark:bg-blue-600/30 text-blue-700 dark:text-blue-300 rounded-full font-medium">
@@ -257,12 +257,12 @@ const ViewTickets = () => {
         </div>
 
         {/* Filters */}
-        <div className="mb-6 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-violet-200/50 dark:border-violet-500/20 shadow-lg p-4 lg:p-6">
+        <div className="mb-6 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-blue-200/50 dark:border-blue-500/20 shadow-lg p-4 lg:p-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div>
-              <label className="block text-sm font-medium text-violet-800 dark:text-violet-200 mb-2">Filter by Project</label>
+              <label className="block text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">Filter by Project</label>
               <select
-                className="w-full border border-violet-200/50 dark:border-violet-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent transition-all"
+                className="w-full border border-blue-200/50 dark:border-blue-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all"
                 value={projectFilter}
                 onChange={(e) => setProjectFilter(e.target.value)}
               >
@@ -274,9 +274,9 @@ const ViewTickets = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-violet-800 dark:text-violet-200 mb-2">Filter by Status</label>
+              <label className="block text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">Filter by Status</label>
               <select
-                className="w-full border border-violet-200/50 dark:border-violet-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent transition-all"
+                className="w-full border border-blue-200/50 dark:border-blue-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all"
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
               >
@@ -288,9 +288,9 @@ const ViewTickets = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-violet-800 dark:text-violet-200 mb-2">Filter by Priority</label>
+              <label className="block text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">Filter by Priority</label>
               <select
-                className="w-full border border-violet-200/50 dark:border-violet-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent transition-all"
+                className="w-full border border-blue-200/50 dark:border-blue-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all"
                 value={priorityFilter}
                 onChange={(e) => setPriorityFilter(e.target.value)}
               >
@@ -308,7 +308,7 @@ const ViewTickets = () => {
                   setStatusFilter("");
                   setPriorityFilter("");
                 }}
-                className="w-full bg-gradient-to-r from-violet-500 to-purple-600 dark:from-violet-600 dark:to-purple-700 text-white px-4 py-2 rounded-lg hover:from-violet-600 hover:to-purple-700 dark:hover:from-violet-700 dark:hover:to-purple-800 transition-all duration-200 font-medium text-sm"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800 transition-all duration-200 font-medium text-sm"
               >
                 🔄 Clear Filters
               </button>
@@ -317,11 +317,11 @@ const ViewTickets = () => {
         </div>
 
         {/* Enhanced Table - Mobile Responsive */}
-        <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-violet-200/50 dark:border-violet-500/20 shadow-lg overflow-hidden">
+        <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-blue-200/50 dark:border-blue-500/20 shadow-lg overflow-hidden">
           {/* Mobile Cards View */}
           <div className="lg:hidden">
             {filteredTickets.map((ticket) => (
-              <div key={ticket.id} className="p-4 border-b border-violet-200/30 dark:border-violet-500/20 last:border-b-0">
+              <div key={ticket.id} className="p-4 border-b border-blue-200/30 dark:border-blue-500/20 last:border-b-0">
                 <div className="flex justify-between items-start mb-3">
                   <div className="flex-1">
                     <h3 className="font-semibold text-slate-900 dark:text-slate-200 mb-1">{ticket.title}</h3>
@@ -364,7 +364,7 @@ const ViewTickets = () => {
 
                 <div className="flex gap-2">
                   <select
-                    className={`flex-1 text-xs px-2 py-1 rounded border ${getReviewColor(ticket.review)} focus:outline-none focus:ring-1 focus:ring-violet-400`}
+                    className={`flex-1 text-xs px-2 py-1 rounded border ${getReviewColor(ticket.review)} focus:outline-none focus:ring-1 focus:ring-blue-400`}
                     value={ticket.review || ""}
                     onChange={(e) => handleReviewChange(ticket.id, e.target.value)}
                   >
@@ -394,25 +394,25 @@ const ViewTickets = () => {
           <div className="hidden lg:block overflow-x-auto">
             <table className="min-w-full">
               <thead>
-                <tr className="bg-gradient-to-r from-violet-100/80 to-purple-100/80 dark:from-violet-800/50 dark:to-purple-700/50 text-sm text-left">
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">🆔 Ticket ID</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">📝 Title</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">📄 Description</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">⚡ Priority</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">📊 Status</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">📅 Due Date</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">🏢 Project</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">👤 Created By</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">🕒 Created At</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">👥 Team Lead</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">📋 Review</th>
-                  <th className="p-3 font-semibold text-violet-800 dark:text-violet-200">⚙️ Actions</th>
+                <tr className="bg-gradient-to-r from-blue-100/80 to-blue-100/80 dark:from-blue-800/50 dark:to-blue-700/50 text-sm text-left">
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">🆔 Ticket ID</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">📝 Title</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">📄 Description</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">⚡ Priority</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">📊 Status</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">📅 Due Date</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">🏢 Project</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">👤 Created By</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">🕒 Created At</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">👥 Team Lead</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">📋 Review</th>
+                  <th className="p-3 font-semibold text-blue-800 dark:text-blue-200">⚙️ Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredTickets.map((ticket, index) => (
-                  <tr key={ticket.id} className={`border-t border-violet-200/30 dark:border-violet-500/20 text-sm hover:bg-violet-50/50 dark:hover:bg-violet-900/20 transition-colors ${
-                    index % 2 === 0 ? 'bg-white/50 dark:bg-slate-800/30' : 'bg-violet-50/30 dark:bg-slate-900/30'
+                  <tr key={ticket.id} className={`border-t border-blue-200/30 dark:border-blue-500/20 text-sm hover:bg-blue-50/50 dark:hover:bg-blue-900/20 transition-colors ${
+                    index % 2 === 0 ? 'bg-white/50 dark:bg-slate-800/30' : 'bg-blue-50/30 dark:bg-slate-900/30'
                   }`}>
                     <td className="p-3">
                       <span className="font-mono text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">
@@ -443,7 +443,7 @@ const ViewTickets = () => {
                       {ticket.dueDate || "N/A"}
                     </td>
                     <td className="p-3">
-                      <span className="text-violet-600 dark:text-violet-400 font-medium">
+                      <span className="text-blue-600 dark:text-blue-400 font-medium">
                         {projectsMap[ticket.projectId] || ticket.projectId}
                       </span>
                     </td>
@@ -461,7 +461,7 @@ const ViewTickets = () => {
                     </td>
                     <td className="p-3">
                       <select
-                        className={`border px-2 py-1 w-full rounded text-xs ${getReviewColor(ticket.review)} focus:outline-none focus:ring-1 focus:ring-violet-400`}
+                        className={`border px-2 py-1 w-full rounded text-xs ${getReviewColor(ticket.review)} focus:outline-none focus:ring-1 focus:ring-blue-400`}
                         value={ticket.review || ""}
                         onChange={(e) => handleReviewChange(ticket.id, e.target.value)}
                       >
@@ -493,15 +493,15 @@ const ViewTickets = () => {
 
           {filteredTickets.length === 0 && (
             <div className="p-8 text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-violet-500 to-purple-600 dark:from-violet-600 dark:to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-violet-800 dark:text-violet-200 mb-3">
+              <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-3">
                 🎫 No Tickets Found
               </h2>
-              <p className="text-violet-600/70 dark:text-violet-300/70 text-lg">
+              <p className="text-blue-600/70 dark:text-blue-300/70 text-lg">
                 No tickets match the current filters.
               </p>
             </div>
@@ -512,14 +512,14 @@ const ViewTickets = () => {
       {/* Edit Modal */}
       {editingTicket && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-xl p-6 rounded-2xl w-full max-w-md shadow-2xl border border-violet-200/50 dark:border-violet-500/20">
-            <h2 className="text-xl font-bold text-violet-800 dark:text-violet-200 mb-6">✏️ Edit Ticket</h2>
+          <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-xl p-6 rounded-2xl w-full max-w-md shadow-2xl border border-blue-200/50 dark:border-blue-500/20">
+            <h2 className="text-xl font-bold text-blue-800 dark:text-blue-200 mb-6">✏️ Edit Ticket</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-violet-700 dark:text-violet-300 mb-2">Title</label>
+                <label className="block text-sm font-medium text-blue-700 dark:text-blue-300 mb-2">Title</label>
                 <input
                   type="text"
-                  className="w-full border border-violet-200/50 dark:border-violet-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent transition-all"
+                  className="w-full border border-blue-200/50 dark:border-blue-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all"
                   value={editValues.title}
                   onChange={(e) =>
                     setEditValues((prev) => ({ ...prev, title: e.target.value }))
@@ -527,10 +527,10 @@ const ViewTickets = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-violet-700 dark:text-violet-300 mb-2">Description</label>
+                <label className="block text-sm font-medium text-blue-700 dark:text-blue-300 mb-2">Description</label>
                 <textarea
                   rows={3}
-                  className="w-full border border-violet-200/50 dark:border-violet-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent transition-all resize-none"
+                  className="w-full border border-blue-200/50 dark:border-blue-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all resize-none"
                   value={editValues.description}
                   onChange={(e) =>
                     setEditValues((prev) => ({
@@ -541,10 +541,10 @@ const ViewTickets = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-violet-700 dark:text-violet-300 mb-2">Due Date</label>
+                <label className="block text-sm font-medium text-blue-700 dark:text-blue-300 mb-2">Due Date</label>
                 <input
                   type="date"
-                  className="w-full border border-violet-200/50 dark:border-violet-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent transition-all"
+                  className="w-full border border-blue-200/50 dark:border-blue-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all"
                   value={editValues.dueDate}
                   onChange={(e) =>
                     setEditValues((prev) => ({
@@ -555,9 +555,9 @@ const ViewTickets = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-violet-700 dark:text-violet-300 mb-2">Priority</label>
+                <label className="block text-sm font-medium text-blue-700 dark:text-blue-300 mb-2">Priority</label>
                 <select
-                  className="w-full border border-violet-200/50 dark:border-violet-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent transition-all"
+                  className="w-full border border-blue-200/50 dark:border-blue-500/30 rounded-lg px-3 py-2 text-sm bg-white/80 dark:bg-slate-800/80 text-slate-900 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all"
                   value={editValues.priority}
                   onChange={(e) =>
                     setEditValues((prev) => ({
@@ -581,7 +581,7 @@ const ViewTickets = () => {
                 Cancel
               </button>
               <button
-                className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 dark:from-violet-600 dark:to-purple-700 text-white rounded-lg hover:from-violet-600 hover:to-purple-700 dark:hover:from-violet-700 dark:hover:to-purple-800 transition-all duration-200 font-medium"
+                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800 transition-all duration-200 font-medium"
                 onClick={handleEditSave}
               >
                 Save Changes

@@ -503,7 +503,7 @@ const BugReportPage = () => {
       case "critical":
         return "text-red-600 bg-red-100 border-red-200 dark:text-red-400 dark:bg-red-900/30 dark:border-red-500/30";
       case "high":
-        return "text-orange-600 bg-orange-100 border-orange-200 dark:text-orange-400 dark:bg-orange-900/30 dark:border-orange-500/30";
+        return "text-blue-600 bg-blue-100 border-blue-200 dark:text-blue-400 dark:bg-blue-900/30 dark:border-blue-500/30";
       case "medium":
         return "text-blue-600 bg-blue-100 border-blue-200 dark:text-blue-400 dark:bg-blue-900/30 dark:border-blue-500/30";
       case "low":
@@ -533,7 +533,7 @@ const BugReportPage = () => {
       case "critical":
         return <AlertCircle className="w-4 h-4 text-red-600 dark:text-red-400" />;
       case "high":
-        return <AlertCircle className="w-4 h-4 text-orange-600 dark:text-orange-400" />;
+        return <AlertCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />;
       case "medium":
         return <Flag className="w-4 h-4 text-blue-600 dark:text-blue-400" />;
       case "low":
@@ -682,7 +682,7 @@ const BugReportPage = () => {
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-cyan-50 via-orange-50 to-cyan-100 dark:bg-gradient-to-br dark:from-purple-900/20 dark:via-purple-800/30 dark:to-purple-900/20 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-cyan-50 via-blue-50 to-cyan-100 dark:bg-gradient-to-br dark:from-purple-900/20 dark:via-purple-800/30 dark:to-purple-900/20 flex items-center justify-center">
         <div className="text-center">
           <div className="relative">
             <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-200 border-t-blue-600 dark:border-blue-400 dark:border-t-blue-300 mx-auto mb-4"></div>
@@ -700,18 +700,18 @@ const BugReportPage = () => {
   }
 
   return (
-    <div className="flex flex-col h-full bg-gradient-to-br from-cyan-50 via-orange-50 to-cyan-100 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 backdrop-blur-sm overflow-hidden">
+    <div className="flex flex-col h-full bg-gradient-to-br from-cyan-50 via-blue-50 to-cyan-100 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-indigo-900/5 backdrop-blur-sm overflow-hidden">
       {/* Enhanced Header */}
-      <div className="liquid-glass border-b border-2 border-purple-500/50 dark:border-purple-500/30 p-4 flex-shrink-0 backdrop-blur-2xl bg-gradient-to-r from-cyan-50/80 via-orange-50/80 to-cyan-100/80 dark:bg-gradient-to-r dark:from-slate-900/95 dark:via-violet-900/90 dark:to-indigo-900/95">
+      <div className="liquid-glass border-b border-2 border-purple-500/50 dark:border-purple-500/30 p-4 flex-shrink-0 backdrop-blur-2xl bg-gradient-to-r from-cyan-50/80 via-blue-50/80 to-cyan-100/80 dark:bg-gradient-to-r dark:from-slate-900/95 dark:via-blue-900/90 dark:to-indigo-900/95">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-2xl flex items-center justify-center relative overflow-hidden">
+              <div className="w-12 h-12 bg-gradient-to-r from-red-500 via-blue-500 to-yellow-500 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent animate-pulse" />
                 <Bug className="w-6 h-6 text-white relative z-10" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white bg-gradient-to-r from-red-500 to-orange-500 dark:from-purple-400 dark:to-purple-500 bg-clip-text text-transparent">
+                <h1 className="text-xl font-bold text-gray-900 dark:text-white bg-gradient-to-r from-red-500 to-blue-500 dark:from-purple-400 dark:to-purple-500 bg-clip-text text-transparent">
                   Bug Reports
                 </h1>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -721,11 +721,11 @@ const BugReportPage = () => {
             </div>
             
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-red-100/80 to-orange-100/80 dark:from-purple-900/40 dark:to-purple-800/40 text-red-700 dark:text-purple-300 border-2 border-purple-500/50 dark:border-purple-500/30 rounded-full flex items-center gap-1 backdrop-blur-sm">
+              <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-red-100/80 to-blue-100/80 dark:from-purple-900/40 dark:to-purple-800/40 text-red-700 dark:text-purple-300 border-2 border-purple-500/50 dark:border-purple-500/30 rounded-full flex items-center gap-1 backdrop-blur-sm">
                 <Activity className="w-3 h-3" />
                 {navigator.onLine ? 'Live' : 'Offline'}
               </span>
-              <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-orange-100/80 to-yellow-100/80 dark:from-purple-900/40 dark:to-purple-800/40 text-orange-700 dark:text-purple-300 border-2 border-purple-500/50 dark:border-purple-500/30 rounded-full backdrop-blur-sm shadow-sm">
+              <span className="px-3 py-1.5 text-xs bg-gradient-to-r from-blue-100/80 to-yellow-100/80 dark:from-purple-900/40 dark:to-purple-800/40 text-blue-700 dark:text-purple-300 border-2 border-purple-500/50 dark:border-purple-500/30 rounded-full backdrop-blur-sm shadow-sm">
                 {Math.round((bugReports.filter(b => b.status === "resolved").length / Math.max(bugReports.length, 1)) * 100)}% Resolved
               </span>
             </div>
@@ -755,7 +755,7 @@ const BugReportPage = () => {
             {/* Create New Bug Button */}
             <button
               onClick={() => setShowNewBugModal(true)}
-              className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-xl transition-all duration-200 shadow-lg flex items-center gap-2 text-sm font-medium"
+              className="px-4 py-2 bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white rounded-xl transition-all duration-200 shadow-lg flex items-center gap-2 text-sm font-medium"
             >
               <Plus className="w-4 h-4" />
               New Bug
@@ -889,7 +889,7 @@ const BugReportPage = () => {
                 </p>
                 <button
                   onClick={() => setShowNewBugModal(true)}
-                  className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-xl transition-all duration-200 shadow-lg flex items-center gap-2 text-sm font-medium mx-auto"
+                  className="px-4 py-2 bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white rounded-xl transition-all duration-200 shadow-lg flex items-center gap-2 text-sm font-medium mx-auto"
                 >
                   <Plus className="w-4 h-4" />
                   New Bug Report
@@ -1208,7 +1208,7 @@ const BugReportPage = () => {
                 </button>
                 <button
                   onClick={handleCreateBug}
-                  className="px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-lg transition-all duration-200 shadow-md"
+                  className="px-4 py-2 bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 text-white rounded-lg transition-all duration-200 shadow-md"
                 >
                   Create Bug Report
                 </button>
@@ -1497,7 +1497,7 @@ const BugCard = ({ bug, onClick, getEmployeeName, getEmployeeAvatar, getProjectN
     >
       {/* Floating glass orbs for visual effect */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-blue-500/5 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-500/10 to-red-500/5 rounded-full blur-xl -ml-12 -mb-12 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-500/10 to-red-500/5 rounded-full blur-xl -ml-12 -mb-12 pointer-events-none" />
 
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">

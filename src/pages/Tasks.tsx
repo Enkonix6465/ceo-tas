@@ -310,7 +310,7 @@ function Tasks() {
       case 'in_progress':
         return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       case 'pending':
-        return 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-500/30';
+        return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       default:
         return 'bg-gray-50 dark:bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-500/30';
     }
@@ -378,18 +378,18 @@ function Tasks() {
   // Error boundary fallback
   if (hasError && connectionStatus === 'offline') {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
-        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl shadow-lg max-w-md">
-          <div className="p-4 bg-orange-100 dark:bg-orange-500/20 rounded-xl mb-4 inline-block">
-            <AlertCircle className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
+        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl shadow-lg max-w-md">
+          <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+            <AlertCircle className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
           <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">Tasks Unavailable</h3>
-          <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4">
+          <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4">
             Unable to load tasks. Please check your connection.
           </p>
           <button
             onClick={handleRefresh}
-            className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
+            className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
           >
             Try Again
           </button>
@@ -400,36 +400,36 @@ function Tasks() {
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-violet-600 dark:text-violet-400 font-medium">Loading Tasks...</p>
+          <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-blue-600 dark:text-blue-400 font-medium">Loading Tasks...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex flex-col relative overflow-hidden">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-violet-200/20 to-purple-200/20 dark:from-violet-900/10 dark:to-purple-900/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-indigo-200/20 to-violet-200/20 dark:from-indigo-900/10 dark:to-violet-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-rose-200/20 to-blue-200/20 dark:from-rose-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
       </div>
 
       {/* Header */}
-      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-violet-200/50 dark:border-violet-500/20 px-6 py-4 shadow-lg">
+      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-blue-200/50 dark:border-blue-500/20 px-6 py-4 shadow-lg">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl shadow-lg">
+              <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
                 <Target className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-rose-600 dark:from-blue-400 dark:via-blue-400 dark:to-rose-400 bg-clip-text text-transparent">
                   Tasks
                 </h1>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70 font-medium">
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70 font-medium">
                   Manage your tasks
                 </p>
               </div>
@@ -439,12 +439,12 @@ function Tasks() {
               connectionStatus === 'connected'
                 ? 'bg-emerald-50/80 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-500/30'
                 : connectionStatus === 'connecting'
-                ? 'bg-amber-50/80 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200/60 dark:border-amber-500/30'
+                ? 'bg-blue-50/80 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-500/30'
                 : 'bg-gray-50/80 dark:bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-200/60 dark:border-gray-500/30'
             }`}>
               <div className={`w-2 h-2 rounded-full ${
                 connectionStatus === 'connected' ? 'bg-emerald-500' :
-                connectionStatus === 'connecting' ? 'bg-amber-500 animate-pulse' :
+                connectionStatus === 'connecting' ? 'bg-blue-500 animate-pulse' :
                 'bg-gray-500'
               }`}></div>
               {tasks.length} Tasks
@@ -455,14 +455,14 @@ function Tasks() {
             <button
               onClick={handleRefresh}
               disabled={loading}
-              className="p-2 bg-white/70 dark:bg-slate-800/70 text-violet-600 dark:text-violet-300 hover:bg-violet-100/70 dark:hover:bg-violet-700/40 border border-violet-200/60 dark:border-violet-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
+              className="p-2 bg-white/70 dark:bg-slate-800/70 text-blue-600 dark:text-blue-300 hover:bg-blue-100/70 dark:hover:bg-blue-700/40 border border-blue-200/60 dark:border-blue-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             </button>
             
             <button
               onClick={() => setShowModal(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-sm text-sm font-medium"
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-sm text-sm font-medium"
             >
               <Plus className="w-4 h-4" />
               New Task
@@ -473,20 +473,20 @@ function Tasks() {
         {/* Filters */}
         <div className="flex items-center gap-3">
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-violet-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-400" />
             <input
               type="text"
               placeholder="Search tasks..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-violet-200/60 dark:border-violet-500/30 rounded-xl text-violet-800 dark:text-violet-200 placeholder-violet-400 text-sm focus:outline-none focus:ring-1 focus:ring-violet-500 shadow-sm backdrop-blur-sm"
+              className="w-full pl-9 pr-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-blue-200/60 dark:border-blue-500/30 rounded-xl text-blue-800 dark:text-blue-200 placeholder-blue-400 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-sm backdrop-blur-sm"
             />
           </div>
           
           <select
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
-            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-violet-200/60 dark:border-violet-500/30 rounded-xl text-violet-800 dark:text-violet-200 text-sm focus:outline-none focus:ring-1 focus:ring-violet-500 shadow-sm backdrop-blur-sm"
+            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-blue-200/60 dark:border-blue-500/30 rounded-xl text-blue-800 dark:text-blue-200 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-sm backdrop-blur-sm"
           >
             <option value="all">All Status</option>
             <option value="pending">Pending</option>
@@ -498,7 +498,7 @@ function Tasks() {
           <select
             value={filterPriority}
             onChange={(e) => setFilterPriority(e.target.value)}
-            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-violet-200/60 dark:border-violet-500/30 rounded-xl text-violet-800 dark:text-violet-200 text-sm focus:outline-none focus:ring-1 focus:ring-violet-500 shadow-sm backdrop-blur-sm"
+            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-blue-200/60 dark:border-blue-500/30 rounded-xl text-blue-800 dark:text-blue-200 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-sm backdrop-blur-sm"
           >
             <option value="all">All Priority</option>
             <option value="high">High</option>
@@ -513,11 +513,11 @@ function Tasks() {
         {filteredTasks.length === 0 ? (
           <div className="flex items-center justify-center h-64">
             <div className="text-center">
-              <div className="p-4 bg-violet-100 dark:bg-violet-500/20 rounded-xl mb-4 inline-block">
-                <Target className="w-8 h-8 text-violet-600 dark:text-violet-400" />
+              <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+                <Target className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               </div>
               <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">No Tasks Found</h3>
-              <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4">
+              <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4">
                 {searchTerm || filterStatus !== 'all' || filterPriority !== 'all' 
                   ? 'Try adjusting your search or filters' 
                   : 'Create your first task to get started'}
@@ -525,7 +525,7 @@ function Tasks() {
               {!searchTerm && filterStatus === 'all' && filterPriority === 'all' && (
                 <button
                   onClick={() => setShowModal(true)}
-                  className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
+                  className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
                 >
                   Create Task
                 </button>
@@ -555,7 +555,7 @@ function Tasks() {
                           e.stopPropagation();
                           updateTaskStatus(task.id, task.status === 'completed' ? 'pending' : 'completed');
                         }}
-                        className="p-1.5 hover:bg-violet-100 dark:hover:bg-violet-500/20 rounded-lg transition-colors"
+                        className="p-1.5 hover:bg-blue-100 dark:hover:bg-blue-500/20 rounded-lg transition-colors"
                       >
                         <StatusIcon className={`w-5 h-5 ${
                           task.status === 'completed' ? 'text-green-600' :
@@ -580,9 +580,9 @@ function Tasks() {
                           e.stopPropagation();
                           handleEdit(task);
                         }}
-                        className="p-1 hover:bg-violet-100 dark:hover:bg-violet-500/20 rounded-lg transition-colors"
+                        className="p-1 hover:bg-blue-100 dark:hover:bg-blue-500/20 rounded-lg transition-colors"
                       >
-                        <Edit2 className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+                        <Edit2 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       </button>
                       <button
                         onClick={(e) => {
@@ -614,13 +614,13 @@ function Tasks() {
                   </div>
                   
                   {task.description && (
-                    <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-3 line-clamp-2 break-words">
+                    <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-3 line-clamp-2 break-words">
                       {task.description}
                     </p>
                   )}
                   
-                  <div className="mt-auto pt-3 border-t border-violet-100/50 dark:border-violet-500/20">
-                    <div className="grid grid-cols-1 gap-2 text-xs text-violet-600/70 dark:text-violet-300/70">
+                  <div className="mt-auto pt-3 border-t border-blue-100/50 dark:border-blue-500/20">
+                    <div className="grid grid-cols-1 gap-2 text-xs text-blue-600/70 dark:text-blue-300/70">
                       {project && (
                         <div className="flex items-center gap-1">
                           <Target className="w-3 h-3 flex-shrink-0" />
@@ -657,7 +657,7 @@ function Tasks() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-blue/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={(e) => {
               if (e.target === e.currentTarget) {
                 setShowModal(false);
@@ -684,7 +684,7 @@ function Tasks() {
                     type="text"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -697,7 +697,7 @@ function Tasks() {
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     rows={3}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 
@@ -709,7 +709,7 @@ function Tasks() {
                     <select
                       value={formData.status}
                       onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                      className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                      className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="pending">Pending</option>
                       <option value="in_progress">In Progress</option>
@@ -724,7 +724,7 @@ function Tasks() {
                     <select
                       value={formData.priority}
                       onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                      className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                      className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="low">Low</option>
                       <option value="medium">Medium</option>
@@ -740,7 +740,7 @@ function Tasks() {
                   <select
                     value={formData.assignee}
                     onChange={(e) => setFormData({ ...formData, assignee: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select Assignee</option>
                     {users.map((user) => (
@@ -758,7 +758,7 @@ function Tasks() {
                   <select
                     value={formData.projectId}
                     onChange={(e) => setFormData({ ...formData, projectId: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select Project</option>
                     {projects.map((project) => (
@@ -777,7 +777,7 @@ function Tasks() {
                     type="date"
                     value={formData.dueDate}
                     onChange={(e) => setFormData({ ...formData, dueDate: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 
@@ -797,13 +797,13 @@ function Tasks() {
                         dueDate: "",
                       });
                     }}
-                    className="flex-1 px-4 py-2 border border-violet-200 dark:border-violet-500/30 text-violet-600 dark:text-violet-400 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-500/10 transition-colors"
+                    className="flex-1 px-4 py-2 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium"
+                    className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium"
                   >
                     {editingTask ? 'Update' : 'Create'}
                   </button>

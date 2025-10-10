@@ -570,14 +570,14 @@ export default function EmployeePerformancePage() {
   return (
     <div className="h-full bg-gray-50 dark:bg-transparent flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="liquid-glass border-b border-gray-200 dark:border-purple-500/30 px-6 py-4 shadow-sm dark:shadow-purple-500/20 relative z-10">
+      <div className="liquid-glass border-b border-gray-200 dark:border-blue-500/30 px-6 py-4 shadow-sm dark:shadow-blue-500/20 relative z-10">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <h1 className="text-2xl font-semibold text-gray-900 dark:text-purple-100">
+            <h1 className="text-2xl font-semibold text-gray-900 dark:text-blue-100">
               Performance Matrix
             </h1>
-            <span className="px-3 py-1 text-xs rounded-full font-medium bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+            <span className="px-3 py-1 text-xs rounded-full font-medium bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               Live Analytics
             </span>
             {selectedEmployee && (
@@ -619,7 +619,7 @@ export default function EmployeePerformancePage() {
                 }
               }}
               disabled={!selectedEmployee}
-              className="px-4 py-2 text-sm bg-white dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-500/30 border border-purple-200 dark:border-purple-500/30 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 text-sm bg-white dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-500/30 border border-blue-200 dark:border-blue-500/30 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Download className="w-4 h-4 mr-2 inline" />
               Export
@@ -630,9 +630,9 @@ export default function EmployeePerformancePage() {
         {/* Search and Best Day Info */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-3 border-b-2 border-purple-500 pb-2">
-              <BarChart3 className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-              <span className="text-base font-medium text-purple-600 dark:text-purple-400">
+            <div className="flex items-center gap-3 border-b-2 border-blue-500 pb-2">
+              <BarChart3 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-base font-medium text-blue-600 dark:text-blue-400">
                 Performance Analytics
               </span>
             </div>
@@ -640,13 +640,13 @@ export default function EmployeePerformancePage() {
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
             <div className="relative">
-              <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-purple-300" />
+              <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-blue-300" />
               <input
                 type="text"
                 placeholder="Search employees..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-9 pr-4 py-2 text-sm border border-gray-200 dark:border-purple-500/30 rounded-lg bg-white dark:bg-[rgba(15,17,41,0.6)] text-gray-900 dark:text-purple-100 placeholder:dark:text-purple-300/70 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent shadow-sm dark:shadow-purple-500/20 backdrop-blur-sm w-full sm:w-48"
+                className="pl-9 pr-4 py-2 text-sm border border-gray-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-[rgba(15,17,41,0.6)] text-gray-900 dark:text-blue-100 placeholder:dark:text-blue-300/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm dark:shadow-blue-500/20 backdrop-blur-sm w-full sm:w-48"
               />
             </div>
             {bestDay && (
@@ -663,7 +663,7 @@ export default function EmployeePerformancePage() {
       </div>
 
       {/* Actions Bar */}
-      <div className="px-6 py-3 liquid-glass border-b border-gray-200 dark:border-purple-500/30 flex justify-between items-center">
+      <div className="px-6 py-3 liquid-glass border-b border-gray-200 dark:border-blue-500/30 flex justify-between items-center">
         <div className="flex items-center gap-4">
           {bestDay && (
             <div className="flex items-center gap-2 text-sm">
@@ -684,12 +684,12 @@ export default function EmployeePerformancePage() {
 
       <div className="flex-1 overflow-hidden flex">
         {/* Employee Sidebar */}
-        <div className="w-80 border-r border-gray-200 dark:border-purple-500/30 liquid-glass flex flex-col">
-          <div className="px-6 py-4 border-b border-gray-200 dark:border-purple-500/30">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-purple-100">
+        <div className="w-80 border-r border-gray-200 dark:border-blue-500/30 liquid-glass flex flex-col">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-blue-500/30">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-blue-100">
               Team Members
             </h2>
-            <p className="text-sm text-gray-500 dark:text-purple-300/70 mt-1">
+            <p className="text-sm text-gray-500 dark:text-blue-300/70 mt-1">
               Select a member to view analytics
             </p>
           </div>
@@ -698,10 +698,10 @@ export default function EmployeePerformancePage() {
             {filteredEmployees.map((team) => (
               <div key={team.teamId}>
                 <div className="mb-3">
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-purple-100 mb-1">
+                  <h3 className="text-sm font-medium text-gray-900 dark:text-blue-100 mb-1">
                     {team.teamName}
                   </h3>
-                  <p className="text-xs text-gray-500 dark:text-purple-300/70">
+                  <p className="text-xs text-gray-500 dark:text-blue-300/70">
                     Lead: {team.teamLead}
                   </p>
                 </div>
@@ -728,8 +728,8 @@ export default function EmployeePerformancePage() {
                           navigate(`?empId=${emp.id}`, { replace: true }); // updates URL so refresh works
                         }}
                         className={`p-4 rounded-xl cursor-pointer border transition-all duration-300 ${selectedEmployee?.id === emp.id
-                            ? "border-purple-500 bg-purple-50 dark:bg-purple-500/20 shadow-lg dark:shadow-purple-500/20"
-                            : "border-gray-200 dark:border-purple-500/20 hover:border-purple-300 dark:hover:border-purple-500/40 hover:bg-gray-50 dark:hover:bg-purple-500/10 hover:shadow-md dark:hover:shadow-purple-500/10"
+                            ? "border-blue-500 bg-blue-50 dark:bg-blue-500/20 shadow-lg dark:shadow-blue-500/20"
+                            : "border-gray-200 dark:border-blue-500/20 hover:border-blue-300 dark:hover:border-blue-500/40 hover:bg-gray-50 dark:hover:bg-blue-500/10 hover:shadow-md dark:hover:shadow-blue-500/10"
                           }`}
                       >
                         <div className="flex items-center gap-3 mb-2">
@@ -741,25 +741,25 @@ export default function EmployeePerformancePage() {
                             className="w-8 h-8 rounded-full"
                           />
                           <div className="flex-1 min-w-0">
-                            <p className="font-medium text-gray-900 dark:text-purple-100 text-sm truncate">
+                            <p className="font-medium text-gray-900 dark:text-blue-100 text-sm truncate">
                               {emp.name}
                             </p>
-                            <p className="text-xs text-gray-500 dark:text-purple-300/70 truncate">
+                            <p className="text-xs text-gray-500 dark:text-blue-300/70 truncate">
                               {emp.department}
                             </p>
                           </div>
                         </div>
                         <div className="flex items-center justify-between text-xs">
-                          <span className="text-gray-600 dark:text-purple-300/70">
+                          <span className="text-gray-600 dark:text-blue-300/70">
                             {empTasks.length} tasks
                           </span>
-                          <span className="font-medium text-gray-900 dark:text-purple-100">
+                          <span className="font-medium text-gray-900 dark:text-blue-100">
                             {completionRate.toFixed(0)}% completionRate
                           </span>
                         </div>
-                        <div className="w-full bg-gray-200 dark:bg-purple-900/30 rounded-full h-2 mt-2">
+                        <div className="w-full bg-gray-200 dark:bg-blue-900/30 rounded-full h-2 mt-2">
                           <div
-                            className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full transition-all duration-500"
+                            className="bg-gradient-to-r from-blue-500 to-blue-500 h-2 rounded-full transition-all duration-500"
                             style={{ width: `${completionRate}%` }}
                           ></div>
                         </div>
@@ -790,9 +790,9 @@ export default function EmployeePerformancePage() {
                         selectedEmployee.name || selectedEmployee.email
                       )}`}
                       alt="avatar"
-                      className="w-16 h-16 rounded-full border-2 border-purple-200 dark:border-purple-500/30"
+                      className="w-16 h-16 rounded-full border-2 border-blue-200 dark:border-blue-500/30"
                     />
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full flex items-center justify-center">
                       <Award className="w-3 h-3 text-white" />
                     </div>
                   </div>
@@ -811,10 +811,10 @@ export default function EmployeePerformancePage() {
                         Send Mail
                       </button>
                     </div>
-                    <p className="text-gray-600 dark:text-purple-300/80">
+                    <p className="text-gray-600 dark:text-blue-300/80">
                       {selectedEmployee.department}
                     </p>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-500 dark:text-purple-300/70">
+                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-500 dark:text-blue-300/70">
                       <div className="flex items-center gap-1">
                         <User className="w-4 h-4" />
                         Employee ID: {selectedEmployee.id.slice(-6)}
@@ -825,13 +825,13 @@ export default function EmployeePerformancePage() {
      <div className="flex items-center gap-2">
   <div className="flex items-center gap-1">
     Performance Matrix:{" "}
-    <span className="font-bold text-purple-600 dark:text-purple-400">
+    <span className="font-bold text-blue-600 dark:text-blue-400">
       {performanceData.totalPerformanceScore}%
     </span>
   </div>
   
   <button
-    className="px-3 py-1 bg-purple-600 text-white rounded hover:bg-purple-700"
+    className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
     onClick={() => console.log("Button clicked")}
   >
     View Details
@@ -1130,7 +1130,7 @@ export default function EmployeePerformancePage() {
                                 <p className="font-medium text-gray-900 dark:text-gray-100">
                                   {label}
                                 </p>
-                                <p className="text-sm text-purple-600 dark:text-purple-400">
+                                <p className="text-sm text-blue-600 dark:text-blue-400">
                                   Score: {payload[0].value?.toFixed(1)}%
                                 </p>
                               </div>
@@ -1431,7 +1431,7 @@ export default function EmployeePerformancePage() {
                                     : score === 70
                                       ? "text-yellow-600"
                                       : score === 50
-                                        ? "text-orange-500"
+                                        ? "text-blue-500"
                                         : score === 30
                                           ? "text-yellow-800"
                                           : score === 10
@@ -1530,7 +1530,7 @@ export default function EmployeePerformancePage() {
       }
       75% {
         transform: translateY(5px);
-        color: #d97706; /* amber-600 */
+        color: #d97706; /* blue-600 */
       }
       100% {
         transform: translateY(0px);
@@ -1555,7 +1555,7 @@ export default function EmployeePerformancePage() {
 
 const StatCard = ({ label, value, icon: Icon, color = "blue", subtitle }) => {
   const colorMap = {
-    blue: "bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30",
+    blue: "bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30",
     green:
       "bg-green-100 dark:bg-green-500/20 text-green-600 dark:text-green-400 border border-green-200 dark:border-green-500/30",
     yellow:
@@ -1572,14 +1572,14 @@ const StatCard = ({ label, value, icon: Icon, color = "blue", subtitle }) => {
     >
       <div className="flex items-center justify-between relative z-10 h-full">
         <div>
-          <p className="text-sm font-medium text-gray-600 dark:text-purple-300/90 mb-2">
+          <p className="text-sm font-medium text-gray-600 dark:text-blue-300/90 mb-2">
             {label}
           </p>
           <p className="text-3xl font-bold text-gray-900 dark:text-white">
             {value}
           </p>
           {subtitle && (
-            <p className="text-xs text-gray-500 dark:text-purple-300/70 mt-1">
+            <p className="text-xs text-gray-500 dark:text-blue-300/70 mt-1">
               {subtitle}
             </p>
           )}

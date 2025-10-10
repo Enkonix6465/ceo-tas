@@ -201,9 +201,9 @@ function Projects() {
       case 'completed':
         return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       case 'on-hold':
-        return 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-500/30';
+        return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       case 'planning':
-        return 'bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-500/30';
+        return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       default:
         return 'bg-gray-50 dark:bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-500/30';
     }
@@ -227,18 +227,18 @@ function Projects() {
   // Error boundary fallback
   if (hasError && connectionStatus === 'offline') {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
-        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl shadow-lg max-w-md">
-          <div className="p-4 bg-orange-100 dark:bg-orange-500/20 rounded-xl mb-4 inline-block">
-            <AlertCircle className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
+        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl shadow-lg max-w-md">
+          <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+            <AlertCircle className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
           <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">Projects Unavailable</h3>
-          <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4">
+          <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4">
             Unable to load projects. Please check your connection.
           </p>
           <button
             onClick={handleRefresh}
-            className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
+            className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
           >
             Try Again
           </button>
@@ -249,34 +249,34 @@ function Projects() {
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-violet-600 dark:text-violet-400 font-medium">Loading Projects...</p>
+          <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-blue-600 dark:text-blue-400 font-medium">Loading Projects...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:from-slate-800 dark:via-purple-900/40 dark:to-indigo-900/60 flex flex-col relative overflow-hidden">
+    <div className="h-full bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:from-slate-800 dark:via-blue-900/40 dark:to-rose-900/60 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-slate-200/30 via-purple-200/40 to-indigo-300/50 dark:from-slate-700/20 dark:via-purple-800/30 dark:to-indigo-900/40 rounded-full blur-3xl opacity-70"></div>
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-br from-purple-200/30 via-indigo-200/40 to-slate-300/50 dark:from-purple-800/20 dark:via-indigo-900/30 dark:to-slate-700/40 rounded-full blur-3xl opacity-70"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-indigo-200/20 via-purple-200/30 to-slate-200/40 dark:from-indigo-800/15 dark:via-purple-900/25 dark:to-slate-800/35 rounded-full blur-2xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-slate-200/30 via-blue-200/40 to-rose-300/50 dark:from-slate-700/20 dark:via-blue-800/30 dark:to-rose-900/40 rounded-full blur-3xl opacity-70"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-200/30 via-rose-200/40 to-slate-300/50 dark:from-blue-800/20 dark:via-rose-900/30 dark:to-slate-700/40 rounded-full blur-3xl opacity-70"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-rose-200/20 via-blue-200/30 to-slate-200/40 dark:from-rose-800/15 dark:via-blue-900/25 dark:to-slate-800/35 rounded-full blur-2xl opacity-60"></div>
       </div>
 
       {/* Header */}
-      <div className="relative z-10 bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-indigo-500/20 px-6 py-4 shadow-xl">
+      <div className="relative z-10 bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-rose-500/20 px-6 py-4 shadow-xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-slate-600 via-purple-600 to-indigo-700 rounded-2xl shadow-lg ring-2 ring-white/20">
+              <div className="p-3 bg-gradient-to-br from-slate-600 via-blue-600 to-rose-700 rounded-2xl shadow-lg ring-2 ring-white/20">
                 <Target className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-700 via-purple-700 to-indigo-800 dark:from-slate-300 dark:via-purple-300 dark:to-indigo-200 bg-clip-text text-transparent tracking-tight">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-700 via-blue-700 to-rose-800 dark:from-slate-300 dark:via-blue-300 dark:to-rose-200 bg-clip-text text-transparent tracking-tight">
                   Projects
                 </h1>
                 <p className="text-sm text-slate-600/80 dark:text-slate-300/80 font-medium tracking-wide">
@@ -289,12 +289,12 @@ function Projects() {
               connectionStatus === 'connected'
                 ? 'bg-emerald-50/90 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-200/70 dark:border-emerald-500/30 ring-1 ring-emerald-200/50'
                 : connectionStatus === 'connecting'
-                ? 'bg-amber-50/90 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-200/70 dark:border-amber-500/30 ring-1 ring-amber-200/50'
+                ? 'bg-blue-50/90 dark:bg-blue-500/15 text-blue-700 dark:text-blue-300 border-blue-200/70 dark:border-blue-500/30 ring-1 ring-blue-200/50'
                 : 'bg-slate-50/90 dark:bg-slate-500/15 text-slate-700 dark:text-slate-300 border-slate-200/70 dark:border-slate-500/30 ring-1 ring-slate-200/50'
             }`}>
               <div className={`w-2 h-2 rounded-full ${
                 connectionStatus === 'connected' ? 'bg-emerald-500' :
-                connectionStatus === 'connecting' ? 'bg-amber-500 animate-pulse' :
+                connectionStatus === 'connecting' ? 'bg-blue-500 animate-pulse' :
                 'bg-gray-500'
               }`}></div>
               {projects.length} Projects
@@ -305,14 +305,14 @@ function Projects() {
             <button
               onClick={handleRefresh}
               disabled={loading}
-              className="p-2 bg-white/70 dark:bg-slate-800/70 text-violet-600 dark:text-violet-300 hover:bg-violet-100/70 dark:hover:bg-violet-700/40 border border-violet-200/60 dark:border-violet-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
+              className="p-2 bg-white/70 dark:bg-slate-800/70 text-blue-600 dark:text-blue-300 hover:bg-blue-100/70 dark:hover:bg-blue-700/40 border border-blue-200/60 dark:border-blue-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             </button>
             
             <button
               onClick={() => setShowModal(true)}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-600 via-purple-600 to-indigo-700 hover:from-slate-700 hover:via-purple-700 hover:to-indigo-800 text-white rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl text-sm font-semibold ring-2 ring-white/20 hover:ring-white/30"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-600 via-blue-600 to-rose-700 hover:from-slate-700 hover:via-blue-700 hover:to-rose-800 text-white rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl text-sm font-semibold ring-2 ring-white/20 hover:ring-white/30"
             >
               <PlusCircle className="w-4 h-4" />
               New Project
@@ -329,7 +329,7 @@ function Projects() {
               placeholder="Search projects..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-500/30 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-lg backdrop-blur-sm transition-all duration-300"
+              className="w-full pl-11 pr-4 py-3 bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-500/30 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 shadow-lg backdrop-blur-sm transition-all duration-300"
             />
           </div>
 
@@ -361,10 +361,10 @@ function Projects() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="mt-3 p-3 bg-indigo-50/80 dark:bg-indigo-500/10 border border-indigo-200/60 dark:border-indigo-500/30 rounded-lg backdrop-blur-sm"
+            className="mt-3 p-3 bg-rose-50/80 dark:bg-rose-500/10 border border-rose-200/60 dark:border-rose-500/30 rounded-lg backdrop-blur-sm"
           >
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-indigo-700 dark:text-indigo-300">
+              <div className="flex items-center gap-2 text-sm text-rose-700 dark:text-rose-300">
                 <Filter className="w-4 h-4" />
                 <span>
                   Showing {filteredProjects.length} of {projects.length} projects
@@ -379,7 +379,7 @@ function Projects() {
                   </span>
                 )}
                 {filterStatus !== 'all' && (
-                  <span className="px-2 py-1 bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 rounded text-xs capitalize">
+                  <span className="px-2 py-1 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded text-xs capitalize">
                     {filterStatus === 'on-hold' ? 'On Hold' : filterStatus}
                   </span>
                 )}
@@ -394,11 +394,11 @@ function Projects() {
         {filteredProjects.length === 0 ? (
           <div className="flex items-center justify-center h-64">
             <div className="text-center">
-              <div className="p-4 bg-violet-100 dark:bg-violet-500/20 rounded-xl mb-4 inline-block">
-                <Target className="w-8 h-8 text-violet-600 dark:text-violet-400" />
+              <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+                <Target className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               </div>
               <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">No Projects Found</h3>
-              <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4">
+              <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4">
                 {searchTerm || filterStatus !== 'all'
                   ? `No projects found ${searchTerm ? `matching "${searchTerm}"` : ''} ${filterStatus !== 'all' ? `with status "${filterStatus}"` : ''}. Try adjusting your filters.`
                   : 'Create your first project to get started'
@@ -407,7 +407,7 @@ function Projects() {
               {!searchTerm && filterStatus === 'all' && (
                 <button
                   onClick={() => setShowModal(true)}
-                  className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
+                  className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
                 >
                   Create Project
                 </button>
@@ -429,7 +429,7 @@ function Projects() {
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg">
+                      <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                         <StatusIcon className="w-4 h-4 text-white" />
                       </div>
                       <div>
@@ -443,9 +443,9 @@ function Projects() {
                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
                         onClick={() => handleEdit(project)}
-                        className="p-1 hover:bg-violet-100 dark:hover:bg-violet-500/20 rounded-lg transition-colors"
+                        className="p-1 hover:bg-blue-100 dark:hover:bg-blue-500/20 rounded-lg transition-colors"
                       >
-                        <Edit2 className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+                        <Edit2 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       </button>
                       <button
                         onClick={() => handleDelete(project.id)}
@@ -456,11 +456,11 @@ function Projects() {
                     </div>
                   </div>
                   
-                  <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4 line-clamp-2">
+                  <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4 line-clamp-2">
                     {project.description}
                   </p>
                   
-                  <div className="space-y-2 text-xs text-violet-600/70 dark:text-violet-300/70">
+                  <div className="space-y-2 text-xs text-blue-600/70 dark:text-blue-300/70">
                     {project.startDate && (
                       <div className="flex items-center gap-2">
                         <Calendar className="w-3 h-3" />
@@ -515,7 +515,7 @@ function Projects() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -528,7 +528,7 @@ function Projects() {
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     rows={3}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -542,7 +542,7 @@ function Projects() {
                       type="date"
                       value={formData.startDate}
                       onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                      className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                      className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                   
@@ -554,7 +554,7 @@ function Projects() {
                       type="date"
                       value={formData.deadline}
                       onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
-                      className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                      className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 </div>
@@ -566,7 +566,7 @@ function Projects() {
                   <select
                     value={formData.status}
                     onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="planning">Planning</option>
                     <option value="active">Active</option>
@@ -583,13 +583,13 @@ function Projects() {
                       setEditingProject(null);
                       setFormData({ name: "", description: "", startDate: "", deadline: "", teamId: "", status: "planning" });
                     }}
-                    className="flex-1 px-4 py-2 border border-violet-200 dark:border-violet-500/30 text-violet-600 dark:text-violet-400 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-500/10 transition-colors"
+                    className="flex-1 px-4 py-2 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium"
+                    className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium"
                   >
                     {editingProject ? 'Update' : 'Create'}
                   </button>

@@ -147,21 +147,21 @@ export default function RaiseProjectTicket() {
   };
 
   return (
-    <div className="h-full bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20 p-6">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:from-blue-900/20 dark:via-blue-900/20 dark:to-rose-900/20 p-6">
       <motion.div
         className="max-w-3xl mx-auto liquid-glass-card"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-purple-100">Raise Project Ticket</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-blue-100">Raise Project Ticket</h2>
 
         {/* Project Selector */}
         <div className="mb-4">
-          <label className="block font-medium text-gray-900 dark:text-purple-100">Select Project</label>
+          <label className="block font-medium text-gray-900 dark:text-blue-100">Select Project</label>
           <select
             value={selectedProjectId}
             onChange={(e) => setSelectedProjectId(e.target.value)}
-            className="w-full border border-gray-200 dark:border-purple-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-purple-100"
+            className="w-full border border-gray-200 dark:border-blue-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-blue-100"
           >
             <option value="">-- Select a project --</option>
             {projects.map((p) => (
@@ -174,11 +174,11 @@ export default function RaiseProjectTicket() {
 
         {/* Project Details Preview */}
         {projectDetails && (
-          <div className="mb-4 p-4 border border-purple-200 dark:border-purple-500/30 rounded bg-purple-50 dark:bg-black/50">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-purple-100">{projectDetails.name}</h3>
-            <p className="text-gray-700 dark:text-purple-300/80">{projectDetails.description}</p>
+          <div className="mb-4 p-4 border border-blue-200 dark:border-blue-500/30 rounded bg-blue-50 dark:bg-black/50">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-blue-100">{projectDetails.name}</h3>
+            <p className="text-gray-700 dark:text-blue-300/80">{projectDetails.description}</p>
             {projectDetails.deadline && (
-              <p className="text-sm text-gray-500 dark:text-purple-300/70">
+              <p className="text-sm text-gray-500 dark:text-blue-300/70">
                 Deadline: {projectDetails.deadline}
               </p>
             )}
@@ -189,33 +189,33 @@ export default function RaiseProjectTicket() {
         {selectedProjectId && (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block font-medium text-gray-900 dark:text-purple-100">Title</label>
+              <label className="block font-medium text-gray-900 dark:text-blue-100">Title</label>
               <input
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full border border-gray-200 dark:border-purple-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-purple-100"
+                className="w-full border border-gray-200 dark:border-blue-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-blue-100"
                 required
               />
             </div>
 
             <div>
-              <label className="block font-medium text-gray-900 dark:text-purple-100">Description</label>
+              <label className="block font-medium text-gray-900 dark:text-blue-100">Description</label>
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="w-full border border-gray-200 dark:border-purple-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-purple-100"
+                className="w-full border border-gray-200 dark:border-blue-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-blue-100"
                 rows={4}
                 required
               />
             </div>
 
             <div>
-              <label className="block font-medium text-gray-900 dark:text-purple-100">Priority</label>
+              <label className="block font-medium text-gray-900 dark:text-blue-100">Priority</label>
               <select
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
-                className="w-full border border-gray-200 dark:border-purple-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-purple-100"
+                className="w-full border border-gray-200 dark:border-blue-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-blue-100"
               >
                 <option>Low</option>
                 <option>Medium</option>
@@ -224,12 +224,12 @@ export default function RaiseProjectTicket() {
             </div>
 
             <div>
-              <label className="block font-medium text-gray-900 dark:text-purple-100">Due Date</label>
+              <label className="block font-medium text-gray-900 dark:text-blue-100">Due Date</label>
               <input
                 type="date"
                 value={dueDate}
                 onChange={(e) => setDueDate(e.target.value)}
-                className="w-full border border-gray-200 dark:border-purple-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-purple-100"
+                className="w-full border border-gray-200 dark:border-blue-500/30 px-3 py-2 rounded mt-1 bg-white dark:bg-black/95 text-gray-900 dark:text-blue-100"
                 required
               />
             </div>
@@ -237,7 +237,7 @@ export default function RaiseProjectTicket() {
             <button
               type="submit"
               disabled={loading}
-              className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg transition-all shadow-lg"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2 rounded-lg transition-all shadow-lg"
             >
               {loading ? "Submitting..." : "Raise Ticket"}
             </button>

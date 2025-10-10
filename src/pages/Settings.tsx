@@ -193,24 +193,24 @@ const Settings = () => {
   ];
 
   return (
-    <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex flex-col relative overflow-hidden">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-violet-200/20 to-purple-200/20 dark:from-violet-900/10 dark:to-purple-900/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-indigo-200/20 to-violet-200/20 dark:from-indigo-900/10 dark:to-violet-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-rose-200/20 to-blue-200/20 dark:from-rose-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
       </div>
 
       {/* Header */}
-      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-violet-200/50 dark:border-violet-500/20 px-6 py-4 shadow-lg">
+      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-blue-200/50 dark:border-blue-500/20 px-6 py-4 shadow-lg">
         <div className="flex items-center gap-4">
-          <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl shadow-lg">
+          <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
             <SettingsIcon className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-rose-600 dark:from-blue-400 dark:via-blue-400 dark:to-rose-400 bg-clip-text text-transparent">
               Settings
             </h1>
-            <p className="text-xs text-violet-600/70 dark:text-violet-300/70 font-medium">
+            <p className="text-xs text-blue-600/70 dark:text-blue-300/70 font-medium">
               Manage your preferences
             </p>
           </div>
@@ -220,7 +220,7 @@ const Settings = () => {
       {/* Content */}
       <div className="relative z-10 flex-1 overflow-hidden flex">
         {/* Sidebar */}
-        <div className="w-64 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-r border-violet-200/50 dark:border-violet-500/20 p-4">
+        <div className="w-64 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border-r border-blue-200/50 dark:border-blue-500/20 p-4">
           <nav className="space-y-2">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -230,8 +230,8 @@ const Settings = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 text-left ${
                     activeTab === tab.id
-                      ? 'bg-gradient-to-r from-violet-100 to-purple-100 dark:bg-gradient-to-r dark:from-violet-800/40 dark:to-purple-800/40 text-violet-700 dark:text-violet-200 font-semibold shadow-lg border border-violet-200 dark:border-violet-600/40'
-                      : 'text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 dark:hover:bg-gradient-to-r dark:hover:from-violet-800/20 dark:hover:to-purple-800/20 hover:text-violet-700 dark:hover:text-violet-200'
+                      ? 'bg-gradient-to-r from-blue-100 to-blue-100 dark:bg-gradient-to-r dark:from-blue-800/40 dark:to-blue-800/40 text-blue-700 dark:text-blue-200 font-semibold shadow-lg border border-blue-200 dark:border-blue-600/40'
+                      : 'text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 dark:hover:bg-gradient-to-r dark:hover:from-blue-800/20 dark:hover:to-blue-800/20 hover:text-blue-700 dark:hover:text-blue-200'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -252,15 +252,15 @@ const Settings = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-6"
               >
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
                   <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-6">Profile Information</h2>
                   
                   <div className="flex items-center gap-6 mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
                       {profileData.fullName.charAt(0) || user?.email?.charAt(0)?.toUpperCase() || 'U'}
                     </div>
                     <div>
-                      <button className="flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-500/20 text-violet-700 dark:text-violet-300 rounded-lg hover:bg-violet-200 dark:hover:bg-violet-500/30 transition-colors">
+                      <button className="flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-500/30 transition-colors">
                         <Upload className="w-4 h-4" />
                         Change Avatar
                       </button>
@@ -277,7 +277,7 @@ const Settings = () => {
                         type="text"
                         value={profileData.fullName}
                         onChange={(e) => setProfileData({...profileData, fullName: e.target.value})}
-                        className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     
@@ -289,7 +289,7 @@ const Settings = () => {
                         type="email"
                         value={profileData.email}
                         onChange={(e) => setProfileData({...profileData, email: e.target.value})}
-                        className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     
@@ -301,7 +301,7 @@ const Settings = () => {
                         type="tel"
                         value={profileData.phone}
                         onChange={(e) => setProfileData({...profileData, phone: e.target.value})}
-                        className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     
@@ -313,7 +313,7 @@ const Settings = () => {
                         type="text"
                         value={profileData.location}
                         onChange={(e) => setProfileData({...profileData, location: e.target.value})}
-                        className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                   </div>
@@ -326,7 +326,7 @@ const Settings = () => {
                       value={profileData.bio}
                       onChange={(e) => setProfileData({...profileData, bio: e.target.value})}
                       rows={4}
-                      className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                      className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Tell us about yourself..."
                     />
                   </div>
@@ -334,7 +334,7 @@ const Settings = () => {
                   <button
                     onClick={handleSaveProfile}
                     disabled={isLoading}
-                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
+                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
                   >
                     <Save className="w-4 h-4" />
                     {isLoading ? 'Saving...' : 'Save Changes'}
@@ -350,7 +350,7 @@ const Settings = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-6"
               >
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
                   <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-6">Preferences</h2>
                   
                   {/* Theme Setting */}
@@ -371,8 +371,8 @@ const Settings = () => {
                             onClick={() => setPreferences({...preferences, theme: option.value})}
                             className={`flex flex-col items-center gap-2 p-4 rounded-lg border transition-all ${
                               preferences.theme === option.value
-                                ? 'bg-violet-100 dark:bg-violet-500/20 border-violet-300 dark:border-violet-500 text-violet-700 dark:text-violet-300'
-                                : 'bg-white dark:bg-slate-700 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-violet-50 dark:hover:bg-violet-500/10'
+                                ? 'bg-blue-100 dark:bg-blue-500/20 border-blue-300 dark:border-blue-500 text-blue-700 dark:text-blue-300'
+                                : 'bg-white dark:bg-slate-700 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-500/10'
                             }`}
                           >
                             <Icon className="w-5 h-5" />
@@ -392,7 +392,7 @@ const Settings = () => {
                       <select
                         value={preferences.language}
                         onChange={(e) => setPreferences({...preferences, language: e.target.value})}
-                        className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       >
                         <option value="en">English</option>
                         <option value="es">Spanish</option>
@@ -408,7 +408,7 @@ const Settings = () => {
                       <select
                         value={preferences.timezone}
                         onChange={(e) => setPreferences({...preferences, timezone: e.target.value})}
-                        className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       >
                         <option value="UTC">UTC</option>
                         <option value="EST">Eastern Time</option>
@@ -421,7 +421,7 @@ const Settings = () => {
                   <button
                     onClick={handleSavePreferences}
                     disabled={isLoading}
-                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
+                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
                   >
                     <Save className="w-4 h-4" />
                     {isLoading ? 'Saving...' : 'Save Preferences'}
@@ -437,7 +437,7 @@ const Settings = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-6"
               >
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
                   <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-6">Security Settings</h2>
                   
                   <div className="space-y-6">
@@ -450,7 +450,7 @@ const Settings = () => {
                       <button
                         onClick={() => setSecurity({...security, twoFactorEnabled: !security.twoFactorEnabled})}
                         className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                          security.twoFactorEnabled ? 'bg-violet-600' : 'bg-gray-300 dark:bg-gray-600'
+                          security.twoFactorEnabled ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'
                         }`}
                       >
                         <span
@@ -469,7 +469,7 @@ const Settings = () => {
                       <select
                         value={security.sessionTimeout}
                         onChange={(e) => setSecurity({...security, sessionTimeout: e.target.value})}
-                        className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       >
                         <option value="15">15 minutes</option>
                         <option value="30">30 minutes</option>
@@ -487,7 +487,7 @@ const Settings = () => {
                       <button
                         onClick={() => setSecurity({...security, loginHistory: !security.loginHistory})}
                         className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                          security.loginHistory ? 'bg-violet-600' : 'bg-gray-300 dark:bg-gray-600'
+                          security.loginHistory ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'
                         }`}
                       >
                         <span
@@ -513,7 +513,7 @@ const Settings = () => {
                           </div>
                           <button
                             onClick={() => setPasswordReset({...passwordReset, showPasswordForm: !passwordReset.showPasswordForm})}
-                            className="px-4 py-2 bg-violet-100 dark:bg-violet-500/20 text-violet-700 dark:text-violet-300 rounded-lg hover:bg-violet-200 dark:hover:bg-violet-500/30 transition-colors flex items-center gap-2"
+                            className="px-4 py-2 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-500/30 transition-colors flex items-center gap-2"
                           >
                             <KeyRound className="w-4 h-4" />
                             {passwordReset.showPasswordForm ? 'Cancel' : 'Change Password'}
@@ -530,7 +530,7 @@ const Settings = () => {
                                 type="password"
                                 value={passwordReset.currentPassword}
                                 onChange={(e) => setPasswordReset({...passwordReset, currentPassword: e.target.value})}
-                                className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                                className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Enter current password"
                               />
                             </div>
@@ -543,7 +543,7 @@ const Settings = () => {
                                 type="password"
                                 value={passwordReset.newPassword}
                                 onChange={(e) => setPasswordReset({...passwordReset, newPassword: e.target.value})}
-                                className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                                className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Enter new password"
                               />
                             </div>
@@ -556,7 +556,7 @@ const Settings = () => {
                                 type="password"
                                 value={passwordReset.confirmPassword}
                                 onChange={(e) => setPasswordReset({...passwordReset, confirmPassword: e.target.value})}
-                                className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                                className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Confirm new password"
                               />
                             </div>
@@ -564,7 +564,7 @@ const Settings = () => {
                             <button
                               onClick={handleChangePassword}
                               disabled={isChangingPassword}
-                              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
+                              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
                             >
                               {isChangingPassword ? (
                                 <>
@@ -614,7 +614,7 @@ const Settings = () => {
                   <button
                     onClick={handleSaveSecurity}
                     disabled={isLoading}
-                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
+                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
                   >
                     <Save className="w-4 h-4" />
                     {isLoading ? 'Saving...' : 'Save Security Settings'}
@@ -630,7 +630,7 @@ const Settings = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-6"
               >
-                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg">
+                <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg">
                   <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-6">Notification Preferences</h2>
                   
                   <div className="space-y-4">
@@ -648,7 +648,7 @@ const Settings = () => {
                         <button
                           onClick={() => setPreferences({...preferences, [item.key]: !preferences[item.key as keyof typeof preferences]})}
                           className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                            preferences[item.key as keyof typeof preferences] ? 'bg-violet-600' : 'bg-gray-300 dark:bg-gray-600'
+                            preferences[item.key as keyof typeof preferences] ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'
                           }`}
                         >
                           <span
@@ -664,7 +664,7 @@ const Settings = () => {
                   <button
                     onClick={handleSavePreferences}
                     disabled={isLoading}
-                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
+                    className="mt-6 flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium disabled:opacity-50"
                   >
                     <Save className="w-4 h-4" />
                     {isLoading ? 'Saving...' : 'Save Notification Settings'}

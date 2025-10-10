@@ -110,11 +110,11 @@ export function LoginForm({
             <div className="flex justify-end mb-8">
               <button
                 onClick={toggleTheme}
-                className="p-3 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-50 dark:from-slate-800 dark:to-violet-900/50 border border-violet-200/50 dark:border-violet-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group backdrop-blur-sm"
+                className="p-3 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-50 dark:from-slate-800 dark:to-blue-900/50 border border-blue-200/50 dark:border-blue-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group backdrop-blur-sm"
                 title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               >
                 {theme === 'light' ? (
-                  <Moon className="w-5 h-5 text-violet-600 group-hover:text-violet-700 transition-colors" />
+                  <Moon className="w-5 h-5 text-blue-600 group-hover:text-blue-700 transition-colors" />
                 ) : (
                   <Sun className="w-5 h-5 text-yellow-500 group-hover:text-yellow-600 transition-colors" />
                 )}
@@ -123,10 +123,10 @@ export function LoginForm({
 
             {/* Logo */}
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
                 <User className="w-6 h-6 text-white" />
               </div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400 bg-clip-text text-transparent">
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
                 ENKONIX TAS
               </div>
             </div>
@@ -161,14 +161,14 @@ export function LoginForm({
                         value={resetEmail}
                         onChange={(e) => setResetEmail(e.target.value)}
                         required
-                        className="h-14 pl-12 pr-4 rounded-2xl border-gray-200 dark:border-gray-600 bg-gray-50/50 dark:bg-slate-800/50 text-gray-900 dark:text-slate-100 placeholder:text-gray-500 dark:placeholder:text-slate-400 focus:border-violet-500 dark:focus:border-violet-400 focus:ring-violet-500/20 backdrop-blur-sm transition-all duration-300 shadow-sm focus:shadow-lg"
+                        className="h-14 pl-12 pr-4 rounded-2xl border-gray-200 dark:border-gray-600 bg-gray-50/50 dark:bg-slate-800/50 text-gray-900 dark:text-slate-100 placeholder:text-gray-500 dark:placeholder:text-slate-400 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/20 backdrop-blur-sm transition-all duration-300 shadow-sm focus:shadow-lg"
                       />
                     </div>
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full h-14 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 text-lg"
+                    className="w-full h-14 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 text-lg"
                     disabled={isResetting}
                   >
                     {isResetting ? (
@@ -198,7 +198,7 @@ export function LoginForm({
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className="h-14 pl-12 pr-4 rounded-2xl border-gray-200 dark:border-gray-600 bg-gray-50/50 dark:bg-slate-800/50 text-gray-900 dark:text-slate-100 placeholder:text-gray-500 dark:placeholder:text-slate-400 focus:border-violet-500 dark:focus:border-violet-400 focus:ring-violet-500/20 backdrop-blur-sm transition-all duration-300 shadow-sm focus:shadow-lg"
+                        className="h-14 pl-12 pr-4 rounded-2xl border-gray-200 dark:border-gray-600 bg-gray-50/50 dark:bg-slate-800/50 text-gray-900 dark:text-slate-100 placeholder:text-gray-500 dark:placeholder:text-slate-400 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/20 backdrop-blur-sm transition-all duration-300 shadow-sm focus:shadow-lg"
                       />
                     </div>
                   </div>
@@ -216,7 +216,7 @@ export function LoginForm({
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="h-14 pl-12 pr-4 rounded-2xl border-gray-200 dark:border-gray-600 bg-gray-50/50 dark:bg-slate-800/50 text-gray-900 dark:text-slate-100 placeholder:text-gray-500 dark:placeholder:text-slate-400 focus:border-violet-500 dark:focus:border-violet-400 focus:ring-violet-500/20 backdrop-blur-sm transition-all duration-300 shadow-sm focus:shadow-lg"
+                        className="h-14 pl-12 pr-4 rounded-2xl border-gray-200 dark:border-gray-600 bg-gray-50/50 dark:bg-slate-800/50 text-gray-900 dark:text-slate-100 placeholder:text-gray-500 dark:placeholder:text-slate-400 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/20 backdrop-blur-sm transition-all duration-300 shadow-sm focus:shadow-lg"
                       />
                     </div>
                   </div>
@@ -224,13 +224,13 @@ export function LoginForm({
 
                 <div className="flex items-center justify-between text-sm">
                   <label className="flex items-center">
-                    <input type="checkbox" className="rounded border-gray-300 dark:border-gray-600 text-violet-600 focus:ring-violet-500/20" />
+                    <input type="checkbox" className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500/20" />
                     <span className="ml-2 text-gray-600 dark:text-gray-400">Remember me</span>
                   </label>
                   <button 
                     type="button"
                     onClick={() => setShowForgotPassword(true)}
-                    className="text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 font-medium transition-colors"
+                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
                   >
                     Forgot your password?
                   </button>
@@ -238,7 +238,7 @@ export function LoginForm({
 
                 <Button 
                   type="submit" 
-                  className="w-full h-14 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 text-lg"
+                  className="w-full h-14 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 text-lg"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -272,14 +272,14 @@ export function LoginForm({
               {/* Quote Section */}
               <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-2xl p-6 shadow-lg rotating-border">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-violet-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm font-bold">"</span>
                   </div>
                   <div>
                     <p className="text-gray-800 dark:text-gray-200 font-medium italic leading-relaxed">
                       {currentQuote}
                     </p>
-                    <p className="text-sm text-violet-600 dark:text-violet-400 mt-3 font-semibold">
+                    <p className="text-sm text-blue-600 dark:text-blue-400 mt-3 font-semibold">
                       — ENKONIX
                     </p>
                   </div>
@@ -290,33 +290,33 @@ export function LoginForm({
           </div>
           
           {/* Decorative Elements - repositioned to avoid text overlap */}
-          <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-violet-300/70 to-purple-400/80 dark:from-violet-700/80 dark:to-purple-600/90 rounded-full opacity-75 animate-floating-circle shadow-lg"></div>
-          <div className="absolute top-16 -right-12 w-6 h-6 bg-gradient-to-br from-purple-300/80 to-indigo-400/90 dark:from-purple-600/90 dark:to-indigo-500/95 rounded-full opacity-60 animate-orbit shadow-md" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-16 -right-10 w-10 h-10 bg-gradient-to-br from-indigo-300/70 to-violet-400/80 dark:from-indigo-600/80 dark:to-violet-500/90 rounded-full opacity-65 animate-scale-pulse shadow-lg" style={{animationDelay: '2s'}}></div>
+          <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-blue-300/70 to-blue-400/80 dark:from-blue-700/80 dark:to-blue-600/90 rounded-full opacity-75 animate-floating-circle shadow-lg"></div>
+          <div className="absolute top-16 -right-12 w-6 h-6 bg-gradient-to-br from-blue-300/80 to-blue-400/90 dark:from-blue-600/90 dark:to-blue-500/95 rounded-full opacity-60 animate-orbit shadow-md" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-16 -right-10 w-10 h-10 bg-gradient-to-br from-blue-300/70 to-blue-400/80 dark:from-blue-600/80 dark:to-blue-500/90 rounded-full opacity-65 animate-scale-pulse shadow-lg" style={{animationDelay: '2s'}}></div>
 
           {/* Additional animated particles - improved contrast */}
-          <div className="absolute top-32 -right-16 w-4 h-4 bg-violet-400/80 dark:bg-violet-300/90 rounded-full animate-gentle-drift shadow-sm" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute top-48 -right-6 w-5 h-5 bg-purple-400/60 dark:bg-purple-300/75 rounded-full animate-parallax-float shadow-md" style={{animationDelay: '3s'}}></div>
-          <div className="absolute bottom-32 -right-14 w-3 h-3 bg-indigo-400/85 dark:bg-indigo-300/95 rounded-full animate-glow-pulse shadow-sm" style={{animationDelay: '4.5s'}}></div>
+          <div className="absolute top-32 -right-16 w-4 h-4 bg-blue-400/80 dark:bg-blue-300/90 rounded-full animate-gentle-drift shadow-sm" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute top-48 -right-6 w-5 h-5 bg-blue-400/60 dark:bg-blue-300/75 rounded-full animate-parallax-float shadow-md" style={{animationDelay: '3s'}}></div>
+          <div className="absolute bottom-32 -right-14 w-3 h-3 bg-blue-400/85 dark:bg-blue-300/95 rounded-full animate-glow-pulse shadow-sm" style={{animationDelay: '4.5s'}}></div>
 
           {/* Floating geometric shapes - enhanced visibility */}
-          <div className="absolute top-24 -right-20 w-5 h-5 bg-gradient-to-br from-violet-400/50 to-purple-500/70 dark:from-violet-500/70 dark:to-purple-400/90 rounded-sm rotate-45 animate-orbit-reverse shadow-md" style={{animationDelay: '2.2s'}}></div>
-          <div className="absolute bottom-24 -right-18 w-8 h-2 bg-gradient-to-r from-purple-400/70 to-indigo-500/80 dark:from-purple-500/80 dark:to-indigo-400/90 animate-ripple shadow-sm" style={{animationDelay: '3.8s'}}></div>
+          <div className="absolute top-24 -right-20 w-5 h-5 bg-gradient-to-br from-blue-400/50 to-blue-500/70 dark:from-blue-500/70 dark:to-blue-400/90 rounded-sm rotate-45 animate-orbit-reverse shadow-md" style={{animationDelay: '2.2s'}}></div>
+          <div className="absolute bottom-24 -right-18 w-8 h-2 bg-gradient-to-r from-blue-400/70 to-blue-500/80 dark:from-blue-500/80 dark:to-blue-400/90 animate-ripple shadow-sm" style={{animationDelay: '3.8s'}}></div>
 
           {/* Left side decorative elements */}
-          <div className="absolute top-12 -left-6 w-4 h-4 bg-gradient-to-br from-violet-300/60 to-purple-400/70 dark:from-violet-600/80 dark:to-purple-500/90 rounded-full animate-gentle-drift shadow-md" style={{animationDelay: '1.5s'}}></div>
-          <div className="absolute bottom-12 -left-8 w-6 h-6 bg-gradient-to-br from-indigo-300/50 to-violet-400/60 dark:from-indigo-600/70 dark:to-violet-500/80 rounded-full animate-parallax-float shadow-lg" style={{animationDelay: '2.8s'}}></div>
+          <div className="absolute top-12 -left-6 w-4 h-4 bg-gradient-to-br from-blue-300/60 to-blue-400/70 dark:from-blue-600/80 dark:to-blue-500/90 rounded-full animate-gentle-drift shadow-md" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute bottom-12 -left-8 w-6 h-6 bg-gradient-to-br from-blue-300/50 to-blue-400/60 dark:from-blue-600/70 dark:to-blue-500/80 rounded-full animate-parallax-float shadow-lg" style={{animationDelay: '2.8s'}}></div>
         </div>
       </div>
       
       {/* Bottom Text */}
       <div className="text-center mt-8 text-sm text-gray-600 dark:text-gray-300">
         By continuing, you agree to our{" "}
-        <a href="#" className="text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 underline underline-offset-2 transition-colors">
+        <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline underline-offset-2 transition-colors">
           Terms of Service
         </a>{" "}
         and{" "}
-        <a href="#" className="text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 underline underline-offset-2 transition-colors">
+        <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline underline-offset-2 transition-colors">
           Privacy Policy
         </a>
       </div>

@@ -213,7 +213,7 @@ const UserManagement = () => {
       case 'project_manager':
         return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       case 'team_lead':
-        return 'bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-500/30';
+        return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       case 'developer':
         return 'bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-400 border-green-200 dark:border-green-500/30';
       default:
@@ -237,18 +237,18 @@ const UserManagement = () => {
   // Error boundary fallback
   if (hasError && connectionStatus === 'offline') {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
-        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl shadow-lg max-w-md">
-          <div className="p-4 bg-orange-100 dark:bg-orange-500/20 rounded-xl mb-4 inline-block">
-            <AlertCircle className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
+        <div className="text-center p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl shadow-lg max-w-md">
+          <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+            <AlertCircle className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
           <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">Users Unavailable</h3>
-          <p className="text-sm text-violet-600/70 dark:text-violet-300/70 mb-4">
+          <p className="text-sm text-blue-600/70 dark:text-blue-300/70 mb-4">
             Unable to load user data. Please check your connection.
           </p>
           <button
             onClick={handleRefresh}
-            className="px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
+            className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg text-sm font-medium"
           >
             Try Again
           </button>
@@ -259,36 +259,36 @@ const UserManagement = () => {
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-violet-900/10 dark:to-indigo-900/5 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-900/10 dark:to-rose-900/5 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-violet-600 dark:text-violet-400 font-medium">Loading Users...</p>
+          <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-blue-600 dark:text-blue-400 font-medium">Loading Users...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20 flex flex-col relative overflow-hidden">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:from-blue-900/20 dark:via-blue-900/20 dark:to-rose-900/20 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-violet-200/20 to-purple-200/20 dark:from-violet-900/10 dark:to-purple-900/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-indigo-200/20 to-violet-200/20 dark:from-indigo-900/10 dark:to-violet-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-blue-200/20 dark:from-blue-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-rose-200/20 to-blue-200/20 dark:from-rose-900/10 dark:to-blue-900/10 rounded-full blur-3xl opacity-60"></div>
       </div>
 
       {/* Header */}
-      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-violet-200/50 dark:border-violet-500/20 px-6 py-4 shadow-lg">
+      <div className="relative z-10 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border-b border-blue-200/50 dark:border-blue-500/20 px-6 py-4 shadow-lg">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl shadow-lg">
+              <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
                 <Users className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-rose-600 dark:from-blue-400 dark:via-blue-400 dark:to-rose-400 bg-clip-text text-transparent">
                   User Management
                 </h1>
-                <p className="text-xs text-violet-600/70 dark:text-violet-300/70 font-medium">
+                <p className="text-xs text-blue-600/70 dark:text-blue-300/70 font-medium">
                   Manage team members
                 </p>
               </div>
@@ -298,12 +298,12 @@ const UserManagement = () => {
               connectionStatus === 'connected'
                 ? 'bg-emerald-50/80 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-500/30'
                 : connectionStatus === 'connecting'
-                ? 'bg-amber-50/80 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200/60 dark:border-amber-500/30'
+                ? 'bg-blue-50/80 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-500/30'
                 : 'bg-gray-50/80 dark:bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-200/60 dark:border-gray-500/30'
             }`}>
               <div className={`w-2 h-2 rounded-full ${
                 connectionStatus === 'connected' ? 'bg-emerald-500' :
-                connectionStatus === 'connecting' ? 'bg-amber-500 animate-pulse' :
+                connectionStatus === 'connecting' ? 'bg-blue-500 animate-pulse' :
                 'bg-gray-500'
               }`}></div>
               {users.length} Users
@@ -314,12 +314,12 @@ const UserManagement = () => {
             <button
               onClick={handleRefresh}
               disabled={loading}
-              className="p-2 bg-white/70 dark:bg-slate-800/70 text-violet-600 dark:text-violet-300 hover:bg-violet-100/70 dark:hover:bg-violet-700/40 border border-violet-200/60 dark:border-violet-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
+              className="p-2 bg-white/70 dark:bg-slate-800/70 text-blue-600 dark:text-blue-300 hover:bg-blue-100/70 dark:hover:bg-blue-700/40 border border-blue-200/60 dark:border-blue-500/30 rounded-xl transition-all duration-200 disabled:opacity-50 shadow-sm backdrop-blur-sm"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             </button>
             
-            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-xl transition-all duration-200 shadow-sm text-sm font-medium">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all duration-200 shadow-sm text-sm font-medium">
               <Plus className="w-4 h-4" />
               Add User
             </button>
@@ -329,20 +329,20 @@ const UserManagement = () => {
         {/* Filters */}
         <div className="flex items-center gap-3">
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-violet-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-blue-400" />
             <input
               type="text"
               placeholder="Search users..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-violet-200/60 dark:border-violet-500/30 rounded-xl text-violet-800 dark:text-violet-200 placeholder-violet-400 text-sm focus:outline-none focus:ring-1 focus:ring-violet-500 shadow-sm backdrop-blur-sm"
+              className="w-full pl-9 pr-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-blue-200/60 dark:border-blue-500/30 rounded-xl text-blue-800 dark:text-blue-200 placeholder-blue-400 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-sm backdrop-blur-sm"
             />
           </div>
           
           <select
             value={filterRole}
             onChange={(e) => setFilterRole(e.target.value)}
-            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-violet-200/60 dark:border-violet-500/30 rounded-xl text-violet-800 dark:text-violet-200 text-sm focus:outline-none focus:ring-1 focus:ring-violet-500 shadow-sm backdrop-blur-sm"
+            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-blue-200/60 dark:border-blue-500/30 rounded-xl text-blue-800 dark:text-blue-200 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-sm backdrop-blur-sm"
           >
             <option value="all">All Roles</option>
             <option value="admin">Admin</option>
@@ -355,7 +355,7 @@ const UserManagement = () => {
           <select
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
-            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-violet-200/60 dark:border-violet-500/30 rounded-xl text-violet-800 dark:text-violet-200 text-sm focus:outline-none focus:ring-1 focus:ring-violet-500 shadow-sm backdrop-blur-sm"
+            className="px-3 py-2 bg-white/70 dark:bg-slate-800/70 border border-blue-200/60 dark:border-blue-500/30 rounded-xl text-blue-800 dark:text-blue-200 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-sm backdrop-blur-sm"
           >
             <option value="all">All Status</option>
             <option value="active">Active</option>
@@ -369,11 +369,11 @@ const UserManagement = () => {
         {filteredUsers.length === 0 ? (
           <div className="flex items-center justify-center h-64">
             <div className="text-center">
-              <div className="p-4 bg-violet-100 dark:bg-violet-500/20 rounded-xl mb-4 inline-block">
-                <Users className="w-8 h-8 text-violet-600 dark:text-violet-400" />
+              <div className="p-4 bg-blue-100 dark:bg-blue-500/20 rounded-xl mb-4 inline-block">
+                <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               </div>
               <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-2">No Users Found</h3>
-              <p className="text-sm text-violet-600/70 dark:text-violet-300/70">
+              <p className="text-sm text-blue-600/70 dark:text-blue-300/70">
                 {searchTerm || filterRole !== 'all' || filterStatus !== 'all' 
                   ? 'Try adjusting your search or filters' 
                   : 'No users available'}
@@ -390,11 +390,11 @@ const UserManagement = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-violet-200/50 dark:border-violet-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-blue-200/50 dark:border-blue-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
                         {user.fullName?.charAt(0)?.toUpperCase() || user.email?.charAt(0)?.toUpperCase() || 'U'}
                       </div>
                       <div>
@@ -409,7 +409,7 @@ const UserManagement = () => {
                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
                         onClick={() => toggleUserStatus(user.id, user.status)}
-                        className="p-1 hover:bg-violet-100 dark:hover:bg-violet-500/20 rounded-lg transition-colors"
+                        className="p-1 hover:bg-blue-100 dark:hover:bg-blue-500/20 rounded-lg transition-colors"
                         title={user.status === 'active' ? 'Deactivate user' : 'Activate user'}
                       >
                         {user.status === 'active' ? (
@@ -420,9 +420,9 @@ const UserManagement = () => {
                       </button>
                       <button
                         onClick={() => handleEdit(user)}
-                        className="p-1 hover:bg-violet-100 dark:hover:bg-violet-500/20 rounded-lg transition-colors"
+                        className="p-1 hover:bg-blue-100 dark:hover:bg-blue-500/20 rounded-lg transition-colors"
                       >
-                        <Edit2 className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+                        <Edit2 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       </button>
                       <button
                         onClick={() => handleDelete(user.id)}
@@ -433,7 +433,7 @@ const UserManagement = () => {
                     </div>
                   </div>
                   
-                  <div className="space-y-2 text-sm text-violet-600/70 dark:text-violet-300/70">
+                  <div className="space-y-2 text-sm text-blue-600/70 dark:text-blue-300/70">
                     {user.email && (
                       <div className="flex items-center gap-2">
                         <Mail className="w-3 h-3" />
@@ -463,7 +463,7 @@ const UserManagement = () => {
                     )}
                   </div>
                   
-                  <div className="mt-4 pt-4 border-t border-violet-200/50 dark:border-violet-500/20">
+                  <div className="mt-4 pt-4 border-t border-blue-200/50 dark:border-blue-500/20">
                     <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium ${
                       user.status === 'active' 
                         ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' 
@@ -514,7 +514,7 @@ const UserManagement = () => {
                     type="text"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -527,7 +527,7 @@ const UserManagement = () => {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -540,7 +540,7 @@ const UserManagement = () => {
                     <select
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                      className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="member">Member</option>
                       <option value="developer">Developer</option>
@@ -557,7 +557,7 @@ const UserManagement = () => {
                     <select
                       value={formData.status}
                       onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                      className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                      className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="active">Active</option>
                       <option value="inactive">Inactive</option>
@@ -573,7 +573,7 @@ const UserManagement = () => {
                     type="text"
                     value={formData.department}
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                    className="w-full px-3 py-2 border border-violet-200 dark:border-violet-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-3 py-2 border border-blue-200 dark:border-blue-500/30 rounded-lg bg-white dark:bg-slate-700 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 
@@ -584,13 +584,13 @@ const UserManagement = () => {
                       setShowModal(false);
                       setEditingUser(null);
                     }}
-                    className="flex-1 px-4 py-2 border border-violet-200 dark:border-violet-500/30 text-violet-600 dark:text-violet-400 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-500/10 transition-colors"
+                    className="flex-1 px-4 py-2 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium"
+                    className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg font-medium"
                   >
                     Update
                   </button>

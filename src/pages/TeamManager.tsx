@@ -63,7 +63,7 @@ export default function TeamManager() {
 
   const { user } = useAuthStore();
 
-  // Color options for teams - neon blue/orange and purple variations
+  // Color options for teams - neon blue/blue and blue variations
   const colorOptions = [
     "#00D4FF", "#FF6600", "#7C3AED", "#8B5CF6", "#A855F7",
     "#06B6D4", "#F97316", "#6D28D9", "#5B21B6", "#4C1D95"
@@ -336,11 +336,11 @@ export default function TeamManager() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ y: -4, scale: 1.02 }}
-        className="bg-white dark:bg-black/95 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-cyan-300/50 dark:border-purple-500/40"
+        className="bg-white dark:bg-black/95 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-cyan-300/50 dark:border-blue-500/40"
       >
         {/* Team Header */}
         <div
-          className="p-6 text-white relative overflow-hidden bg-gradient-to-br from-purple-500 to-blue-600 dark:from-purple-700 dark:to-blue-900 cursor-pointer"
+          className="p-6 text-white relative overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-700 dark:to-blue-900 cursor-pointer"
           onClick={() => navigate(`/team-details/${team.id}`)}
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
@@ -402,7 +402,7 @@ export default function TeamManager() {
         </div>
 
         {/* Team Leader */}
-        <div className="p-4 border-b border-cyan-300/50 dark:border-purple-500/40">
+        <div className="p-4 border-b border-cyan-300/50 dark:border-blue-500/40">
           <div className="flex items-center gap-3">
             <img
               src={leadInfo.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${leadInfo.name}`}
@@ -428,7 +428,7 @@ export default function TeamManager() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="border-t border-cyan-300/50 dark:border-purple-500/40"
+              className="border-t border-cyan-300/50 dark:border-blue-500/40"
             >
               <div className="p-4">
                 <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
@@ -437,7 +437,7 @@ export default function TeamManager() {
                 </h4>
                 <div className="grid grid-cols-1 gap-3">
                   {teamMembers.map((member) => (
-                    <div key={member.id} className="flex items-center gap-3 p-3 bg-cyan-50 dark:bg-purple-800/30 rounded-lg">
+                    <div key={member.id} className="flex items-center gap-3 p-3 bg-cyan-50 dark:bg-blue-800/30 rounded-lg">
                       <img
                         src={member.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${member.name}`}
                         alt={member.name}
@@ -478,20 +478,20 @@ export default function TeamManager() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-50 to-rose-50 dark:from-blue-900/20 dark:via-blue-900/20 dark:to-rose-900/20">
       {/* Enhanced Header */}
-      <div className="bg-white/80 dark:bg-black/95 backdrop-blur-xl border-b border-cyan-300/50 dark:border-purple-500/40 sticky top-0 z-10">
+      <div className="bg-white/80 dark:bg-black/95 backdrop-blur-xl border-b border-cyan-300/50 dark:border-blue-500/40 sticky top-0 z-10">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 dark:from-purple-600 dark:to-blue-800 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-800 rounded-2xl flex items-center justify-center shadow-lg">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-orange-600 dark:from-purple-400 dark:to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
                   Team Galaxy
                 </h1>
-                <p className="text-gray-600 dark:text-purple-300 font-medium">
+                <p className="text-gray-600 dark:text-blue-300 font-medium">
                   Manage teams and collaborate effectively
                 </p>
               </div>
@@ -499,7 +499,7 @@ export default function TeamManager() {
 
             <div className="flex items-center gap-3">
               {/* View Mode Toggle */}
-              <div className="flex items-center bg-cyan-100/50 dark:bg-purple-800/50 rounded-xl p-1">
+              <div className="flex items-center bg-cyan-100/50 dark:bg-blue-800/50 rounded-xl p-1">
                 {[
                   { id: "cards", icon: Grid, label: "Cards" },
                   { id: "list", icon: List, label: "List" }
@@ -509,8 +509,8 @@ export default function TeamManager() {
                     onClick={() => setViewMode(mode.id)}
                     className={`flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all ${
                       viewMode === mode.id
-                        ? 'bg-white dark:bg-purple-600 text-gray-900 dark:text-white shadow-sm'
-                        : 'text-gray-600 dark:text-purple-300 hover:text-gray-900 dark:hover:text-white'
+                        ? 'bg-white dark:bg-blue-600 text-gray-900 dark:text-white shadow-sm'
+                        : 'text-gray-600 dark:text-blue-300 hover:text-gray-900 dark:hover:text-white'
                     }`}
                   >
                     <mode.icon className="w-4 h-4" />
@@ -532,14 +532,14 @@ export default function TeamManager() {
                 placeholder="Search teams or members..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-black/90 border border-cyan-300 dark:border-purple-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-purple-500 focus:border-transparent transition-all"
+                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-black/90 border border-cyan-300 dark:border-blue-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-blue-500 focus:border-transparent transition-all"
               />
             </div>
             
             <select
               value={filterDepartment}
               onChange={(e) => setFilterDepartment(e.target.value)}
-              className="px-4 py-3 bg-white dark:bg-black/90 border border-cyan-300 dark:border-purple-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-purple-500 focus:border-transparent"
+              className="px-4 py-3 bg-white dark:bg-black/90 border border-cyan-300 dark:border-blue-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-blue-500 focus:border-transparent"
             >
               <option value="all">All Departments</option>
               <option value="Engineering">Engineering</option>
@@ -555,7 +555,7 @@ export default function TeamManager() {
       <div className="p-6">
         {teams.length === 0 ? (
           <div className="text-center py-16">
-            <div className="w-24 h-24 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-800/50 dark:to-blue-700/50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-100 dark:from-blue-800/50 dark:to-blue-700/50 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Users className="w-12 h-12 text-gray-400" />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
@@ -585,9 +585,9 @@ export default function TeamManager() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="w-full max-w-2xl bg-white dark:bg-black/95 rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto border border-cyan-300/50 dark:border-purple-500/40"
+              className="w-full max-w-2xl bg-white dark:bg-black/95 rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto border border-cyan-300/50 dark:border-blue-500/40"
             >
-              <div className="p-6 border-b border-cyan-300/50 dark:border-purple-500/40">
+              <div className="p-6 border-b border-cyan-300/50 dark:border-blue-500/40">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                     {editId ? "Edit Team" : "Create New Team"}
@@ -597,7 +597,7 @@ export default function TeamManager() {
                       setShowCreateModal(false);
                       resetForm();
                     }}
-                    className="p-2 hover:bg-cyan-100 dark:hover:bg-purple-700/50 rounded-lg transition-colors"
+                    className="p-2 hover:bg-cyan-100 dark:hover:bg-blue-700/50 rounded-lg transition-colors"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -616,7 +616,7 @@ export default function TeamManager() {
                       placeholder="Enter team name"
                       value={teamName}
                       onChange={(e) => setTeamName(e.target.value)}
-                      className="w-full px-4 py-3 border border-cyan-300 dark:border-purple-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-purple-500 focus:border-transparent dark:bg-black/90 dark:text-white"
+                      className="w-full px-4 py-3 border border-cyan-300 dark:border-blue-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-blue-500 focus:border-transparent dark:bg-black/90 dark:text-white"
                     />
                   </div>
                   
@@ -648,7 +648,7 @@ export default function TeamManager() {
                     value={teamDescription}
                     onChange={(e) => setTeamDescription(e.target.value)}
                     rows={3}
-                    className="w-full px-4 py-3 border border-cyan-300 dark:border-purple-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-purple-500 focus:border-transparent dark:bg-black/90 dark:text-white"
+                    className="w-full px-4 py-3 border border-cyan-300 dark:border-blue-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-blue-500 focus:border-transparent dark:bg-black/90 dark:text-white"
                   />
                 </div>
 
@@ -660,7 +660,7 @@ export default function TeamManager() {
                   <select
                     value={teamLead}
                     onChange={(e) => setTeamLead(e.target.value)}
-                    className="w-full px-4 py-3 border border-cyan-300 dark:border-purple-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-purple-500 focus:border-transparent dark:bg-black/90 dark:text-white"
+                    className="w-full px-4 py-3 border border-cyan-300 dark:border-blue-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-blue-500 focus:border-transparent dark:bg-black/90 dark:text-white"
                   >
                     <option value="">Select team lead</option>
                     {employees.map((emp) => (
@@ -681,18 +681,18 @@ export default function TeamManager() {
                     placeholder="Search employees..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full px-4 py-3 border border-cyan-300 dark:border-purple-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-purple-500 focus:border-transparent dark:bg-black/90 dark:text-white mb-3"
+                    className="w-full px-4 py-3 border border-cyan-300 dark:border-blue-500/40 rounded-xl focus:ring-2 focus:ring-cyan-500 dark:focus:ring-blue-500 focus:border-transparent dark:bg-black/90 dark:text-white mb-3"
                   />
 
-                  <div className="border border-cyan-300 dark:border-purple-500/40 rounded-xl max-h-60 overflow-y-auto">
+                  <div className="border border-cyan-300 dark:border-blue-500/40 rounded-xl max-h-60 overflow-y-auto">
                     {filteredEmployees.map((emp) => {
                       const isSelected = selectedMembers.includes(emp.id);
                       return (
                         <div
                           key={emp.id}
                           onClick={() => toggleMember(emp.id)}
-                          className={`p-3 cursor-pointer hover:bg-cyan-50 dark:hover:bg-purple-700/50 flex items-center gap-3 border-b border-cyan-300/50 dark:border-purple-500/40 last:border-b-0 transition-colors ${
-                            isSelected ? "bg-cyan-100 dark:bg-purple-900/30" : ""
+                          className={`p-3 cursor-pointer hover:bg-cyan-50 dark:hover:bg-blue-700/50 flex items-center gap-3 border-b border-cyan-300/50 dark:border-blue-500/40 last:border-b-0 transition-colors ${
+                            isSelected ? "bg-cyan-100 dark:bg-blue-900/30" : ""
                           }`}
                         >
                           <img
@@ -710,7 +710,7 @@ export default function TeamManager() {
                           </div>
                           {isSelected && (
                             <div className="flex items-center gap-2">
-                              <span className="px-2 py-1 text-xs bg-cyan-100 dark:bg-purple-100 text-cyan-700 dark:text-purple-700 rounded-full">
+                              <span className="px-2 py-1 text-xs bg-cyan-100 dark:bg-blue-100 text-cyan-700 dark:text-blue-700 rounded-full">
                                 Selected
                               </span>
                               {teamLead === emp.id && (
@@ -741,7 +741,7 @@ export default function TeamManager() {
                         return (
                           <div
                             key={memberId}
-                            className="flex items-center gap-2 bg-cyan-100 dark:bg-purple-900/30 text-cyan-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm"
+                            className="flex items-center gap-2 bg-cyan-100 dark:bg-blue-900/30 text-cyan-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm"
                           >
                             <img
                               src={member?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${member?.name}`}
@@ -760,19 +760,19 @@ export default function TeamManager() {
                 )}
               </div>
 
-              <div className="p-6 border-t border-cyan-300/50 dark:border-purple-500/40 flex justify-end gap-3">
+              <div className="p-6 border-t border-cyan-300/50 dark:border-blue-500/40 flex justify-end gap-3">
                 <button
                   onClick={() => {
                     setShowCreateModal(false);
                     resetForm();
                   }}
-                  className="px-6 py-3 border border-cyan-300 dark:border-purple-500/40 text-gray-700 dark:text-purple-300 rounded-xl hover:bg-cyan-50 dark:hover:bg-purple-700/50 transition-colors"
+                  className="px-6 py-3 border border-cyan-300 dark:border-blue-500/40 text-gray-700 dark:text-blue-300 rounded-xl hover:bg-cyan-50 dark:hover:bg-blue-700/50 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleCreateOrUpdate}
-                  className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-orange-600 dark:from-purple-600 dark:to-purple-700 text-white rounded-xl hover:from-cyan-700 hover:to-orange-700 dark:hover:from-purple-700 dark:hover:to-purple-800 transition-all shadow-lg hover:shadow-xl"
+                  className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-blue-600 dark:to-blue-700 text-white rounded-xl hover:from-cyan-700 hover:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800 transition-all shadow-lg hover:shadow-xl"
                 >
                   {editId ? "Update Team" : "Create Team"}
                 </button>

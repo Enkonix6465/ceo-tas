@@ -180,9 +180,9 @@ const ProjectDetail = () => {
       case 'completed':
         return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       case 'on-hold':
-        return 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-500/30';
+        return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       case 'planning':
-        return 'bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-500/30';
+        return 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30';
       default:
         return 'bg-gray-50 dark:bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-500/30';
     }
@@ -199,7 +199,7 @@ const ProjectDetail = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-violet-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
       </div>
     );
   }
@@ -210,7 +210,7 @@ const ProjectDetail = () => {
         <div className="text-red-500 mb-4">{error}</div>
         <button 
           onClick={() => navigate(-1)}
-          className="px-4 py-2 bg-violet-600 text-white rounded hover:bg-violet-700"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
         >
           Go Back
         </button>
@@ -224,7 +224,7 @@ const ProjectDetail = () => {
         <div className="text-gray-500 mb-4">Project not found</div>
         <button 
           onClick={() => navigate(-1)}
-          className="px-4 py-2 bg-violet-600 text-white rounded hover:bg-violet-700"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
         >
           Go Back
         </button>
@@ -235,7 +235,7 @@ const ProjectDetail = () => {
   const StatusIcon = getStatusIcon(project.status);
 
   return (
-    <div className="h-full bg-gradient-to-br from-slate-100 via-purple-100 to-indigo-200 dark:from-slate-800 dark:via-purple-900/40 dark:to-indigo-900/60 overflow-auto">
+    <div className="h-full bg-gradient-to-br from-slate-100 via-blue-100 to-rose-200 dark:from-slate-800 dark:via-blue-900/40 dark:to-rose-900/60 overflow-auto">
       <div className="container mx-auto px-4 py-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -246,7 +246,7 @@ const ProjectDetail = () => {
           <div className="col-span-2 space-y-4">
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg">
+                <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                   <StatusIcon className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -320,7 +320,7 @@ const ProjectDetail = () => {
                 </div>
                 <div className="bg-white dark:bg-slate-700 p-3 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600">
                   <div className="text-sm text-gray-500 dark:text-gray-400">Pending</div>
-                  <div className="text-xl font-bold text-amber-600 dark:text-amber-400">{taskStats.pending}</div>
+                  <div className="text-xl font-bold text-blue-600 dark:text-blue-400">{taskStats.pending}</div>
                 </div>
                 <div className="bg-white dark:bg-slate-700 p-3 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600">
                   <div className="text-sm text-gray-500 dark:text-gray-400">In Progress</div>
@@ -350,11 +350,11 @@ const ProjectDetail = () => {
                           className="border-t border-gray-100 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-600/30 cursor-pointer"
                           onClick={() => navigate(`/task/${task.id}`)}
                         >
-                          <td className="px-4 py-3 text-violet-600 dark:text-violet-400 font-medium">{task.task_id}</td>
+                          <td className="px-4 py-3 text-blue-600 dark:text-blue-400 font-medium">{task.task_id}</td>
                           <td className="px-4 py-3 text-gray-800 dark:text-gray-200">{task.title}</td>
                           <td className="px-4 py-3">
                             <span className={`px-2 py-1 rounded text-xs font-medium ${
-                              task.status === 'pending' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300' :
+                              task.status === 'pending' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' :
                               task.status === 'in_progress' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' :
                               'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'
                             }`}>
@@ -377,8 +377,8 @@ const ProjectDetail = () => {
           </div>
 
           <div className="col-span-1 space-y-4">
-            <div className="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg border border-indigo-100 dark:border-indigo-700/30">
-              <h3 className="font-medium text-indigo-800 dark:text-indigo-300 mb-2">Project Details</h3>
+            <div className="bg-rose-50 dark:bg-rose-900/30 p-4 rounded-lg border border-rose-100 dark:border-rose-700/30">
+              <h3 className="font-medium text-rose-800 dark:text-rose-300 mb-2">Project Details</h3>
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600 dark:text-gray-400">Created:</span>
@@ -416,7 +416,7 @@ const ProjectDetail = () => {
                       className="bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 shadow-sm rounded-lg p-3 text-sm transition"
                     >
                       <div className="flex items-center gap-2 mb-1">
-                        <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-700 dark:text-indigo-300 flex items-center justify-center font-bold text-xs">
+                        <div className="w-8 h-8 rounded-full bg-rose-100 dark:bg-rose-800 text-rose-700 dark:text-rose-300 flex items-center justify-center font-bold text-xs">
                           {getEmployeeName(comment.userId)?.[0] || "U"}
                         </div>
                         <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
@@ -441,7 +441,7 @@ const ProjectDetail = () => {
               <div className="mt-4">
                 <textarea
                   rows={3}
-                  className="w-full p-2 border rounded-md text-sm bg-white dark:bg-zinc-800 dark:border-zinc-600 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-indigo-300"
+                  className="w-full p-2 border rounded-md text-sm bg-white dark:bg-zinc-800 dark:border-zinc-600 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-rose-300"
                   placeholder="Write a comment..."
                   value={newComment}
                   onChange={(e) => setNewComment(e.target.value)}
@@ -449,7 +449,7 @@ const ProjectDetail = () => {
                 <button
                   onClick={handleAddComment}
                   disabled={commentLoading || !newComment.trim()}
-                  className="mt-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded w-full disabled:opacity-50 transition"
+                  className="mt-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded w-full disabled:opacity-50 transition"
                 >
                   {commentLoading ? "Saving..." : "Post Comment"}
                 </button>

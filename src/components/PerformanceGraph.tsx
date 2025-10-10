@@ -53,7 +53,7 @@ export const PerformanceGraph: React.FC<PerformanceGraphProps> = ({
           className="liquid-glass-stats group cursor-pointer"
         >
           <div className="flex items-center justify-between mb-2 relative z-10">
-            <span className="text-sm font-medium text-gray-600 dark:text-purple-300/90">
+            <span className="text-sm font-medium text-gray-600 dark:text-blue-300/90">
               Overall Performance
             </span>
           </div>
@@ -81,7 +81,7 @@ export const PerformanceGraph: React.FC<PerformanceGraphProps> = ({
           className="liquid-glass-stats group cursor-pointer"
         >
           <div className="flex items-center justify-between mb-2 relative z-10">
-            <span className="text-sm font-medium text-gray-600 dark:text-purple-300/90">
+            <span className="text-sm font-medium text-gray-600 dark:text-blue-300/90">
               On-Time Rate
             </span>
           </div>
@@ -109,7 +109,7 @@ export const PerformanceGraph: React.FC<PerformanceGraphProps> = ({
           className="liquid-glass-stats group cursor-pointer"
         >
           <div className="flex items-center justify-between mb-2 relative z-10">
-            <span className="text-sm font-medium text-gray-600 dark:text-purple-300/90">
+            <span className="text-sm font-medium text-gray-600 dark:text-blue-300/90">
               Overdue Tasks
             </span>
           </div>
@@ -119,7 +119,7 @@ export const PerformanceGraph: React.FC<PerformanceGraphProps> = ({
             </span>
           </div>
           <div className="mt-3 relative z-10">
-            <span className="text-xs text-gray-600 dark:text-purple-300/70">
+            <span className="text-xs text-gray-600 dark:text-blue-300/70">
               Need attention
             </span>
           </div>
@@ -131,7 +131,7 @@ export const PerformanceGraph: React.FC<PerformanceGraphProps> = ({
           className="liquid-glass-stats group cursor-pointer"
         >
           <div className="flex items-center justify-between mb-2 relative z-10">
-            <span className="text-sm font-medium text-gray-600 dark:text-purple-300/90">
+            <span className="text-sm font-medium text-gray-600 dark:text-blue-300/90">
               Avg Delay
             </span>
           </div>
@@ -141,7 +141,7 @@ export const PerformanceGraph: React.FC<PerformanceGraphProps> = ({
             </span>
           </div>
           <div className="mt-3 relative z-10">
-            <span className="text-xs text-gray-600 dark:text-purple-300/70">
+            <span className="text-xs text-gray-600 dark:text-blue-300/70">
               Per task
             </span>
           </div>
@@ -155,7 +155,7 @@ export const PerformanceGraph: React.FC<PerformanceGraphProps> = ({
             <p className="text-sm font-medium text-gray-900 dark:text-white">
               Performance Summary
             </p>
-            <p className="text-xs text-gray-600 dark:text-purple-300/70">
+            <p className="text-xs text-gray-600 dark:text-blue-300/70">
               {overallPerformance >= 80
                 ? 'Excellent performance! Keep up the great work.'
                 : overallPerformance >= 60
