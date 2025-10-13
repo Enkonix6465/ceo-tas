@@ -435,10 +435,17 @@ const ViewTickets = () => {
                       </span>
                     </td>
                     <td className="p-3">
-                      <span className={`px-2 py-1 rounded-full text-white text-xs font-medium ${getStatusColor(ticket.status)}`}>
-                        {ticket.status}
-                      </span>
-                    </td>
+  <div className="flex items-center justify-center">
+    <span
+      className={`px-2 py-1 rounded-full text-white text-xs font-medium ${getStatusColor(
+        ticket.status
+      )}`}
+    >
+      {ticket.status}
+    </span>
+  </div>
+</td>
+
                     <td className={`p-3 ${isPastDue(ticket.dueDate) ? "text-red-600 dark:text-red-400 font-semibold" : "text-slate-600 dark:text-slate-400"}`}>
                       {ticket.dueDate || "N/A"}
                     </td>
